@@ -51,7 +51,7 @@ if (isset($_POST['btn'])) {
                 <br>
                 <input type="text" placeholder="masukkan email anda" name="email">
                 <input type="password" placeholder="masukkan password anda" name="password">
-                <input type="password" placeholder="ulangi password" name="password2">
+                <input type="password" placeholder="ulangi password anda" name="password2">
                 <br>
                 <br>
                 <a> <button name="btn">daftar</button></a>
