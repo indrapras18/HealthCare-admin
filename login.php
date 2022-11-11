@@ -44,7 +44,7 @@
  				<br>
  				<a> <button name="btn">Login</button></a>
  				<br>
- 				<h5> Tidak memiliki akun? <a class="lain" href="a">Daftar </a></h5>
+ 				<h5> Tidak memiliki akun? <a class="lain" href="add_admin.php">Daftar </a></h5>
  		</form>
  		</center>
  	</div>
