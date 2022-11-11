@@ -1,7 +1,7 @@
 <?php
 include('core/koneksi.php');
-// error_reporting(0);
-
+error_reporting(0);
+// cek validasi email
 if (isset($_POST['btn'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
