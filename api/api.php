@@ -5,14 +5,16 @@ header('Content-Type: application/json');
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: *");
 if (empty($_GET)) {
-    $query = mysqli_query($koneksi, "SELECT * FROM users");
+    $query = mysqli_query($koneksi, "SELECT * FROM tenaga_medis");
     $result = array();
     while ($row = mysqli_fetch_array($query)) {
         array_push($result, array(
-            'id' => $row['id_users'],
+            'id_tenaga_medis' => $row['id_tenaga_medis'],
+            'nama' => $row['nama'],
             'email' => $row['email'],
+            'no_str' => $row['no_str'],
             'password' => $row['password'],
-            'level' => $row['level']
+            'id_poli' => $row['id_poli']
         ));
     }
 
@@ -24,10 +26,12 @@ if (empty($_GET)) {
     $result = array();
     while ($row = $query->fetch_assoc()) {
         $result = array(
-            'id' => $row['id'],
-            'nama' => $row['email'],
+            'id_tenaga_medis' => $row['id_tenaga_medis'],
+            'nama' => $row['nama'],
             'email' => $row['email'],
-            'password' => $row['password']
+            'no_str' => $row['no_str'],
+            'password' => $row['password'],
+            'id_poli' => $row['id_poli']
         );
     }
     echo json_encode(

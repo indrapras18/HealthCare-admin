@@ -210,9 +210,9 @@ include 'core/koneksi.php';
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="pages/forms/general.html" class="nav-link">
+                  <a href="pages/forms/form_tenaga_medis.php" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>General Elements</p>
+                    <p>Tenaga Medis</p>
                   </a>
                 </li>
                 <li class="nav-item">
@@ -289,10 +289,10 @@ include 'core/koneksi.php';
                 <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
 
                 <div class="info-box-content">
-                  <span class="info-box-text">Jumlah User</span>
+                  <span class="info-box-text">Tenaga Medis</span>
                   <span class="info-box-number">
                     <?php
-                    $data_user = mysqli_query($koneksi, "select * from users");
+                    $data_user = mysqli_query($koneksi, "select * from tenaga_medis");
                     $jumlah_user = mysqli_num_rows($data_user);
                     ?>
                     <?php echo $jumlah_user; ?>
@@ -308,9 +308,9 @@ include 'core/koneksi.php';
                 <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-thumbs-up"></i></span>
 
                 <div class="info-box-content">
-                  <span class="info-box-text">Perawat</span>
+                  <span class="info-box-text">Poli</span>
                   <?php
-                  $data_user = mysqli_query($koneksi, "select * from tenaga_medis");
+                  $data_user = mysqli_query($koneksi, "select * from poli");
                   $jumlah_user = mysqli_num_rows($data_user);
                   ?>
                   <?php echo $jumlah_user; ?>
@@ -329,7 +329,7 @@ include 'core/koneksi.php';
                 <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
 
                 <div class="info-box-content">
-                  <span class="info-box-text">Pasien Aktif</span>
+                  <span class="info-box-text">Pasien</span>
                   <span class="info-box-number">
                     <?php
                     $data_pasien = mysqli_query($koneksi,"select * from pasien");

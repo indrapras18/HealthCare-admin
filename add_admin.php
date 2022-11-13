@@ -1,34 +1,3 @@
-<?php
-include('core/koneksi.php');
-error_reporting(0);
-// cek validasi email
-if (isset($_POST['btn'])) {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $password2 = $_POST['password2'];
-
-    if ($password == $password2) {
-        $sql = "SELECT * FROM users WHERE email='$email'";
-        $result = mysqli_query($koneksi, $sql);
-        if (!$result->num_rows > 0) {
-            $sql = "INSERT INTO users (email, password) VALUES ('$email', '$password')";
-            $result = mysqli_query($koneksi, $sql);
-            if ($result) {
-                echo "<script>alert('registrasi berhasil!')
-                window.location.href = 'login.php'
-                </script>";
-            } else {
-                echo "<script>alert('Woops! Terjadi kesalahan.')</script>";
-            }
-        } else {
-            echo "<script>alert('Woops! Email Sudah Terdaftar.')</script>";
-        }
-    } else {
-        echo "<script>alert('Password Tidak Sesuai')</script>";
-    }
-}
-?>
-
 <!doctype html>
 <html>
 
@@ -71,6 +40,12 @@ if (isset($_POST['btn'])) {
 </html>
 
 <style type="text/css">
+    * {
+        padding: 0px;
+        margin: 0px;
+        margin-top: 0px;
+    }
+
     button {
         color: white;
     }
@@ -96,3 +71,33 @@ if (isset($_POST['btn'])) {
         color: #078A73;
     }
 </style>
+<?php
+include('core/koneksi.php');
+error_reporting(0);
+// cek validasi email
+if (isset($_POST['btn'])) {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $password2 = $_POST['password2'];
+
+    if ($password == $password2) {
+        $sql = "SELECT * FROM users WHERE email='$email'";
+        $result = mysqli_query($koneksi, $sql);
+        if (!$result->num_rows > 0) {
+            $sql = "INSERT INTO users (email, password) VALUES ('$email', '$password')";
+            $result = mysqli_query($koneksi, $sql);
+            if ($result) {
+                echo "<script>alert('registrasi berhasil!')
+                window.location.href = 'login.php'
+                </script>";
+            } else {
+                echo "<script>alert('Woops! Terjadi kesalahan.')</script>";
+            }
+        } else {
+            echo "<script>alert('Woops! Email Sudah Terdaftar.')</script>";
+        }
+    } else {
+        echo "<script>alert('Password Tidak Sesuai')</script>";
+    }
+}
+?>
