@@ -210,15 +210,15 @@ include 'core/koneksi.php';
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="pages/forms/form_tenaga_medis.php" class="nav-link">
+                  <a href="pages/forms/form_tenaga_medis.php" class="nav-link active">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Tenaga Medis</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="pages/forms/advanced.html" class="nav-link">
+                  <a href="pages/forms/form_poli.php" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Advanced Elements</p>
+                    <p>Poli</p>
                   </a>
                 </li>
                 <li class="nav-item">
@@ -239,21 +239,15 @@ include 'core/koneksi.php';
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="pages/tables/simple.html" class="nav-link">
+                  <a href="pages/tables/table_tenaga_medis.php" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Simple Tables</p>
+                    <p>Tenaga Medis</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="pages/tables/data.html" class="nav-link">
+                  <a href="pages/tables/table_poli.php" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>DataTables</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/tables/jsgrid.html" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>jsGrid</p>
+                    <p>Poli</p>
                   </a>
                 </li>
               </ul>

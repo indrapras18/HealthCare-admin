@@ -1,4 +1,7 @@
 <?php
+include("../../core/koneksi.php");
+?>
+<?php
 include "../../core/koneksi.php";
 ?>
 <!DOCTYPE html>
@@ -63,7 +66,7 @@ include "../../core/koneksi.php";
             <!-- Brand Logo -->
             <a href="../../index3.html" class="brand-link">
                 <img src="../../dist/img/amplop.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">Aplikasi Surat</span>
+                <!-- <span class="brand-text font-weight-light">Aplikasi Surat</span> -->
             </a>
 
             <!-- Sidebar -->
@@ -110,15 +113,27 @@ include "../../core/koneksi.php";
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="../forms/form_tenaga_medis.php" class="nav-link">
+                                    <a href="../forms/petugas.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Tenaga Medis</p>
+                                        <p>Petugas</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="../forms/form_poli.php" class="nav-link">
+                                    <a href="../forms/suratmasuk.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Poli</p>
+                                        <p>Surat Masuk</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="../forms/suratkeluar.php" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Surat Keluar</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="../forms/disposisi.php" class="nav-link active">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Disposisi</p>
                                     </a>
                                 </li>
                             </ul>
@@ -133,15 +148,15 @@ include "../../core/koneksi.php";
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="../tables/table_tenaga_medis.php" class="nav-link active">
+                                    <a href="../tables/tablepetugas.php" class="nav-link active">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Tabel Tenaga Medis</p>
+                                        <p>Tabel Petugas</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="../tables/table_poli.php" class="nav-link">
+                                    <a href="../tables/tablesuratmasuk.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Tabel Poli</p>
+                                        <p>Tabel Surat Masuk</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -173,7 +188,7 @@ include "../../core/koneksi.php";
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Form Perawat</h1>
+                            <h1>Form Poli</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
@@ -201,50 +216,23 @@ include "../../core/koneksi.php";
                                 <form method="POST">
                                     <div class="card-body">
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Nama Perawat</label>
-                                            <input type="text" name="nama" class="form-control" id="exampleInputEmail1" placeholder="Nama Perawat" required>
+                                            <label for="exampleInputEmail1">Nama Poli</label>
+                                            <input type="text" name="nama_poli" class="form-control" id="exampleInputEmail1" placeholder="Nama Poli" required>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Email Perawat</label>
-                                            <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email Perawat">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputPassword1">Nomor STR</label>
-                                            <input type="number" name="no_str" class="form-control" id="exampleInputPassword1" placeholder="Nomor STR">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputPassword1">Password</label>
-                                            <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-12 col-sm-12" data-select2-id="45">
-                                                <div class="form-group" data-select2-id="44">
-                                                    <label>Poli</label>
-                                                    <select name="id" class="form-control select2 select2-danger select2-hidden-accessible" data-dropdown-css-class="select2-danger" style="width: 100%;" data-select2-id="23" tabindex="-1" aria-hidden="true">
-                                                        <?php
-                                                        $sql = mysqli_query($koneksi, "SELECT * FROM poli");
-                                                        foreach ($sql as $a) :
-                                                        ?>
-                                                            <option value="<?= $a['id_poli']; ?>"><?= $a['nama_poli']; ?></option>
-                                                        <?php
-                                                        endforeach;
-                                                        ?>
-                                                    </select>
-                                                </div><br>
-                                                <!-- /.form-group -->
-                                            </div>
-                                        </div>
-                                        <!-- /.card-body -->
-                                        <div class="card-footer">
-                                            <button name="btn">Submit</button>
-                                        </div>
-                                </form>
+                                        <!-- /.form-group -->
+                                    </div>
                             </div>
-                            <!-- /.card -->
-
+                            <!-- /.card-body -->
+                            <div class="card-footer">
+                                <button name="btn">Submit</button>
+                            </div>
+                            </form>
                         </div>
-                        <!-- /.row -->
+                        <!-- /.card -->
+
                     </div>
+                    <!-- /.row -->
+                </div>
             </section>
             <!-- /.content -->
         </div>
@@ -277,9 +265,9 @@ include "../../core/koneksi.php";
 </html>
 <?php
 if (isset($_POST['btn'])) {
-    $sql = mysqli_query($koneksi, "INSERT INTO tenaga_medis VALUES ('','$_POST[nama]','$_POST[email]','$_POST[no_str]','$_POST[password]','$_POST[id]')");
-    if ($sql) {
-        echo "<script>alert('Data Tersimpan.')</script>";
-    }
+    $sql = mysqli_query($koneksi, "INSERT INTO poli VALUES('','$_POST[nama_poli]')");
+}
+if ($sql) {
+    echo "<script>alert('Data Tersimpan.')</script>";
 }
 ?>
