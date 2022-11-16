@@ -229,7 +229,7 @@ include "../../core/koneksi.php";
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
-                                        <!-- <th>ID</th> -->
+                                        <th>ID</th>
                                         <th>Nama Tenaga Medis</th>
                                         <th>Email</th>
                                         <th>Nomor STR</th>
@@ -239,18 +239,19 @@ include "../../core/koneksi.php";
                                 </thead>
                                 <tbody>
                                     <?php
-                                    $sql = mysqli_query($koneksi, "SELECT tenaga_medis.`nama`,tenaga_medis.`email`,tenaga_medis.`no_str`,tenaga_medis.`password`,poli.`nama_poli`
+                                    $sql = mysqli_query($koneksi, "SELECT tenaga_medis.`id_tenaga_medis`,tenaga_medis.`nama`,tenaga_medis.`email`,tenaga_medis.`no_str`,tenaga_medis.`password`,poli.`nama_poli`
                                     FROM tenaga_medis,poli
                                     WHERE tenaga_medis.`id_poli` = poli.`id_poli`");
                                     while ($data = mysqli_fetch_array($sql)) {
                                     ?>
                                         <tr>
+                                            <td><?= $data['id_tenaga_medis']; ?></td>
                                             <td><?= $data['nama']; ?></td>
                                             <td><?= $data['email']; ?></td>
                                             <td><?= $data['no_str']; ?></td>
                                             <td><?= $data['password']; ?></td>
                                             <td><?= $data['nama_poli']; ?></td>
-                                            <td><button style="background-color: red"><a href="disposisi/delete.php?id=<?= $data['no_disposisi']; ?>">Hapus</a></button></td>
+                                            <td><button style="background-color: red"><a href="tenaga_medis/delete_tenaga_medis.php?id=<?= $data['id_tenaga_medis']; ?>">Hapus</a></button></td>
                                             <td><button style="background-color: blue"><a href="disposisi/update.php?id=<?= $data['no_disposisi']; ?>">Update</a></button></td>
                                         </tr>
                                     <?php
