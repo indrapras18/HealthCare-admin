@@ -184,9 +184,22 @@ include "../../core/koneksi.php";
                                 <div class="card-header">
                                     <h3 class="card-title">Form Tenaga Medis</h3>
                                 </div>
-                                <!-- /.card-header -->
-                                <!-- form start -->
-                                <form method="POST">
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary ml-2" data-toggle="modal" data-target="#exampleModal">
+                            Tambah Data
+                        </button>
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                         <form method="POST">
                                     <div class="card-body">
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Nama Perawat</label>
@@ -209,29 +222,28 @@ include "../../core/koneksi.php";
                                                 <div class="form-group" data-select2-id="44">
                                                     <label>Poli</label>
                                                     <select name="id" class="form-control select2 select2-danger select2-hidden-accessible" data-dropdown-css-class="select2-danger" style="width: 100%;" data-select2-id="23" tabindex="-1" aria-hidden="true">
-                                                        <?php
-                                                        $sql = mysqli_query($koneksi, "SELECT * FROM poli");
-                                                        foreach ($sql as $a) :
-                                                        ?>
+                                                    <?php
+                                                    $sql = mysqli_query($koneksi, "SELECT * FROM poli");
+                                                    foreach ($sql as $a) :
+                                                    ?>
                                                             <option value="<?= $a['id_poli']; ?>"><?= $a['nama_poli']; ?></option>
                                                         <?php
-                                                        endforeach;
+                                                    endforeach;
                                                         ?>
                                                     </select>
                                                 </div><br>
-                                                <!-- /.form-group -->
                                             </div>
                                         </div>
-                                        <!-- /.card-body -->
-                                        <div class="card-footer">
-                                            <button name="btn">Submit</button>
-                                        </div>
-                                </form>
+                                
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="submit" name="btn" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                    </form>
+                                </div>
                             </div>
-                            <!-- /.card -->
-
                         </div>
-                        <!-- /.row -->
                     </div>
             </section>
             <!-- /.content -->

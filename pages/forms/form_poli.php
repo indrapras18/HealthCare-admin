@@ -167,12 +167,6 @@ include "../../core/koneksi.php";
                         <div class="col-sm-6">
                             <h1>Form Poli</h1>
                         </div>
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">General Form</li>
-                            </ol>
-                        </div>
                     </div>
                 </div><!-- /.container-fluid -->
             </section>
@@ -188,28 +182,40 @@ include "../../core/koneksi.php";
                                 <div class="card-header">
                                     <h3 class="card-title">Form Tenaga Medis</h3>
                                 </div>
-                                <!-- /.card-header -->
-                                <!-- form start -->
-                                <form method="POST">
-                                    <div class="card-body">
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Nama Poli</label>
-                                            <input type="text" name="nama_poli" class="form-control" id="exampleInputEmail1" placeholder="Nama Poli" required>
+                            </div>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                Tambah Data
+                            </button>
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
                                         </div>
-                                        <!-- /.form-group -->
-                                    </div>
-                            </div>
-                            <!-- /.card-body -->
-                            <div class="card-footer">
-                                <button name="btn">Submit</button>
-                            </div>
-                            </form>
-                        </div>
-                        <!-- /.card -->
+                                        <div class="modal-body">
+                                            <form method="POST">
+                                                <div class="form-group">
+                                                    <label for="exampleFormControlInput1">Nama Poli</label>
+                                                    <input type="text" name="nama_poli" class="form-control" id="NamaPoli" placeholder="Nama Poli" require>
+                                                </div>
 
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <button type="submit" name="btn" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.card -->
+
+                        </div>
+                        <!-- /.row -->
                     </div>
-                    <!-- /.row -->
-                </div>
             </section>
             <!-- /.content -->
         </div>
