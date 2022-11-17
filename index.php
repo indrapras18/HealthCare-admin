@@ -54,9 +54,9 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
-                        <a href="index.html" class="nav-item nav-link active">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About</a>
-                        <a href="perawat.html" class="nav-item nav-link">Perawat</a>
+                        <a href="index.php" class="nav-item nav-link active">Home</a>
+                        <a href="team.php" class="nav-item nav-link">About</a>
+                        <a href="perawat.php" class="nav-item nav-link">Perawat</a>
                     </div>
                     <a href="login.php" class="btn btn-light rounded-pill text-primary py-2 px-4 ms-lg-5">Log In</a>
                     <!-- <button><a href="login.php"></a>Log In</button>
@@ -73,7 +73,7 @@
                             <a href="" class="btn btn-outline-light rounded-pill border-2 py-3 px-5 animated slideInRight">Learn More</a>
                         </div>
                         <div class="col-lg-6 text-center text-lg-start">
-                            <img class="img-fluid animated zoomIn" src="img/hero.png" alt="">
+                            <img class="img-fluid animated zoomIn" src="img/faa.png" alt="">
                         </div>
                     </div>
                 </div>
