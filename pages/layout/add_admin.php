@@ -4,13 +4,13 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HealthCare</title>
-    <link rel="stylesheet" type="text/css" href="css/stylelogin.css">
+    <link rel="stylesheet" type="text/css" href="../../css/stylelogin.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="login">
-        <p class="headlogin" style="text-align:justify;"><img src="img/logo.png" style="float:left;"> Healthcare </p>
+        <p class="headlogin" style="text-align:justify;"><img src="../../img/logo.png" style="float:left;"> Healthcare </p>
         <form method="POST" action="">
             <center>
                 <br>
@@ -30,7 +30,7 @@
         </center>
     </div>
     <div class="right">
-        <img src="img/logo.png" alt="">
+        <img src="../../img/logo.png" alt="">
         <br>
         <h1>HealthCare</h1>
     </div>

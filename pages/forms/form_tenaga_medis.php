@@ -144,18 +144,6 @@ include "../../core/koneksi.php";
                                         <p>Tabel Poli</p>
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="../tables/tablesuratkeluar.php" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Tabel Surat Keluar</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="../tables/tabledisposisi.php" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Tabel Disposisi</p>
-                                    </a>
-                                </li>
                             </ul>
                         </li>
 

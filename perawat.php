@@ -55,10 +55,10 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
                         <a href="index.php" class="nav-item nav-link">Home</a>
-                        <a href="team.php" class="nav-item nav-link">About</a>
-                        <a href="service.php" class="nav-item nav-link active">Perawat</a>
+                        <a href="about.php" class="nav-item nav-link">About</a>
+                        <a href="perawat.php" class="nav-item nav-link active">Perawat</a>
                         </div>
-                        <a href="login.php" class="btn btn-light rounded-pill text-primary py-2 px-4 ms-lg-5">Log In</a>
+                        <a href="pages/layout/login.php" class="btn btn-light rounded-pill text-primary py-2 px-4 ms-lg-5">Log In</a>
                     </div>
                 </div>
             </nav>

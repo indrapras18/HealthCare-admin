@@ -113,27 +113,16 @@ include "../../core/koneksi.php";
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="../forms/petugas.php" class="nav-link">
+                                    <a href="../forms/form_tenaga_medis.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Petugas</p>
+                                        <p>Tenaga Medis</p>
                                     </a>
                                 </li>
+
                                 <li class="nav-item">
-                                    <a href="../forms/suratmasuk.php" class="nav-link">
+                                    <a href="../forms/form_poli.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Surat Masuk</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="../forms/suratkeluar.php" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Surat Keluar</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="../forms/disposisi.php" class="nav-link active">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Disposisi</p>
+                                        <p>Poli</p>
                                     </a>
                                 </li>
                             </ul>
@@ -148,27 +137,15 @@ include "../../core/koneksi.php";
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="../tables/tablepetugas.php" class="nav-link active">
+                                    <a href="../tables/table_tenaga_medis.php" class="nav-link active">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Tabel Petugas</p>
+                                        <p>Tenaga Medis</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="../tables/tablesuratmasuk.php" class="nav-link">
+                                    <a href="../tables/table_poli.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Tabel Surat Masuk</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="../tables/tablesuratkeluar.php" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Tabel Surat Keluar</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="../tables/tabledisposisi.php" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Tabel Disposisi</p>
+                                        <p>Poli</p>
                                     </a>
                                 </li>
                             </ul>
