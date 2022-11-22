@@ -1,9 +1,6 @@
 <?php
 include("../../core/koneksi.php");
 ?>
-<?php
-include "../../core/koneksi.php";
-?>
 <!DOCTYPE html>
 <html>
 
@@ -64,9 +61,9 @@ include "../../core/koneksi.php";
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="../../index3.html" class="brand-link">
-                <img src="../../dist/img/amplop.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-                <!-- <span class="brand-text font-weight-light">Aplikasi Surat</span> -->
+            <a href="../../index.php" class="brand-link">
+                <img src="../../dist/img/logowhite1.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <span class="brand-text font-weight-light">HealthCare</span>
             </a>
 
             <!-- Sidebar -->
@@ -118,9 +115,8 @@ include "../../core/koneksi.php";
                                         <p>Tenaga Medis</p>
                                     </a>
                                 </li>
-
                                 <li class="nav-item">
-                                    <a href="../forms/form_poli.php" class="nav-link">
+                                    <a href="../forms/form_poli.php" class="nav-link active">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Poli</p>
                                     </a>
@@ -175,55 +171,59 @@ include "../../core/koneksi.php";
             <section class="content">
                 <div class="container-fluid">
                     <div class="row">
-                        <!-- left column -->
                         <div class="col-md-12">
-                            <!-- general form elements -->
-                            <div class="card card-primary">
+                            <div class="card" style="background-color:#0AB885;">
                                 <div class="card-header">
-                                    <h3 class="card-title">Form Tenaga Medis</h3>
+                                    <h3 class="card-title" style="color:white ;">Form Poli</h3>
                                 </div>
                             </div>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                                Tambah Data
-                            </button>
-                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form method="POST">
-                                                <div class="form-group">
-                                                    <label for="exampleFormControlInput1">Nama Poli</label>
-                                                    <input type="text" name="nama_poli" class="form-control" id="NamaPoli" placeholder="Nama Poli" require>
+                        </div>
+                            <div class="card mb-3 mx-auto">
+                                <img src="../../img/logo.png" class="card-img-top" style="height: 100px; width : 130px;">
+                                <div class="card-body">
+                                    <h5 class="card-title"><b>HealthCare</b></h5>
+                                    <p class="card-text">Hai admin disini kamu dapat menambahkan data diri perawat. Jangan lupa cek berkas perwat.</p>
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                        Tambah Data
+                                    </button>
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Poli</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
                                                 </div>
-
+                                                <div class="modal-body">
+                                                    <form method="POST">
+                                                        <div class="form-group">
+                                                            <label for="exampleFormControlInput1">Nama Poli</label>
+                                                            <input type="text" name="nama_poli" class="form-control" id="NamaPoli" placeholder="Nama Poli" require>
+                                                        </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    <button type="submit" name="btn" class="btn btn-success swalDefaultSuccess">
+                                                        Simpan
+                                                    </button>
+                                                </div>
+                                                </form>
+                                            </div>
                                         </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="submit" name="btn" class="btn btn-primary">Save changes</button>
-                                        </div>
-                                        </form>
                                     </div>
                                 </div>
-                            </div>
-                            <!-- /.card -->
 
+                                <!-- /.card -->
+
+                            </div>
+                            <!-- /.row -->
                         </div>
-                        <!-- /.row -->
-                    </div>
             </section>
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
         <footer class="main-footer">
-            <div class="float-right d-none d-sm-block">
-                <b>Version</b> 1.0.0
-            </div>
             <strong>Copyright &copy; 2022 <a>HealthCare</a>.</strong>
         </footer>
 

@@ -30,16 +30,12 @@ include "../../core/koneksi.php";
                     <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="../../index3.html" class="nav-link">Home</a>
+                    <a href="../../index.php" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="#" class="nav-link">Contact</a>
                 </li>
             </ul>
-
-            <!-- SEARCH FORM -->
-
-
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
                 <!-- Messages Dropdown Menu -->
@@ -81,9 +77,9 @@ include "../../core/koneksi.php";
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="../../index3.html" class="brand-link">
-                <img src="../../dist/img/amplop.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">Aplikasi Surat</span>
+            <a href="../../index.php" class="brand-link">
+                <img src="../../dist/img/logoWhite1.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <span class="brand-text font-weight-light">HealthCare</span>
             </a>
 
             <!-- Sidebar -->
@@ -99,7 +95,7 @@ include "../../core/koneksi.php";
                 </div>
 
                 <!-- Sidebar Menu -->
-                <nav class="mt-2">
+                <nav class="mt-2" style="height: 700px;">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
@@ -145,7 +141,7 @@ include "../../core/koneksi.php";
                             </ul>
                         </li>
                         <li class="nav-item has-treeview menu-open">
-                            <a href="#" class="nav-link active">
+                            <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-table"></i>
                                 <p>
                                     Tables
@@ -160,7 +156,7 @@ include "../../core/koneksi.php";
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="../tables/table_poli.php" class="nav-link">
+                                    <a href="../tables/table_poli.php" class="nav-link active">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Poli</p>
                                     </a>
@@ -205,22 +201,20 @@ include "../../core/koneksi.php";
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
+                                        <th>ID Poli</th>
                                         <th>Nama Poli</th>
-                                        <th>Tenaga Medis</th>
                                         <th colspan="2">Aksi</th>
                                 </thead>
                                 <tbody>
                                     <?php
-                                    $sql = mysqli_query($koneksi, "SELECT poli.`nama_poli`,tenaga_medis.`nama`
-                                    FROM poli,tenaga_medis
-                                    WHERE poli.`id_poli` = tenaga_medis.`id_poli`");
+                                    $sql = mysqli_query($koneksi, "SELECT * FROM poli");
                                     while ($data = mysqli_fetch_array($sql)) {
                                     ?>
                                         <tr>
+                                            <td><?= $data['id_poli'];?></td>
                                             <td><?= $data['nama_poli']; ?></td>
-                                            <td><?= $data['nama']; ?></td>
-                                            <td><button style="background-color: red"><a href="disposisi/delete.php?id=<?= $data['no_disposisi']; ?>">Hapus</a></button></td>
-                                            <td><button style="background-color: blue"><a href="disposisi/update.php?id=<?= $data['no_disposisi']; ?>">Update</a></button></td>
+                                            <td><button type="button" class="btn btn-block btn-outline-danger" style="width : 100px;"><a style="color : #820000;" href="disposisi/delete.php?id=<?= $data['no_disposisi']; ?>">Hapus</a></button></td>
+                                            <td><button type="button" class="btn btn-block btn-outline-warning" style="width : 100px;"><a style="color : #F0FF42;" href="disposisi/delete.php?id=<?= $data['no_disposisi']; ?>">Update</a></button></td>
                                         </tr>
                                     <?php
                                     }
@@ -237,10 +231,7 @@ include "../../core/koneksi.php";
     </div>
     <!-- /.content-wrapper -->
     <footer class="main-footer">
-        <div class="float-right d-none d-sm-block">
-            <b>Version</b> 3.0.0-rc.5
-        </div>
-        <strong>Copyright &copy; <a href="http://adminlte.io">Aplikasi surat indra</a>.</strong> All rights
+        <strong>Copyright &copy; <a href="index.php">HealthCare</a>.</strong> All rights
         reserved.
     </footer>
 

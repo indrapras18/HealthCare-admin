@@ -81,9 +81,9 @@ include "../../core/koneksi.php";
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="../../index3.html" class="brand-link">
-                <img src="../../dist/img/amplop.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">Aplikasi Surat</span>
+            <a href="../../index.php" class="brand-link">
+                <img src="../../dist/img/logoWhite1.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <span class="brand-text font-weight-light">HealthCare</span>
             </a>
 
             <!-- Sidebar -->
@@ -94,15 +94,12 @@ include "../../core/koneksi.php";
                         <img src="../../dist/img/avatar.png" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Admin</a>
+                        <a href="#" class="d-block">HealthCare</a>
                     </div>
                 </div>
 
-                <!-- Sidebar Menu -->
-                <nav class="mt-2">
+                <nav class="mt-2" style="height: 700px;">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                        <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -120,7 +117,6 @@ include "../../core/koneksi.php";
                                 </li>
                             </ul>
                         </li>
-
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-edit"></i>
@@ -154,7 +150,7 @@ include "../../core/koneksi.php";
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="../tables/table_tenaga_medis.php" class="nav-link ">
+                                    <a href="../tables/table_tenaga_medis.php" class="nav-link active">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Tenaga Medis</p>
                                     </a>
@@ -192,7 +188,6 @@ include "../../core/koneksi.php";
                     <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">Petugas</h3>
-
                             <div class="card-tools">
                                 <div class="input-group input-group-sm" style="width: 150px;">
                                     <div class="input-group-append">
@@ -215,20 +210,20 @@ include "../../core/koneksi.php";
                                 </thead>
                                 <tbody>
                                     <?php
-                                    $sql = mysqli_query($koneksi, "SELECT tenaga_medis.`id_tenaga_medis`,tenaga_medis.`nama`,tenaga_medis.`email`,tenaga_medis.`no_str`,tenaga_medis.`password`,poli.`nama_poli`
+                                    $sql = mysqli_query($koneksi, "SELECT tenaga_medis.`id_tenagamedis`,tenaga_medis.`nama`,tenaga_medis.`email`,tenaga_medis.`no_str`,tenaga_medis.`password`,poli.nama_poli
                                     FROM tenaga_medis,poli
-                                    WHERE tenaga_medis.`id_poli` = poli.`id_poli`");
+                                    WHERE tenaga_medis.`id_poli` = poli.id_poli");
                                     while ($data = mysqli_fetch_array($sql)) {
                                     ?>
                                         <tr>
-                                            <td><?= $data['id_tenaga_medis']; ?></td>
+                                            <td><?= $data['id_tenagamedis']; ?></td>
                                             <td><?= $data['nama']; ?></td>
                                             <td><?= $data['email']; ?></td>
                                             <td><?= $data['no_str']; ?></td>
                                             <td><?= $data['password']; ?></td>
                                             <td><?= $data['nama_poli']; ?></td>
-                                            <td><button style="background-color: red"><a href="tenaga_medis/delete_tenaga_medis.php?id=<?= $data['id_tenaga_medis']; ?>">Hapus</a></button></td>
-                                            <td><button style="background-color: blue"><a href="disposisi/update.php?id=<?= $data['no_disposisi']; ?>">Update</a></button></td>
+                                            <td><button type="button" class="btn btn-danger"><a style="color : white;" href="tenaga_medis/delete_tenaga_medis.php?id=<?= $data['id_tenagamedis']; ?>">Hapus</a></button></td>
+                                            <td><button type="button" class="btn btn-warning"><a style="color : white;" href="tenaga_medis/update_tenaga_medis.php?id=<?= $data['id_tenagamedis']; ?>">Update</a></button></td>
                                         </tr>
                                     <?php
                                     }
@@ -245,10 +240,7 @@ include "../../core/koneksi.php";
     </div>
     <!-- /.content-wrapper -->
     <footer class="main-footer">
-        <div class="float-right d-none d-sm-block">
-            <b>Version</b> 3.0.0-rc.5
-        </div>
-        <strong>Copyright &copy; <a href="http://adminlte.io">Aplikasi surat indra</a>.</strong> All rights
+        <strong>Copyright &copy; <a href="../../index.php">HealthCare</a>.</strong> All rights
         reserved.
     </footer>
 
@@ -268,6 +260,16 @@ include "../../core/koneksi.php";
     <script src="../../dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="../../dist/js/demo.js"></script>
+    <!-- klik funtion -->
 </body>
 
 </html>
+
+<?php
+if (isset($_POST['btn'])) {
+    $sql = mysqli_query($koneksi, "INSERT INTO tenaga_medis VALUES ('','$_POST[nama]','$_POST[email]','$_POST[no_str]','$_POST[password]','$_POST[id]')");
+    if ($sql) {
+        echo "<script>alert('Data Tersimpan.')</script>";
+    }
+}
+?>

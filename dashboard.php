@@ -59,18 +59,18 @@ include 'core/koneksi.php';
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
             <li class="nav-item has-treeview menu-open">
-              <a href="#" class="nav-link active">
+              <!-- <a href="#" class="nav-link active">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
                   Dashboard
                   <i class="right fas fa-angle-left"></i>
                 </p>
-              </a>
+              </a> -->
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="./index.php" class="nav-link active">
+                  <a href="./index.php" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Home</p>
+                    <p>Dashboard</p>
                   </a>
                 </li>
               </ul>
@@ -349,11 +349,8 @@ include 'core/koneksi.php';
 
     <!-- Main Footer -->
     <footer class="main-footer">
-      <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
+      <strong>Copyright &copy;<a href="index.php">HealthCare</a>.</strong>
       All rights reserved.
-      <div class="float-right d-none d-sm-inline-block">
-        <b>Version</b> 3.0.0-rc.5
-      </div>
     </footer>
   </div>
   <!-- ./wrapper -->

@@ -16,7 +16,7 @@ body{
     position: center;
     font-weight: 26px;
     line-height: 25px;
-    margin-top: -370px;
+    margin-top: -380px;
     margin-right: 150px;
 
 }
@@ -26,13 +26,6 @@ body{
     display: grid;
     margin-top: -12px;
     margin-right: -10px;
-
-}
-.headlogin {
-    font-size: 15px;
-    font-family: Montserrat;
-    margin-top: 20px;
-    font-weight:bolder;
 }
 form {
     width: 250px;
@@ -54,39 +47,18 @@ h1 {
     margin: 5px;
 
 }
-/* hr {
-    border-top: 1px solid #24cea3;
-    padding: 0px;
-}
- */
  .garisatas{
-    text-align: left;
-    font-size: 12px;
-    font-family: montserrat;
-    margin: 5px;
- }
-p {
-    text-align: center;
+        text-align: left;
+        font-size: 12px;
+        font-family: monsterat;
+        margin: 5px;
 
-}
-.right img {
-    /* height: 347px;
-    width: 619px;
-    left: 794px;
-    top: 291px;
-    border-radius: 0px; */
-
-    width: 300px;
-    height: 150px;
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 260px;
 } 
 .right h1{
      color: #078A73;
      text-align: center;
-     margin-top: -240px;
+     margin-top: -500px;
+     font-family: sans-serif;
 }
 .right{
     width: 690px;
@@ -113,6 +85,7 @@ input {
     border: 1px solid rgba(34, 171, 139, 0.867);
     font-size: 10px;
     font-family: sans-serif;
+
 }
 button {
     border: none;

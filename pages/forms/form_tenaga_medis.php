@@ -31,7 +31,7 @@ include "../../core/koneksi.php";
                     <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="../../index3.html" class="nav-link">Home</a>
+                    <a href="../../index.php" class="nav-link">Home</a>
                 </li>
             </ul>
 
@@ -61,9 +61,9 @@ include "../../core/koneksi.php";
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="../../index3.html" class="brand-link">
-                <img src="../../dist/img/amplop.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">Aplikasi Surat</span>
+            <a href="../../index.php" class="brand-link">
+                <img src="../../dist/img/logoWhite1.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <span class="brand-text font-weight-light">HealthCare</span>
             </a>
 
             <!-- Sidebar -->
@@ -110,7 +110,7 @@ include "../../core/koneksi.php";
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="../forms/form_tenaga_medis.php" class="nav-link">
+                                    <a href="../forms/form_tenaga_medis.php" class="nav-link active">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Tenaga Medis</p>
                                     </a>
@@ -133,7 +133,7 @@ include "../../core/koneksi.php";
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="../tables/table_tenaga_medis.php" class="nav-link active">
+                                    <a href="../tables/table_tenaga_medis.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Tabel Tenaga Medis</p>
                                     </a>
@@ -172,87 +172,90 @@ include "../../core/koneksi.php";
                     </div>
                 </div><!-- /.container-fluid -->
             </section>
-
-            <!-- Main content -->
             <section class="content">
                 <div class="container-fluid">
                     <div class="row">
-                        <!-- left column -->
                         <div class="col-md-12">
-                            <!-- general form elements -->
-                            <div class="card card-primary">
+                            <div class="card" style="background-color:#0AB885;">
                                 <div class="card-header">
-                                    <h3 class="card-title">Form Tenaga Medis</h3>
+                                    <h3 class="card-title" style="color : white;">Form Tenaga Medis</h3>
                                 </div>
                             </div>
                         </div>
-                        <button type="button" class="btn btn-primary ml-2" data-toggle="modal" data-target="#exampleModal">
-                            Tambah Data
-                        </button>
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                         <form method="POST">
-                                    <div class="card-body">
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Nama Perawat</label>
-                                            <input type="text" name="nama" class="form-control" id="exampleInputEmail1" placeholder="Nama Perawat" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Email Perawat</label>
-                                            <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email Perawat">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputPassword1">Nomor STR</label>
-                                            <input type="number" name="no_str" class="form-control" id="exampleInputPassword1" placeholder="Nomor STR">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputPassword1">Password</label>
-                                            <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-12 col-sm-12" data-select2-id="45">
-                                                <div class="form-group" data-select2-id="44">
-                                                    <label>Poli</label>
-                                                    <select name="id" class="form-control select2 select2-danger select2-hidden-accessible" data-dropdown-css-class="select2-danger" style="width: 100%;" data-select2-id="23" tabindex="-1" aria-hidden="true">
-                                                    <?php
-                                                    $sql = mysqli_query($koneksi, "SELECT * FROM poli");
-                                                    foreach ($sql as $a) :
-                                                    ?>
-                                                            <option value="<?= $a['id_poli']; ?>"><?= $a['nama_poli']; ?></option>
-                                                        <?php
-                                                    endforeach;
-                                                        ?>
-                                                    </select>
-                                                </div><br>
+                        <div class="card mb-3 mx-auto">
+                            <img src="../../img/logo.png" class="card-img-top" style="height: 100px; width : 130px;">
+                            <div class="card-body">
+                                <h5 class="card-title"><b>HeatCare</b></h5>
+                                <p class="card-text">Hai admin disini kamu dapat menambahkan data diri perawat. Jangan lupa cek berkas perwat.</p>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                    Tambah Data
+                                </button>
+                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form method="POST">
+                                                    <div class="card-body">
+                                                        <div class="form-group">
+                                                            <label for="exampleInputEmail1">Nama Perawat</label>
+                                                            <input type="text" name="nama" class="form-control" id="exampleInputEmail1" placeholder="Nama Perawat" required>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="exampleInputEmail1">Email Perawat</label>
+                                                            <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email Perawat">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="exampleInputPassword1">Nomor STR</label>
+                                                            <input type="number" name="no_str" class="form-control" id="exampleInputPassword1" placeholder="Nomor STR">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="exampleInputPassword1">Password</label>
+                                                            <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-12 col-sm-12" data-select2-id="45">
+                                                                <div class="form-group" data-select2-id="44">
+                                                                    <label>Poli</label>
+                                                                    <select name="id" class="form-control select2 select2-danger select2-hidden-accessible" data-dropdown-css-class="select2-danger" style="width: 100%;" data-select2-id="23" tabindex="-1" aria-hidden="true">
+                                                                        <?php
+                                                                        $sql = mysqli_query($koneksi, "SELECT * FROM poli");
+                                                                        foreach ($sql as $a) :
+                                                                        ?>
+                                                                            <option value="<?= $a['id_poli']; ?>"><?= $a['nama_poli']; ?></option>
+                                                                        <?php
+                                                                        endforeach;
+                                                                        ?>
+                                                                    </select>
+                                                                </div><br>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                        <button type="submit" name="btn" class="btn btn-success swalDefaultSuccess">
+                                                            Simpan
+                                                        </button>
+                                                    </div>
+                                                </form>
                                             </div>
                                         </div>
-                                
                                     </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <button type="submit" name="btn" class="btn btn-primary">Save changes</button>
-                                    </div>
-                                    </form>
                                 </div>
+
                             </div>
                         </div>
-                    </div>
             </section>
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
         <footer class="main-footer">
-            <div class="float-right d-none d-sm-block">
-                <b>Version</b> 1.0.0
-            </div>
             <strong>Copyright &copy; 2022 <a>HealthCare</a>.</strong>
         </footer>
 
@@ -272,14 +275,30 @@ include "../../core/koneksi.php";
     <script src="../../dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="../../dist/js/demo.js"></script>
-</body>
+    <script type="text/javascript">
+  $(function() {
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000
+    });
 
+    $('.swalDefaultSuccess').click(function() {
+      Toast.fire({
+        type: 'success',
+        title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+      })
+    });
+  });
+    </script>
+</body>
 </html>
 <?php
 if (isset($_POST['btn'])) {
     $sql = mysqli_query($koneksi, "INSERT INTO tenaga_medis VALUES ('','$_POST[nama]','$_POST[email]','$_POST[no_str]','$_POST[password]','$_POST[id]')");
-    if ($sql) {
-        echo "<script>alert('Data Tersimpan.')</script>";
-    }
+    // if ($sql) {
+    //     echo "<script>alert('Data Tersimpan.')</script>";
+    // }
 }
 ?>
