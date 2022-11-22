@@ -297,8 +297,8 @@ include "../../core/koneksi.php";
 <?php
 if (isset($_POST['btn'])) {
     $sql = mysqli_query($koneksi, "INSERT INTO tenaga_medis VALUES ('','$_POST[nama]','$_POST[email]','$_POST[no_str]','$_POST[password]','$_POST[id]')");
-    // if ($sql) {
-    //     echo "<script>alert('Data Tersimpan.')</script>";
-    // }
+    if ($sql) {
+        echo "<script>alert('Data Tersimpan.')</script>";
+    }
 }
 ?>
