@@ -130,7 +130,7 @@
  }
 </style>
 <?php
-include('core/koneksi.php');
+include('../../core/koneksi.php');
 error_reporting(0);
 // cek validasi email
 if (isset($_POST['btn'])) {
@@ -142,7 +142,7 @@ if (isset($_POST['btn'])) {
         $sql = "SELECT * FROM login_admin WHERE email='$email'";
         $result = mysqli_query($koneksi, $sql);
         if (!$result->num_rows > 0) {
-            $sql = "INSERT INTO users (email, password) VALUES ('$email', '$password')";
+            $sql = "INSERT INTO login_admin (email, password) VALUES ('$email', '$password')";
             $result = mysqli_query($koneksi, $sql);
             if ($result) {
                 echo "<script>alert('registrasi berhasil!')
