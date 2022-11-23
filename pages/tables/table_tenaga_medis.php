@@ -195,9 +195,8 @@ include "../../core/koneksi.php";
                                 </div>
                             </div>
                         </div>
-                        <!-- /.card-header -->
-                        <div class="card-body table-responsive p-0">
-                            <table class="table table-hover">
+                        <div class="card-body">
+                            <table id="example2" class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
                                         <th>ID</th>
@@ -207,6 +206,7 @@ include "../../core/koneksi.php";
                                         <th>Password</th>
                                         <th>Poli</th>
                                         <th colspan="2">Aksi</th>
+                                    </tr>
                                 </thead>
                                 <tbody>
                                     <?php
@@ -234,21 +234,20 @@ include "../../core/koneksi.php";
                     </div>
                 </div>
             </div>
+            </section>
+            <!-- /.content -->
         </div>
-        </section>
-        <!-- /.content -->
-    </div>
-    <!-- /.content-wrapper -->
-    <footer class="main-footer">
-        <strong>Copyright &copy; <a href="../../index.php">HealthCare</a>.</strong> All rights
-        reserved.
-    </footer>
+        <!-- /.content-wrapper -->
+        <footer class="main-footer">
+            <strong>Copyright &copy; <a href="../../index.php">HealthCare</a>.</strong> All rights
+            reserved.
+        </footer>
 
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-        <!-- Control sidebar content goes here -->
-    </aside>
-    <!-- /.control-sidebar -->
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
     </div>
     <!-- ./wrapper -->
 

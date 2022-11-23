@@ -178,7 +178,7 @@ include "../../core/koneksi.php";
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Data Putugas Medis</h1>
+                            <h1>Data Poli</h1>
                         </div>
                     </div>
                 </div><!-- /.container-fluid -->
@@ -187,7 +187,7 @@ include "../../core/koneksi.php";
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Petugas</h3>
+                            <h3 class="card-title">Poli</h3>
 
                             <div class="card-tools">
                                 <div class="input-group input-group-sm" style="width: 150px;">
@@ -197,13 +197,14 @@ include "../../core/koneksi.php";
                             </div>
                         </div>
                         <!-- /.card-header -->
-                        <div class="card-body table-responsive p-0">
-                            <table class="table table-hover">
+                        <div class="card-body">
+                            <table id="example2" class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
                                         <th>ID Poli</th>
-                                        <th>Nama Poli</th>
+                                        <th>Nama</th>
                                         <th colspan="2">Aksi</th>
+                                    </tr>
                                 </thead>
                                 <tbody>
                                     <?php
@@ -211,7 +212,7 @@ include "../../core/koneksi.php";
                                     while ($data = mysqli_fetch_array($sql)) {
                                     ?>
                                         <tr>
-                                            <td><?= $data['id_poli'];?></td>
+                                            <td><?= $data['id_poli']; ?></td>
                                             <td><?= $data['nama_poli']; ?></td>
                                             <td><button type="button" class="btn btn-danger"><a style="color : white;" href="poli/delete_poli.php?id=<?= $data['id_poli']; ?>">Hapus</a></button></td>
                                             <td><button type="button" class="btn btn-warning"><a style="color : white;" href="poli/update_poli.php?id=<?= $data['id_poli']; ?>">Update</a></button></td>
@@ -225,21 +226,20 @@ include "../../core/koneksi.php";
                     </div>
                 </div>
             </div>
+            </section>
+            <!-- /.content -->
         </div>
-        </section>
-        <!-- /.content -->
-    </div>
-    <!-- /.content-wrapper -->
-    <footer class="main-footer">
-        <strong>Copyright &copy; <a href="index.php">HealthCare</a>.</strong> All rights
-        reserved.
-    </footer>
+        <!-- /.content-wrapper -->
+        <footer class="main-footer">
+            <strong>Copyright &copy; <a href="index.php">HealthCare</a>.</strong> All rights
+            reserved.
+        </footer>
 
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-        <!-- Control sidebar content goes here -->
-    </aside>
-    <!-- /.control-sidebar -->
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
     </div>
     <!-- ./wrapper -->
 
