@@ -213,8 +213,8 @@ include "../../core/koneksi.php";
                                         <tr>
                                             <td><?= $data['id_poli'];?></td>
                                             <td><?= $data['nama_poli']; ?></td>
-                                            <td><button type="button" class="btn btn-block btn-outline-danger" style="width : 100px;"><a style="color : #820000;" href="disposisi/delete.php?id=<?= $data['no_disposisi']; ?>">Hapus</a></button></td>
-                                            <td><button type="button" class="btn btn-block btn-outline-warning" style="width : 100px;"><a style="color : #F0FF42;" href="disposisi/delete.php?id=<?= $data['no_disposisi']; ?>">Update</a></button></td>
+                                            <td><button type="button" class="btn btn-danger"><a style="color : white;" href="poli/delete_poli.php?id=<?= $data['id_poli']; ?>">Hapus</a></button></td>
+                                            <td><button type="button" class="btn btn-warning"><a style="color : white;" href="poli/update_poli.php?id=<?= $data['id_poli']; ?>">Update</a></button></td>
                                         </tr>
                                     <?php
                                     }
