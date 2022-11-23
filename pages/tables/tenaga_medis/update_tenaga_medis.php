@@ -51,19 +51,19 @@ $rows = mysqli_fetch_array($sql);
                                             <div class="card-body">
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Nama Perawat</label>
-                                                    <input type="text" name="nama" class="form-control" id="exampleInputEmail1" placeholder="Nama Perawat" required>
+                                                    <input type="text" name="nama" class="form-control" id="exampleInputEmail1" placeholder="Nama Perawat" value="<?=$rows['nama'];?>" required>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Email Perawat</label>
-                                                    <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email Perawat">
+                                                    <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email Perawat" value="<?=$rows['email'];?>">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputPassword1">Nomor STR</label>
-                                                    <input type="number" name="no_str" class="form-control" id="exampleInputPassword1" placeholder="Nomor STR">
+                                                    <input type="number" name="no_str" class="form-control" id="exampleInputPassword1" placeholder="Nomor STR" value="<?=$rows['no_str'];?>">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputPassword1">Password</label>
-                                                    <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                                    <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password" value="<?=$rows['password'];?>"   >
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-12 col-sm-12" data-select2-id="45">
@@ -116,6 +116,9 @@ $rows = mysqli_fetch_array($sql);
 </html>
 <?php 
 if (isset($_POST['btn'])) {
-  $sql = mysqli_query($koneksi,"UPDATE tb_disposisi SET nomor_agenda = '$_POST[nomor_agenda]',no_surat = '$_POST[no_surat]',kepada = '$_POST[kepada]',keterangan = '$_POST[keterangan]',status_surat = '$_POST[status_surat]',tanggapan = '$_POST[tanggapan]' WHERE no_disposisi = $id");
+  $sql = mysqli_query($koneksi,"UPDATE tenaga_medis SET nama = '$_POST[nama]',email = '$_POST[email]',no_str = '$_POST[no_str]',password = '$_POST[password]' WHERE id_tenagamedis = $id");
+  echo "<script>alert('Edit Berhasil')
+        window.location.href = '../table_tenaga_medis.php'
+        </script>";
 }
  ?>

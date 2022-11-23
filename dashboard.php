@@ -290,7 +290,9 @@ include 'core/koneksi.php';
                   $data_user = mysqli_query($koneksi, "select * from poli");
                   $jumlah_user = mysqli_num_rows($data_user);
                   ?>
-                  <?php echo $jumlah_user; ?>
+                  <span class="info-box-number">
+                    <?php echo  $jumlah_user; ?>
+                  </span>
                 </div>
                 <!-- /.info-box-content -->
               </div>
@@ -309,7 +311,7 @@ include 'core/koneksi.php';
                   <span class="info-box-text">Pasien</span>
                   <span class="info-box-number">
                     <?php
-                    $data_pasien = mysqli_query($koneksi,"select * from pasien");
+                    $data_pasien = mysqli_query($koneksi, "select * from pasien");
                     $jumlah_pasien = mysqli_num_rows($data_pasien);
                     ?>
                     <?php echo $jumlah_pasien; ?>
