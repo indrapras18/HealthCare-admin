@@ -202,7 +202,7 @@ include "../../core/koneksi.php";
                                 <thead>
                                     <tr>
                                         <th>ID Poli</th>
-                                        <th>Nama</th>
+                                        <th>Nama Poli</th>
                                         <th colspan="2">Aksi</th>
                                     </tr>
                                 </thead>
