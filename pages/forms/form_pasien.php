@@ -1,5 +1,5 @@
 <?php
-include "../../core/koneksi.php";
+include('../../core/koneksi.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -110,7 +110,7 @@ include "../../core/koneksi.php";
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="../forms/form_tenaga_medis.php" class="nav-link active">
+                                    <a href="../forms/form_tenaga_medis.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Tenaga Medis</p>
                                     </a>
@@ -122,7 +122,7 @@ include "../../core/koneksi.php";
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="../forms/form_pasien.php" class="nav-link">
+                                    <a href="../forms/form_pasien.php" class="nav-link active">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Pasien</p>
                                     </a>
@@ -303,7 +303,7 @@ include "../../core/koneksi.php";
 </html>
 <?php
 if (isset($_POST['btn'])) {
-    $sql = mysqli_query($koneksi, "INSERT INTO tenaga_medis VALUES ('','$_POST[nama]','$_POST[email]','$_POST[no_str]','$_POST[password]','$_POST[id]')");
+    $sql = mysqli_query($koneksi, "INSERT INTO pasien VALUES ('','$_POST[nama]','$_POST[email]','$_POST[jk]','$_POST[alamat]','$_POST[foto]','$_POST[password]')");
     if ($sql) {
         echo "<script>alert('Data Tersimpan.')</script>";
     }

@@ -121,6 +121,12 @@ include("../../core/koneksi.php");
                                         <p>Poli</p>
                                     </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a href="../forms/form_pasien.php" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Pasien</p>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                         <li class="nav-item has-treeview">
@@ -210,15 +216,23 @@ include("../../core/koneksi.php");
                                                 </div>
                                                 </form>
                                             </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="submit" name="btn" class="btn btn-success swalDefaultSuccess">
+                                                    Simpan
+                                                </button>
+                                            </div>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
-
-                                <!-- /.card -->
-
                             </div>
-                            <!-- /.row -->
+
+                            <!-- /.card -->
+
                         </div>
+                        <!-- /.row -->
+                    </div>
             </section>
             <!-- /.content -->
         </div>
