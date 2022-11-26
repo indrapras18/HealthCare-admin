@@ -178,12 +178,12 @@ include("../../core/koneksi.php");
                                 </div>
                             </div>
                         </div>
-                            <div class="card mb-3 mx-auto">
-                                <img src="../../img/logo.png" class="card-img-top" style="height: 100px; width : 130px;">
+                        <div class="card mb-3 mx-auto"style="height: 430px; width: 400px;">
+                                <center><img src="../../img/poli1.png" class="card-img-top" style="height: 150px; width : 150px;margin-top: 20px;"></center>
                                 <div class="card-body">
-                                    <h5 class="card-title"><b>HealthCare</b></h5>
-                                    <p class="card-text">Hai admin disini kamu dapat menambahkan data diri perawat. Jangan lupa cek berkas perwat.</p>
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                    <h5 class="card-title"style= "font-size: 25px; font-family: sans-serif; color: #00B98E"><b>HealthCare</b></h5>
+                                    <p class="card-text">Hai admin disini kamu dapat menambahkan data poli perawat. Jangan lupa cek secara detail berkas perwat .</p>
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"style="margin-left: 200px; margin-top: 15px;">
                                         Tambah Data
                                     </button>
                                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -223,9 +223,7 @@ include("../../core/koneksi.php");
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
-        <footer class="main-footer">
-            <strong>Copyright &copy; 2022 <a>HealthCare</a>.</strong>
-        </footer>
+        
 
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
@@ -246,6 +244,7 @@ include("../../core/koneksi.php");
 </body>
 
 </html>
+
 <?php
 if (isset($_POST['btn'])) {
     $sql = mysqli_query($koneksi, "INSERT INTO poli VALUES('','$_POST[nama_poli]')");
