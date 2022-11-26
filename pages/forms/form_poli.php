@@ -184,37 +184,29 @@ include("../../core/koneksi.php");
                                 </div>
                             </div>
                         </div>
-                        <div class="card mb-3 mx-auto"style="height: 430px; width: 400px;">
-                                <center><img src="../../img/poli1.png" class="card-img-top" style="height: 150px; width : 150px;margin-top: 20px;"></center>
-                                <div class="card-body">
-                                    <h5 class="card-title"style= "font-size: 25px; font-family: sans-serif; color: #00B98E"><b>HealthCare</b></h5>
-                                    <p class="card-text">Hai admin disini kamu dapat menambahkan data poli perawat. Jangan lupa cek secara detail berkas perwat .</p>
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"style="margin-left: 200px; margin-top: 15px;">
-                                        Tambah Data
-                                    </button>
-                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Poli</h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <form method="POST">
-                                                        <div class="form-group">
-                                                            <label for="exampleFormControlInput1">Nama Poli</label>
-                                                            <input type="text" name="nama_poli" class="form-control" id="NamaPoli" placeholder="Nama Poli" require>
-                                                        </div>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                    <button type="submit" name="btn" class="btn btn-success swalDefaultSuccess">
-                                                        Simpan
-                                                    </button>
-                                                </div>
-                                                </form>
+                        <div class="card mb-3 mx-auto" style="height: 430px; width: 400px;">
+                            <center><img src="../../img/poli.png" class="card-img-top" style="height: 150px; width : 150px;margin-top: 20px;"></center>
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-size: 25px; font-family: sans-serif; color: #00B98E"><b>HealthCare</b></h5>
+                                <p class="card-text">Hai admin disini kamu dapat menambahkan data poli perawat. Jangan lupa cek secara detail berkas perwat .</p>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="margin-left: 200px; margin-top: 15px;">
+                                    Tambah Data
+                                </button>
+                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Poli</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form method="POST">
+                                                    <div class="form-group">
+                                                        <label for="exampleFormControlInput1">Nama Poli</label>
+                                                        <input type="text" name="nama_poli" class="form-control" id="NamaPoli" placeholder="Nama Poli" require>
+                                                    </div>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -227,17 +219,18 @@ include("../../core/koneksi.php");
                                     </div>
                                 </div>
                             </div>
-
-                            <!-- /.card -->
-
                         </div>
-                        <!-- /.row -->
+
+                        <!-- /.card -->
+
                     </div>
+                    <!-- /.row -->
+                </div>
             </section>
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
-        
+
 
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
