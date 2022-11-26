@@ -210,6 +210,12 @@ include 'core/koneksi.php';
                     <p>Poli</p>
                   </a>
                 </li>
+                <li class="nav-item">
+                  <a href="pages/forms/form_pasien.php" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Pasien</p>
+                  </a>
+                </li>
               </ul>
             </li>
             <li class="nav-item has-treeview">
@@ -327,8 +333,14 @@ include 'core/koneksi.php';
                 <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
 
                 <div class="info-box-content">
-                  <span class="info-box-text">New Members</span>
-                  <span class="info-box-number">2,000</span>
+                  <span class="info-box-text">Admin</span>
+                  <span class="info-box-number">
+                    <?php
+                    $data_admin = mysqli_query($koneksi, "select * from login_admin");
+                    $jumlah_admin = mysqli_num_rows($data_admin);
+                    ?>
+                    <?php echo $jumlah_admin ?>
+                  </span>
                 </div>
                 <!-- /.info-box-content -->
               </div>

@@ -205,7 +205,7 @@ include "../../core/koneksi.php";
                                             <td><?= $data['nama']; ?></td>
                                             <td><?= $data['email']; ?></td>
                                             <td><?= $data['no_str']; ?></td>
-                                            <td><?= $data['password']; ?></td>
+                                            <td><?= md5($data['password']);?></td>
                                             <td><?= $data['nama_poli']; ?></td>
                                             <td><button type="button" class="btn btn-danger"><a style="color : white;" href="tenaga_medis/delete_tenaga_medis.php?id=<?= $data['id_tenagamedis']; ?>">Hapus</a></button></td>
                                             <td><button type="button" class="btn btn-warning"><a style="color : white;" href="tenaga_medis/update_tenaga_medis.php?id=<?= $data['id_tenagamedis']; ?>">Update</a></button></td>

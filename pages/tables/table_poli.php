@@ -203,17 +203,23 @@ include "../../core/koneksi.php";
                                     <tr>
                                         <th>ID Poli</th>
                                         <th>Nama Poli</th>
+                                        <th>Tenaga Medis</th>
+                                        <th>Nomor STR</th>
                                         <th colspan="2">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php
-                                    $sql = mysqli_query($koneksi, "SELECT * FROM poli");
+                                    $sql = mysqli_query($koneksi, "SELECT poli.`id_poli`,poli.`nama_poli`,tenaga_medis.`nama`,tenaga_medis.`no_str`
+                                    FROM tenaga_medis,poli
+                                    WHERE tenaga_medis.`id_poli` = poli.`id_poli`");
                                     while ($data = mysqli_fetch_array($sql)) {
                                     ?>
                                         <tr>
                                             <td><?= $data['id_poli']; ?></td>
                                             <td><?= $data['nama_poli']; ?></td>
+                                            <td><?= $data['nama']; ?></td>
+                                            <td><?= $data['no_str']; ?></td>
                                             <td><button type="button" class="btn btn-danger"><a style="color : white;" href="poli/delete_poli.php?id=<?= $data['id_poli']; ?>">Hapus</a></button></td>
                                             <td><button type="button" class="btn btn-warning"><a style="color : white;" href="poli/update_poli.php?id=<?= $data['id_poli']; ?>">Update</a></button></td>
                                         </tr>
