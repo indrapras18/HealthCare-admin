@@ -188,12 +188,13 @@ include "../../core/koneksi.php";
                                 </div>
                             </div>
                         </div>
-                        <div class="card mb-3 mx-auto">
-                            <img src="../../img/logo.png" class="card-img-top" style="height: 100px; width : 130px;">
+                        <div class="card mb-3 mx-auto"style="height: 430px; width: 400px;">
+                            <center>
+                            <img src="../../img/dokter.png" class="card-img-top" style="height: 200px; width : 200px;"></center>
                             <div class="card-body">
-                                <h5 class="card-title"><b>HeatCare</b></h5>
-                                <p class="card-text">Hai admin disini kamu dapat menambahkan data diri perawat. Jangan lupa cek berkas perwat.</p>
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                <h5 class="card-title"style= "font-size: 25px; font-family: sans-serif; color: #00B98E"><b>HealthCare</b> </h5>
+                                <p class="card-text">Hai admin disini kamu dapat menambahkan data diri perawat. Jangan lupa cek kembali berkas perawat dengan detail.</p>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"style="margin-left : 200px;margin-top: 15px;">
                                     Tambah Data
                                 </button>
                                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -261,9 +262,6 @@ include "../../core/koneksi.php";
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
-        <footer class="main-footer">
-            <strong>Copyright &copy; 2022 <a>HealthCare</a>.</strong>
-        </footer>
 
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
