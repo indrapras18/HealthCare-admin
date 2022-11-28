@@ -150,6 +150,12 @@ include('../../core/koneksi.php');
                                         <p>Tabel Poli</p>
                                     </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a href="../tables/table_pasien.php" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Table Pasien</p>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
 
@@ -216,9 +222,13 @@ include('../../core/koneksi.php');
                                                             <label for="exampleInputEmail1">Email</label>
                                                             <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email Pasien">
                                                         </div>
-                                                        <div class="form-group">
-                                                            <label for="exampleInputPassword1">Jenis Kelamin</label>
-                                                            <input type="text" name="jk" class="form-control" id="exampleInputPassword1" placeholder="Jenis Kelamin">
+                                                        <div>
+                                                            <label for="exampleInputEmail1">Jenis Kelamin</label>
+                                                            <select class="custom-select" name="jk">
+                                                                <option selected>Open this select menu</option>
+                                                                <option value="l">Laki Laki</option>
+                                                                <option value="p">Perempuan</option>
+                                                            </select>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="exampleInputPassword1">Alamat</label>

@@ -138,6 +138,12 @@ include "../../core/koneksi.php";
                                         <p>Poli</p>
                                     </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a href="../forms/form_pasien.php" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Pasien</p>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                         <li class="nav-item has-treeview menu-open">
@@ -159,6 +165,12 @@ include "../../core/koneksi.php";
                                     <a href="../tables/table_poli.php" class="nav-link active">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Poli</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="../tables/table_pasien.php" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Pasien</p>
                                     </a>
                                 </li>
                             </ul>

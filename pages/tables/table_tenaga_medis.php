@@ -123,6 +123,12 @@ include "../../core/koneksi.php";
                                         <p>Poli</p>
                                     </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a href="../forms/form_pasien.php" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Pasien</p>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                         <li class="nav-item has-treeview menu-open">
@@ -144,6 +150,12 @@ include "../../core/koneksi.php";
                                     <a href="../tables/table_poli.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Poli</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="../tables/table_pasien.php" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Pasien</p>
                                     </a>
                                 </li>
                             </ul>
@@ -205,7 +217,7 @@ include "../../core/koneksi.php";
                                             <td><?= $data['nama']; ?></td>
                                             <td><?= $data['email']; ?></td>
                                             <td><?= $data['no_str']; ?></td>
-                                            <td><?= md5($data['password']);?></td>
+                                            <td><?= md5($data['password']); ?></td>
                                             <td><?= $data['nama_poli']; ?></td>
                                             <td><button type="button" class="btn btn-danger"><a style="color : white;" href="tenaga_medis/delete_tenaga_medis.php?id=<?= $data['id_tenagamedis']; ?>">Hapus</a></button></td>
                                             <td><button type="button" class="btn btn-warning"><a style="color : white;" href="tenaga_medis/update_tenaga_medis.php?id=<?= $data['id_tenagamedis']; ?>">Update</a></button></td>

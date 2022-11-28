@@ -239,6 +239,12 @@ include 'core/koneksi.php';
                     <p>Poli</p>
                   </a>
                 </li>
+                <li class="nav-item">
+                  <a href="pages/tables/table_pasien.php" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Pasien</p>
+                  </a>
+                </li>
               </ul>
             </li>
           </ul>

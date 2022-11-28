@@ -150,6 +150,12 @@ include "../../core/koneksi.php";
                                         <p>Tabel Poli</p>
                                     </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a href="../tables/table_pasien.php" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Table Pasien</p>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
 
