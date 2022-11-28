@@ -167,7 +167,7 @@ include('../../core/koneksi.php');
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Form Perawat</h1>
+                            <h1>Form Pasien</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
@@ -184,7 +184,7 @@ include('../../core/koneksi.php');
                         <div class="col-md-12">
                             <div class="card" style="background-color:#0AB885;">
                                 <div class="card-header">
-                                    <h3 class="card-title" style="color : white;">Form Tenaga Medis</h3>
+                                    <h3 class="card-title" style="color : white;">Form Pasien</h3>
                                 </div>
                             </div>
                         </div>
@@ -200,7 +200,7 @@ include('../../core/koneksi.php');
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Form Poli</h5>
+                                                <h5 class="modal-title" id="exampleModalLabel">Form Pasien</h5>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
@@ -209,37 +209,28 @@ include('../../core/koneksi.php');
                                                 <form method="POST">
                                                     <div class="card-body">
                                                         <div class="form-group">
-                                                            <label for="exampleInputEmail1">Nama Perawat</label>
-                                                            <input type="text" name="nama" class="form-control" id="exampleInputEmail1" placeholder="Nama Perawat" required>
+                                                            <label for="exampleInputEmail1">Nama</label>
+                                                            <input type="text" name="nama" class="form-control" id="exampleInputEmail1" placeholder="Nama Paseien" required>
                                                         </div>
                                                         <div class="form-group">
-                                                            <label for="exampleInputEmail1">Email Perawat</label>
-                                                            <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email Perawat">
+                                                            <label for="exampleInputEmail1">Email</label>
+                                                            <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email Pasien">
                                                         </div>
                                                         <div class="form-group">
-                                                            <label for="exampleInputPassword1">Nomor STR</label>
-                                                            <input type="number" name="no_str" class="form-control" id="exampleInputPassword1" placeholder="Nomor STR">
+                                                            <label for="exampleInputPassword1">Jenis Kelamin</label>
+                                                            <input type="text" name="jk" class="form-control" id="exampleInputPassword1" placeholder="Jenis Kelamin">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="exampleInputPassword1">Alamat</label>
+                                                            <input type="password" name="alamat" class="form-control" id="exampleInputPassword1" placeholder="Alamat">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="exampleInputPassword1">Foto</label>
+                                                            <input type="file" name="foto" class="form-control" id="exampleInputPassword1" placeholder="Foto">
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="exampleInputPassword1">Password</label>
                                                             <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-12 col-sm-12" data-select2-id="45">
-                                                                <div class="form-group" data-select2-id="44">
-                                                                    <label>Poli</label>
-                                                                    <select name="id" class="form-control select2 select2-danger select2-hidden-accessible" data-dropdown-css-class="select2-danger" style="width: 100%;" data-select2-id="23" tabindex="-1" aria-hidden="true">
-                                                                        <?php
-                                                                        $sql = mysqli_query($koneksi, "SELECT * FROM poli");
-                                                                        foreach ($sql as $a) :
-                                                                        ?>
-                                                                            <option value="<?= $a['id_poli']; ?>"><?= $a['nama_poli']; ?></option>
-                                                                        <?php
-                                                                        endforeach;
-                                                                        ?>
-                                                                    </select>
-                                                                </div><br>
-                                                            </div>
                                                         </div>
 
                                                     </div>

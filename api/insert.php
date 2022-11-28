@@ -5,13 +5,16 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: *");
 
 //mengambil variable untuk post
+$nama = isset($_POST["nama"]) ? $_POST["nama"] : "";
 $email = isset($_POST["email"]) ? $_POST["email"] : "";
+$jk = isset($_POST["jk"]) ? $_POST["jk"] : "";
+$alamat = isset($_POST["alamat"]) ? $_POST["alamat"] : "";
+$foto = isset($_POST["foto"]) ? $_POST["foto"] : "";
 $password = isset($_POST["password"]) ? $_POST["password"] : "";
-$level = isset($_POST["level"]) ? $_POST["level"] : "";
 
 //query insert
-$sql = "INSERT INTO `users` (`email`, `password`, `level`) 
-VALUES ('".$email."', '".$password."', '".$level."');";
+$sql = "INSERT INTO `pasien` (`nama`, `email`, `jk`, `alamat`, `foto`, `password`) 
+VALUES ('".$nama."', '".$email."', '".$jk."', '".$alamat."', '".$foto."', '".$password."');";
 // echo $sql;
 
 //excute query
