@@ -7,3 +7,7 @@ This application was made to make it easier for admins to manage user data in he
 - [x] form tenaga Medis
 - [x] table poli
 - [x] table tenaga Medis
+- [x] form Pasien
+- [x] tabel pasien
+- [x] api get data
+- [ ] api insert data
