@@ -213,13 +213,13 @@ include "../../core/koneksi.php";
                             <table id="example2" class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
-                                        <th>ID Pasien</th>
-                                        <th>Nama Pasien</th>
-                                        <th>Email Pasien</th>
-                                        <th>Jenis Kelamin Pasien</th>
-                                        <th>Alamat Pasien</th>
-                                        <th>Foto Pasien</th>
-                                        <th>Password Pasien</th>
+                                        <th>ID</th>
+                                        <th>Nama</th>
+                                        <th>Email</th>
+                                        <th>Jenis Kelamin</th>
+                                        <th>Alamat</th>
+                                        <th>Foto</th>
+                                        <th>Password</th>
                                         <th colspan="2">Aksi</th>
                                     </tr>
                                 </thead>
@@ -235,7 +235,7 @@ include "../../core/koneksi.php";
                                             <td><?= $data['jk']; ?></td>
                                             <td><?= $data['alamat']; ?></td>
                                             <td><?= $data['foto']; ?></td>
-                                            <td><?= $data['password']; ?></td>
+                                            <td><?= md5($data['password']); ?></td>
                                             <td><button type="button" class="btn btn-danger"><a style="color : white;" href="pasien/delete.php?id=<?= $data['id_pasien']; ?>">Hapus</a></button></td>
                                             <td><button type="button" class="btn btn-warning"><a style="color : white;" href="pasien/update.php?id=<?= $data['id_pasien']; ?>">Update</a></button></td>
                                         </tr>
