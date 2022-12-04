@@ -58,7 +58,7 @@
                         <a href="about.php" class="nav-item nav-link active">About</a>
                         <a href="perawat.php" class="nav-item nav-link">Perawat</a>
                     </div>
-                    <a href="pages/layout/login.php" class="btn btn-light rounded-pill text-primary py-2 px-4 ms-lg-5">Log In</a>
+                    <a href="Admin/dist/layout/login.php" class="btn btn-light rounded-pill text-primary py-2 px-4 ms-lg-5">Log In</a>
                 </div>
             </nav>
 
