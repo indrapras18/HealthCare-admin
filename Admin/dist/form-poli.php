@@ -148,6 +148,8 @@
                                 <li><a href="form-poli.php">Form Poli</a></li>
                                 <li><a href="form-pasien.php">Form Pasien</a></li>
                                 <li><a href="form-tenagamedis.php">Form Tenaga Medis</a></li>
+                                <li><a href="form-.php">Form Jadwal</a></li>
+                                <li><a href="form-.php">Form FAQ</a></li>
                             </ul>
                         </li>
 
@@ -160,6 +162,8 @@
                                 <li><a href="tables-tenaga-medis.php">Tenaga Medis</a></li>
                                 <li><a href="tables-poli.php">Poli</a></li>
                                 <li><a href="tables-pasien.php">Pasien</a></li>
+                                <li><a href="tables-jadwal.php">Jadwal</a></li>
+                                <li><a href="tables-faq.php">FAQ</a></li>
                             </ul>
                         </li>
 

@@ -170,7 +170,7 @@ include ('../../core/koneksi.php');
                             <li><a href="tables-tenaga-medis.php">Tenaga Medis</a></li>
                             <li><a href="tables-poli.php">Poli</a></li>
                             <li><a href="tables-pasien.php">Pasien</a></li>
-                            <li><a href="tables-pasien.php">Jadwal</a></li>
+                            <li><a href="tables-jadwal.php">Jadwal</a></li>
                             <li><a href="tables-pasien.php">FAQ</a></li>
                         </ul>
                     </li>

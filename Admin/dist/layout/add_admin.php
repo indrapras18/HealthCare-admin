@@ -140,7 +140,7 @@
     }
 </style>
 <?php
-include('../../core/koneksi.php');
+include('../../../core/koneksi.php');
 error_reporting(0);
 // cek validasi email
 if (isset($_POST['btn'])) {
@@ -170,7 +170,7 @@ if (isset($_POST['btn'])) {
 }
 ?>
 
-<script type="module">
+<!-- <script type="module">
     // Import the functions you need from the SDKs you need
     // Import the functions you need from the SDKs you need
     import {
@@ -215,4 +215,4 @@ if (isset($_POST['btn'])) {
             });
 
     });
-</script>
+</script> -->

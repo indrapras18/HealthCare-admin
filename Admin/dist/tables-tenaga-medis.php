@@ -229,6 +229,8 @@ include('../../core/koneksi.php')
                                 <li><a href="form-poli.php">Form Poli</a></li>
                                 <li><a href="form-pasien.php">Form Pasien</a></li>
                                 <li><a href="form-tenagamedis.php">Form Tenaga Medis</a></li>
+                                <li><a href="form-.php">Form Jadwal</a></li>
+                                <li><a href="form-.php">Form FAQ</a></li>
 
                             </ul>
                         </li>
@@ -242,6 +244,8 @@ include('../../core/koneksi.php')
                                 <li><a href="tables-tenaga-medis.php">Tenaga Medis</a></li>
                                 <li><a href="tables-poli.php">Poli</a></li>
                                 <li><a href="tables-pasien.php">Pasien</a></li>
+                                <li><a href="tables-jadwal.php">Jadwal</a></li>
+                                <li><a href="tables-faq.php">FAQ</a></li>
                             </ul>
                         </li>
 
@@ -293,8 +297,8 @@ include('../../core/koneksi.php')
                                                     <td><?= md5($data['password']); ?></td>
                                                     <td><?= $data['id_poli']; ?></td>
                                                     <td>
-                                                    <button type="button" class="btn btn-danger"><a style="color : white;" href="pasien/delete.php?id=<?= $data['id_pasien']; ?>">Hapus</a></button>
-                                                    <button type="button" class="btn btn-warning"><a style="color : white;" href="pasien/update.php?id=<?= $data['id_pasien']; ?>">Update</a></button>
+                                                        <button type="button" class="btn btn-danger"><a style="color : white;" href="pasien/delete.php?id=<?= $data['id_pasien']; ?>">Hapus</a></button>
+                                                        <button type="button" class="btn btn-warning"><a style="color : white;" href="pasien/update.php?id=<?= $data['id_pasien']; ?>">Update</a></button>
                                                     </td>
                                                     <!-- <td><button type="button" class="btn btn-danger"><a style="color : white;" href="pasien/delete.php?id=<?= $data['id_pasien']; ?>">Hapus</a></button></td>
                                                     <td><button type="button" class="btn btn-warning"><a style="color : white;" href="pasien/update.php?id=<?= $data['id_pasien']; ?>">Update</a></button></td> -->
