@@ -62,8 +62,9 @@ include('../../core/koneksi.php');
                             <span class="logo-sm">
                                 <img src="assets/images/logo-sm.png" alt="" height="22">
                             </span>
-                            <span class="logo-lg">
-                                <img src="assets/images/logo-light.png" alt="" height="20">
+                            <span class="logo-lg" style="color:white; font-size:19px;">
+                                <img src="../../img/logo.png" alt="" height="30">
+                                <strong>HealthCare</strong>
                             </span>
                         </a>
                     </div>
@@ -289,8 +290,8 @@ include('../../core/koneksi.php');
                                                     <td><?= $data['id_tenagamedis']; ?></td>
                                                     <td><?= $data['id_pasien']; ?></td>
                                                     <td>
-                                                        <button type="button" class="btn btn-danger"><a style="color : white;" href="pasien/delete.php?id=<?= $data['id_pasien']; ?>">Hapus</a></button>
-                                                        <button type="button" class="btn btn-warning"><a style="color : white;" href="pasien/update.php?id=<?= $data['id_pasien']; ?>">Update</a></button>
+                                                        <button type="button" class="btn btn-danger"><a style="color : white;" href="jadwal/delete.php?id=<?= $data['id_jadwal']; ?>">Hapus</a></button>
+                                                        <button type="button" class="btn btn-warning"><a style="color : white;" href="jadwal/update.php?id=<?= $data['id_jadwal']; ?>">Update</a></button>
                                                     </td>
                                                 </tr>
 

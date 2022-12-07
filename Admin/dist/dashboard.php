@@ -6,12 +6,12 @@ include ('../../core/koneksi.php');
 
 <head>
     <meta charset="utf-8" />
-    <title>Dashboard | Fonik - Responsive Bootstrap 5 Admin Dashboard</title>
+    <title>HealthCare</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link rel="shortcut icon" href="../../img/logo.png">
 
     <!-- Bootstrap Css -->
     <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
@@ -44,10 +44,10 @@ include ('../../core/koneksi.php');
                 <div class="navbar-brand-box">
                     <a href="../../index.php" class="logo logo-dark">
                         <span class="logo-sm">
-                            <img src="assets/images/logo-sm.png" alt="" height="22">
+                            <img src="../../img/logo.png" alt="" height="22">
                         </span>
                         <span class="logo-lg">
-                            <img src="assets/images/logo-dark.png" alt="" height="20">
+                            <img src="../../img/logo.png" alt="" height="20">
                         </span>
                     </a>
 
@@ -114,7 +114,7 @@ include ('../../core/koneksi.php');
                         <a class="dropdown-item" href="#"><i class="dripicons-lock font-size-16 align-middle me-2"></i> Lock
                             screen</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#"><i class="dripicons-exit font-size-16 align-middle me-2"></i>
+                        <a class="dropdown-item" href="../../index.php"><i class="dripicons-exit font-size-16 align-middle me-2"></i>
                             Logout</a>
                     </div>
                 </div>
@@ -171,7 +171,7 @@ include ('../../core/koneksi.php');
                             <li><a href="tables-poli.php">Poli</a></li>
                             <li><a href="tables-pasien.php">Pasien</a></li>
                             <li><a href="tables-jadwal.php">Jadwal</a></li>
-                            <li><a href="tables-pasien.php">FAQ</a></li>
+                            <li><a href="tables-faq.php">FAQ</a></li>
                         </ul>
                     </li>
 

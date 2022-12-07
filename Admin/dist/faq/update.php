@@ -34,19 +34,6 @@ $rows = mysqli_fetch_array($sql);
                     <div class="card-body">
                         <h5 class="card-title"><b>HeatCare</b></h5>
                         <p class="card-text">Hai admin disini kamu dapat menambahkan data diri perawat. Jangan lupa cek berkas perwat.</p>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                            Edit Data
-                        </button>
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
                                         <form method="POST">
                                             <div class="card-body">
                                                 <div class="form-group">
@@ -118,7 +105,7 @@ $rows = mysqli_fetch_array($sql);
 if (isset($_POST['btn'])) {
   $sql = mysqli_query($koneksi,"UPDATE tenaga_medis SET nama = '$_POST[nama]',email = '$_POST[email]',no_str = '$_POST[no_str]',password = '$_POST[password]' WHERE id_tenagamedis = $id");
   echo "<script>alert('Edit Berhasil')
-        window.location.href = '../tables-tenaga-medis.php'
+        window.location.href = '../table_tenaga_medis.php'
         </script>";
 }
  ?>

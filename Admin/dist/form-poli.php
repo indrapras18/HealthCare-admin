@@ -50,10 +50,11 @@
 
                         <a href="index.html" class="logo logo-light">
                             <span class="logo-sm">
-                                <img src="assets/images/logo-sm.png" alt="" height="22">
+                                <img src="../../img/logo.png" alt="" height="22">
                             </span>
-                            <span class="logo-lg">
-                                <img src="assets/images/logo-light.png" alt="" height="20">
+                            <span class="logo-lg" style="color:white; font-size:19px;">
+                                <img src="../../img/logo.png" alt="" height="30">
+                                <strong>HealthCare</strong>
                             </span>
                         </a>
                     </div>
