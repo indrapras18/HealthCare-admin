@@ -1,165 +1,86 @@
-<!doctype html>
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>HealthCare</title>
-	<link rel="stylesheet" type="text/css" href="../../../css/stylelogin.css">
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HealthCare</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-	<div class="login">
-		<p class="headlogin"><img src="../../../img/logo.png" style="float:left;">
-		<h1 class="tulisan"> Healthcare </p>
-			<form method="POST" action="">
-				<center>
-					<br>
-					<br>
-					<h1>Masuk</h1>
-					<!-- <p class="garisatas">admin</p> -->
-					<br>
-					<input type="text" placeholder="masukkan email anda" name="email">
-					<input type="password" placeholder="masukkan password anda" name="password">
-					<br>
-					<br>
-					<button name="btn">Login</button></a>
-					<br>
-					<h5> Tidak memiliki akun? <a class="lain" href="add_admin.php">Daftar </a></h5>
-			</form>
-			</center>
-	</div>
-	<div class="right">
-		<img src="../../../img/logoWhite.png" alt="">
-		<br>
-		<h1>HealthCare</h1>
-	</div>
-	</div>
-</body>
 
+    <div class="main">
+        <!-- Sing in  Form -->
+        <section class="sign-in">
+            <div class="container">
+                <div class="signin-content">
+                    <div class="signin-image">
+                        <figure><img src="images/kesehatan2.png" alt="sing up image"></figure>
+                        <a href="add_admin.php" class="signup-image-link">Create an account</a>
+                    </div>
+
+                    <div class="signin-form">
+                        <h2 class="form-title">Sign up</h2>
+                        <form method="POST" class="register-form" id="login-form">
+                            <div class="form-group">
+                                <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                <input type="email" name="email" id="email" placeholder="Your Email"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="password" name="password" id="your_pass" placeholder="Password"/>
+                            </div>
+                            <div class="form-group form-button">
+                                <input type="submit" name="btn" id="signin" class="form-submit" value="Log In"
+                                style="background-color: #0AB885;" />
+                            </div>
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>
-
-<style type="text/css">
-	button {
-		color: white;
-	}
-
-	.login {
-		width: 83%;
-		height: 580px;
-	}
-
-	.garisatas {
-		text-align: left;
-		font-size: 12px;
-		font-family: monsterat;
-		margin: 5px;
-	}
-
-	input {
-		font-family: sans-serif;
-		font-size: 15px;
-		width: 350px;
-		height: 40px;
-	}
-
-
-	button {
-		width: 350px;
-		height: 40px;
-		font-family: sans-serif;
-	}
-
-	.headlogin {
-		height: 60px;
-		width: 100px;
-		margin-left: 20px;
-		margin-top: 50px;
-	}
-
-	.lain {
-		color: #078A73;
-	}
-
-	img {
-		margin-right: 40px;
-	}
-
-	.tulisan {
-		font-family: sans-serif;
-		font-size: 25px;
-		margin-left: 100px;
-		max-width: 300px;
-		max-height: 40px;
-		margin-top: -60px;
-		margin-bottom: 500px;
-	}
-
-	form {
-		margin-left: 80px;
-		margin-top: 30px;
-
-
-	}
-
-	.lain {
-		color: #078A73;
-	}
-
-	.right {
-		display: grid;
-		background-color: #00B98E;
-		margin-left: 670px;
-		max-height: 700px;
-		margin-top: -700px;
-	}
-
-	.right img {
-
-		width: 330px;
-		height: 180px;
-		margin-left: 200px;
-		margin-top: 240px;
-		margin: center;
-	}
-
-	.right h1 {
-		font-size: 40px;
-		font-weight: bold;
-		margin-left: 30px;
-		color: #078A73;
-		text-align: center;
-		margin-top: 200px;
-		font-family: sans-serif;
-
-	}
-
-	@media screen and (max-width: 922px) {
-		.right.login {
-			width: 100%;
-		}
-	}
-</style>
 <?php
-include '../../../core/koneksi.php';
 if (isset($_POST['btn'])) {
+    include '../../../core/koneksi.php';
+    $pesan=''; $redirect = '';
 	$email = $_POST['email'];
 	$password = $_POST['password'];
 
-	$username = mysqli_real_escape_string($koneksi, $username);
+	$username = mysqli_real_escape_string($koneksi, $email);
 	$password = mysqli_real_escape_string($koneksi, $password);
 
-	$sql = "SELECT * FROM login_admin WHERE email='$email' AND password='$password'";
-	$result = mysqli_query($koneksi, $sql);
-	if ($result->num_rows > 0) {
-		$row = mysqli_fetch_assoc($result);
-		echo "<script>alert('Login berhasil selmat datang')
-        window.location.href = '../dashboard.php'
-        </script>";
-	} else {
-		echo "<script>alert('Email dan Password salah!!!.')
-        window.location.href = '../../../404.html'
-        </script>";
-	}
+    $q = $koneksi->query("SELECT * FROM login_admin where email = '$email'");
+    $get_data = mysqli_fetch_array($q);
+    if (empty($get_data)) {
+        $pesan = 'akun belum terdaftar';
+    }else{
+        if ($password != $get_data['password']) {
+            $pesan = 'Username atau Password salah';
+        }else{
+            session_start();
+            $_SESSION['id'] = $get_data['id'];
+            $_SESSION['email'] = $email;
+            $pesan = 'selamat bekerja';
+            $redirect = '../dashboard.php';
+        }
+    }
+
+    echo ("<script language= 'JavaScript'>
+        window.alert ('$pesan'); window.location.href='$redirect';
+        </script>");
 }
 ?>

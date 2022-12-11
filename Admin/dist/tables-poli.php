@@ -28,6 +28,8 @@ include('../../core/koneksi.php')
     <!-- App Css-->
     <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
 
 </head>
 
@@ -221,7 +223,7 @@ include('../../core/koneksi.php')
                             </a>
                         </li>
 
-                        <li>
+                        <!-- <li>
                             <a href="javascript: void(0);" class="waves-effect">
                                 <i class="dripicons-blog"></i>
                                 <span> Forms </span>
@@ -234,7 +236,7 @@ include('../../core/koneksi.php')
                                 <li><a href="form-.php">Form FAQ</a></li>
 
                             </ul>
-                        </li>
+                        </li> -->
 
                         <li>
                             <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -261,27 +263,47 @@ include('../../core/koneksi.php')
         <!-- Start right Content here -->
         <!-- ============================================================== -->
         <div class="main-content">
-
             <div class="page-content">
+                <button style="margin-left:963px; margin-bottom:15px; background-color:#0AB885; color:white;"  type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <i class="fa-regular fa-plus"></i> Tambah Data
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Form Poli</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="" method="post">
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">Nama Poli</label>
+                                        <input type="text" name="nama_poli" class="form-control" id="NamaPoli" placeholder="Nama Poli" require>
+                                    </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal"> <i class="fa-solid fa-xmark"></i> Close</button>
+                                <button type="submit" class="btn btn-success" name="btn"> <i class="fa-solid fa-floppy-disk"></i> Simpan</button>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
                 <div class="container-fluid">
 
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-body">
-
-                                    <h4 class="card-title">Default Datatable</h4>
-                                    <p class="card-title-desc">DataTables has most features enabled by default, so all you
-                                        need to do to use it with your own tables is to call the construction function:
-                                        <code>$().DataTable();</code>.
-                                    </p>
-
                                     <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                         <thead>
                                             <tr>
-                                                <th>ID Poli</th>
-                                                <th>Nama Poli</th>
-                                                <th colspan="2">Aksi</th>
+                                                <th style="background-color: #0AB885; color:white;">ID Poli</th>
+                                                <th style="background-color: #0AB885; color:white;">Nama Poli</th>
+                                                <th style="background-color: #0AB885; color:white;" colspan="2">Aksi</th>
                                             </tr>
                                         </thead>
 
@@ -460,3 +482,14 @@ include('../../core/koneksi.php')
 </body>
 
 </html>
+<?php
+include('../../core/koneksi.php');
+if (isset($_POST['btn'])) {
+    $sql = mysqli_query($koneksi, "INSERT INTO poli VALUES('','$_POST[nama_poli]')");
+}
+if ($sql) {
+    // echo "<script>alert('data ditambahkan')
+    // window.location.href = 'tables-poli.php'
+    // </script>";
+}
+?>

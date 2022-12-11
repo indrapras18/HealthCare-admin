@@ -1,144 +1,60 @@
-<!doctype html>
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HealthCare</title>
-    <link rel="stylesheet" type="text/css" href="../../../css/stylelogin.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-    <div class="login">
-        <p class="headlogin"><img src="../../../img/logo.png" style="float:left;">
-        <h1 class="tulisanr"> Healthcare </p>
-            <form method="POST" action="">
-                <center>
-                    <br>
-                    <br>
-                    <h1>Daftar</h1>
-                    <!-- <p class="garisatas">Lorem ipsum lorem</p> -->
-                    <br>
-                    <input type="text" placeholder="masukkan email anda" id="email" name="email">
-                    <input type="password" placeholder="masukkan password anda" id="password" name="password">
-                    <input type="password" placeholder="ulangi password anda" name="password2" id="password2">
-                    <br>
-                    <br>
-                    <a> <button name="btn" id="btn_submit">Daftar</button></a>
-                    <br>
-                    <h5> Sudah memiliki akun? <a class="lain" href="login.php">Login </a></h5>
-            </form>
-            </center>
-    </div>
-    <div class="right">
-        <img src="../../../img/logoWhite.png" style="text-align: center;">
-        <br>
-        <h1>HealthCare</h1>
-    </div>
-    </div>
-</body>
 
+    <div class="main">
+        <!-- Sign up form -->
+        <section class="signup">
+            <div class="container">
+                <div class="signup-content">
+                    <div class="signup-form">
+                        <h2 class="form-title">Sign up</h2>
+                        <form method="POST" class="register-form" id="register-form">
+                            
+                            <div class="form-group">
+                                <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                <input type="email" name="email" id="email" placeholder="Your Email"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="password" name="password" id="pass" placeholder="Password"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
+                                <input type="password" name="password2" id="re_pass" placeholder="Repeat your password"/>
+                            </div>
+                            
+                            <div class="form-group form-button">
+                                <input type="submit" name="btn" id="signup" class="form-submit" value="Register" style="background-color: #0AB885;"/>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="signup-image">
+                        <figure><img src="images/kesehatan2.png" alt="sing up image"></figure>
+                        <a href="login.php" class="signup-image-link">I am already member</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>
-
-<style type="text/css">
-    * {
-        padding: 0px;
-        margin: 0px;
-        margin-top: 0px;
-    }
-
-    .garisatas {
-        text-align: left;
-        font-size: 12px;
-        font-family: monsterat;
-        margin: 5px;
-    }
-
-    .login {
-        width: 83%;
-        height: 580px;
-    }
-
-    button {
-        color: white;
-
-    }
-
-    input {
-        font-family: sans-serif;
-        font-size: 15px;
-        width: 350px;
-        height: 40px;
-    }
-
-    button {
-        width: 350px;
-        height: 40px;
-        font-family: sans-serif;
-    }
-
-    .headlogin {
-        height: 60px;
-        width: 100px;
-        margin-left: 40px;
-        margin-top: 40px;
-    }
-
-    .tulisanr {
-        font-family: sans-serif;
-        font-size: 25px;
-        margin-left: 120px;
-        max-width: 300px;
-        max-height: 40px;
-        margin-top: -60px;
-        margin-bottom: 400px;
-    }
-
-    form {
-        margin-left: 80px;
-        margin-top: 30px;
-
-
-    }
-
-    .lain {
-        color: #078A73;
-    }
-
-    .right {
-        display: grid;
-        background-color: #00B98E;
-        margin-left: 670px;
-        max-height: 750px;
-        margin-top: -700px;
-    }
-
-    .right img {
-
-        width: 330px;
-        height: 180px;
-        margin-left: 200px;
-        margin-top: 290px;
-        margin: center;
-    }
-
-    .right h1 {
-        font-size: 40px;
-        font-weight: bold;
-        margin-left: 40px;
-        font-family: sans-serif;
-
-        color: #078A73;
-        text-align: center;
-        margin-top: 280px;
-    }
-
-    @media screen and (max-width: 922px) {
-        .right.login {
-            width: 100%;
-        }
-    }
-</style>
 <?php
 include('../../../core/koneksi.php');
 error_reporting(0);

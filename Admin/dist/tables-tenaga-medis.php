@@ -28,7 +28,7 @@ include('../../core/koneksi.php')
     <!-- App Css-->
     <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
 
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
 
 <body data-sidebar="dark">
@@ -221,7 +221,7 @@ include('../../core/koneksi.php')
                             </a>
                         </li>
 
-                        <li>
+                        <!-- <li>
                             <a href="javascript: void(0);" class="waves-effect">
                                 <i class="dripicons-blog"></i>
                                 <span> Forms </span>
@@ -234,7 +234,7 @@ include('../../core/koneksi.php')
                                 <li><a href="form-.php">Form FAQ</a></li>
 
                             </ul>
-                        </li>
+                        </li> -->
 
                         <li>
                             <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -260,31 +260,80 @@ include('../../core/koneksi.php')
         <!-- ============================================================== -->
         <!-- Start right Content here -->
         <!-- ============================================================== -->
+
         <div class="main-content">
-
             <div class="page-content">
+            <button  style="margin-left:950px; margin-bottom:15px; background-color:#3991E1; color:white;" type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <i class="fa-regular fa-plus"></i> Tambah Data
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Form Tenaga Medis</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="" method="post">
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">Nama Perawat</label>
+                                        <input type="text" name="nama" class="form-control" id="nama" placeholder="Nama perawat" require>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">Email Perawat</label>
+                                        <input type="email" name="email" class="form-control" id="email" placeholder="Email Perawat" require>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">Nomor STR</label>
+                                        <input type="number" name="no_str" class="form-control" id="no_str" placeholder="Nomor STR" require>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">Password</label>
+                                        <input type="password" name="password" class="form-control" id="password" placeholder="Password" require>
+                                    </div>
+                                    <div>
+                                        <label for="exampleFormControlInput1">Poli</label>
+                                        <select class="form-select" name="id" aria-label="Default select example">
+                                            <option selected>Open this select menu</option>
+                                            <?php
+                                            $sql = mysqli_query($koneksi, "SELECT * FROM poli");
+                                            foreach ($sql as $a) :
+                                            ?>
+                                                <option value="<?= $a['id_poli']; ?>"><?= $a['nama_poli']; ?></option>
+                                            <?php
+                                            endforeach;
+                                            ?>
+                                        </select>
+                                    </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal"> <i class="fa-solid fa-xmark"></i> Close</button>
+                                <button type="submit" class="btn btn-success" name="btn" id="tambah"> <i class="fa-regular fa-floppy-disk"></i> Simpan</button>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
                 <div class="container-fluid">
-
                     <!-- end row -->
-
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-body">
                                     <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-
                                         <thead>
                                             <tr>
-                                                <th>ID Tenaga Medis</th>
-                                                <th>Nama</th>
-                                                <th>Emsil</th>
-                                                <th>Nomor STR</th>
-                                                <th>Password</th>
-                                                <th>Poli</th>
-                                                <th>Aksi</th>
+                                                <th style="background-color: #0AB885; color:white;">ID Tenaga Medis</th>
+                                                <th style="background-color: #0AB885; color:white;">Nama</th>
+                                                <th style="background-color: #0AB885; color:white;">Email</th>
+                                                <th style="background-color: #0AB885; color:white;">Nomor STR</th>
+                                                <th style="background-color: #0AB885; color:white;">Password</th>
+                                                <th style="background-color: #0AB885; color:white;">Poli</th>
+                                                <th style="background-color: #0AB885; color:white;">Aksi</th>
                                             </tr>
                                         </thead>
-
                                         <tbody>
                                             <?php
                                             $sql = mysqli_query($koneksi, "SELECT * from tenaga_medis");
@@ -301,8 +350,6 @@ include('../../core/koneksi.php')
                                                         <button type="button" class="btn btn-danger"><a style="color : white;" href="tenaga_medis/delete_tenaga_medis.php?id=<?= $data['id_tenagamedis']; ?>">Hapus</a></button>
                                                         <button type="button" class="btn btn-warning"><a style="color : white;" href="tenaga_medis/update_tenaga_medis.php?id=<?= $data['id_tenagamedis']; ?>">Update</a></button>
                                                     </td>
-                                                    <!-- <td><button type="button" class="btn btn-danger"><a style="color : white;" href="pasien/delete.php?id=<?= $data['id_pasien']; ?>">Hapus</a></button></td>
-                                                    <td><button type="button" class="btn btn-warning"><a style="color : white;" href="pasien/update.php?id=<?= $data['id_pasien']; ?>">Update</a></button></td> -->
                                                 </tr>
 
                                             <?php
@@ -464,3 +511,14 @@ include('../../core/koneksi.php')
 </body>
 
 </html>
+<?php
+include('../../core/koneksi.php');
+if (isset($_POST['btn'])) {
+    $sql = mysqli_query($koneksi, "INSERT INTO tenaga_medis VALUES ('','$_POST[nama]','$_POST[email]','$_POST[no_str]','$_POST[password]','$_POST[id]')");
+    if ($sql) {
+        echo "<script>alert('data ditambahkan')
+        window.location.href = 'tables-tenaga-medis.php'
+        </script>";
+    }
+}
+?>

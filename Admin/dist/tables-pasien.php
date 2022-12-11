@@ -28,6 +28,8 @@ include('../../core/koneksi.php');
     <!-- App Css-->
     <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
 
 </head>
 
@@ -220,7 +222,7 @@ include('../../core/koneksi.php');
                                 <span>Dashboard</span>
                             </a>
                         </li>
-
+<!-- 
                         <li>
                             <a href="javascript: void(0);" class="waves-effect">
                                 <i class="dripicons-blog"></i>
@@ -234,7 +236,7 @@ include('../../core/koneksi.php');
                                 <li><a href="form-.php">Form FAQ</a></li>
 
                             </ul>
-                        </li>
+                        </li> -->
 
                         <li>
                             <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -261,8 +263,57 @@ include('../../core/koneksi.php');
         <!-- Start right Content here -->
         <!-- ============================================================== -->
         <div class="main-content">
-
             <div class="page-content">
+                <button style="margin-left:963px; margin-bottom:15px; background-color:#0AB885; color:white;" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Tambah Data
+                </button>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Form Pasien</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="" method="post">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Nama</label>
+                                        <input type="text" name="nama" class="form-control" id="exampleInputEmail1" placeholder="Nama Paseien" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Email</label>
+                                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email Pasien">
+                                    </div>
+                                    <div>
+                                        <label for="exampleInputEmail1">Jenis Kelamins</label>
+                                        <select class="form-select" name="jk" aria-label="Default select example">
+                                            <option selected>Open this select menu</option>
+                                            <option value="L">Laki Laki</option>
+                                            <option value="P">Perempuan</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Alamat</label>
+                                        <input type="text" name="alamat" class="form-control" id="exampleInputPassword1" placeholder="Alamat">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Foto</label>
+                                        <input type="file" name="foto" class="form-control" id="exampleInputPassword1" placeholder="Foto">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Password</label>
+                                        <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                    </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-success" name="btn">Simpan</button>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-12">
@@ -272,14 +323,14 @@ include('../../core/koneksi.php');
 
                                         <thead>
                                             <tr>
-                                                <th>ID</th>
-                                                <th>Nama</th>
-                                                <th>Email</th>
-                                                <th>Jenis Kelmin</th>
-                                                <th>Alamat</th>
-                                                <th>Foto</th>
-                                                <th>Password</th>
-                                                <th>Aksi</th>
+                                                <th style="background-color: #0AB885; color:white;">ID</th>
+                                                <th style="background-color: #0AB885; color:white;">Nama</th>
+                                                <th style="background-color: #0AB885; color:white;">Email</th>
+                                                <th style="background-color: #0AB885; color:white;">Jenis Kelmin</th>
+                                                <th style="background-color: #0AB885; color:white;">Alamat</th>
+                                                <th style="background-color: #0AB885; color:white;">Foto</th>
+                                                <th style="background-color: #0AB885; color:white;">Password</th>
+                                                <th style="background-color: #0AB885; color:white;">Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -293,7 +344,7 @@ include('../../core/koneksi.php');
                                                     <td><?= $data['email']; ?></td>
                                                     <td><?= $data['jk']; ?></td>
                                                     <td><?= $data['alamat']; ?></td>
-                                                    <td><?= $data['foto']; ?></td>
+                                                    <td><?= "<img src='assets/images'".$data['foto']."'style='width:2px; height:1px;'>"?></td>
                                                     <td><?= md5($data['password']); ?></td>
                                                     <td>
                                                         <button type="button" class="btn btn-danger"><a style="color : white;" href="pasien/delete.php?id=<?= $data['id_pasien']; ?>">Hapus</a></button>
@@ -425,3 +476,14 @@ include('../../core/koneksi.php');
 </body>
 
 </html>
+<?php
+include('../../core/koneksi.php');
+if (isset($_POST['btn'])) {
+    $sql = mysqli_query($koneksi, "INSERT INTO pasien VALUES ('','$_POST[nama]','$_POST[email]','$_POST[jk]','$_POST[alamat]','$_POST[foto]','$_POST[password]')");
+    if ($sql) {
+        echo "<script>alert('data ditambahkan')
+        window.location.href = 'tables-pasien.php'
+        </script>";
+    }
+}
+?>

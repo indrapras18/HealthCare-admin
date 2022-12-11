@@ -74,7 +74,7 @@ include('../../core/koneksi.php');
                     </button>
 
                     <div class="d-none d-sm-block ms-2">
-                        <h4 class="page-title font-size-18">Pasien</h4>
+                        <h4 class="page-title font-size-18">Jadwal</h4>
                     </div>
 
                 </div>
@@ -221,7 +221,7 @@ include('../../core/koneksi.php');
                             </a>
                         </li>
 
-                        <li>
+                        <!-- <li>
                             <a href="javascript: void(0);" class="waves-effect">
                                 <i class="dripicons-blog"></i>
                                 <span> Forms </span>
@@ -234,7 +234,7 @@ include('../../core/koneksi.php');
                                 <li><a href="form-.php">Form FAQ</a></li>
 
                             </ul>
-                        </li>
+                        </li> -->
 
                         <li>
                             <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -272,11 +272,11 @@ include('../../core/koneksi.php');
 
                                         <thead>
                                             <tr>
-                                                <th>ID Jadwal</th>
-                                                <th>Jadwal</th>
-                                                <th>Tenaga Medis</th>
-                                                <th>Pasien</th>
-                                                <th>Aksi</th>
+                                                <th style="background-color: #0AB885; color:white;">ID Jadwal</th>
+                                                <th style="background-color: #0AB885; color:white;">Jadwal</th>
+                                                <th style="background-color: #0AB885; color:white;">Tenaga Medis</th>
+                                                <th style="background-color: #0AB885; color:white;">Pasien</th>
+                                                <th style="background-color: #0AB885; color:white;">Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>

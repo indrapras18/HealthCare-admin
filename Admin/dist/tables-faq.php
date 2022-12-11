@@ -74,7 +74,7 @@ include('../../core/koneksi.php');
                     </button>
 
                     <div class="d-none d-sm-block ms-2">
-                        <h4 class="page-title font-size-18">Pasien</h4>
+                        <h4 class="page-title font-size-18">FAQ</h4>
                     </div>
 
                 </div>
@@ -221,7 +221,7 @@ include('../../core/koneksi.php');
                             </a>
                         </li>
 
-                        <li>
+                        <!-- <li>
                             <a href="javascript: void(0);" class="waves-effect">
                                 <i class="dripicons-blog"></i>
                                 <span> Forms </span>
@@ -234,7 +234,7 @@ include('../../core/koneksi.php');
                                 <li><a href="form-.php">Form FAQ</a></li>
 
                             </ul>
-                        </li>
+                        </li> -->
 
                         <li>
                             <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -263,19 +263,19 @@ include('../../core/koneksi.php');
         <div class="main-content">
 
             <div class="page-content">
+                <!-- modal -->
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-body">
                                     <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-
                                         <thead>
                                             <tr>
-                                                <th>ID FAQ</th>
-                                                <th>Pertanyaan</th>
-                                                <th>Jawaban</th>
-                                                <th>Aksi</th>
+                                                <th style="background-color: #0AB885; color:white;">ID FAQ</th>
+                                                <th style="background-color: #0AB885; color:white;">Pertanyaan</th>
+                                                <th style="background-color: #0AB885; color:white;">Jawaban</th>
+                                                <th style="background-color: #0AB885; color:white;">Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
