@@ -69,7 +69,9 @@ if (isset($_POST['btn'])) {
         $pesan = 'akun belum terdaftar';
     }else{
         if ($password != $get_data['password']) {
-            $pesan = 'Username atau Password salah';
+            echo "<script>alert('Username atau Password salah')
+            window.location.href = '../../../404.html'
+            </script>";
         }else{
             session_start();
             $_SESSION['id'] = $get_data['id'];
