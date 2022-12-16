@@ -1,8 +1,10 @@
 <?php
 include('../../core/koneksi.php');
-session_start(); 
+session_start();
 $id = $_SESSION['id'];
 $email = $_SESSION['email'];
+$sql = mysqli_query($koneksi, "SELECT * FROM login_admin WHERE id = $id");
+$rows = mysqli_fetch_array($sql);
 ?>
 <!doctype html>
 <html lang="en">
@@ -70,29 +72,12 @@ $email = $_SESSION['email'];
                     </button>
 
                     <div class="d-none d-sm-block ms-2">
-                        <h4 class="page-title font-size-18">Dashboard</h4> 
+                        <h4 class="page-title font-size-18">Dashboard</h4>
                     </div>
 
                 </div>
-
                 <!-- Search input -->
-                <div class="search-wrap" id="search-wrap">
-                    <div class="search-bar">
-                        <input class="search-input form-control" placeholder="Search" />
-                        <a href="#" class="close-search toggle-search" data-bs-target="#search-wrap">
-                            <i class="mdi mdi-close-circle"></i>
-                        </a>
-                    </div>
-                </div>
-
                 <div class="d-flex">
-
-                    <div class="dropdown d-none d-lg-inline-block">
-                        <button type="button" class="btn header-item toggle-search noti-icon waves-effect" data-bs-target="#search-wrap">
-                            <i class="mdi mdi-magnify"></i>
-                        </button>
-                    </div>
-
                     <div class="dropdown d-none d-lg-inline-block">
                         <button type="button" class="btn header-item noti-icon waves-effect" data-bs-toggle="fullscreen">
                             <i class="mdi mdi-fullscreen"></i>
@@ -101,21 +86,20 @@ $email = $_SESSION['email'];
 
                     <div class="dropdown d-inline-block ms-2">
                         <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-1.jpg" alt="Header Avatar">
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-end">
-                            <!-- item-->
-                            <a class="dropdown-item" href="profile_admin.php"><i class="dripicons-user font-size-16 align-middle me-2"></i>
-                                Profile</a>
-                            <a class="dropdown-item" href="#"><i class="dripicons-wallet font-size-16 align-middle me-2"></i> My
-                                Wallet</a>
-                            <a class="dropdown-item d-block" href="#"><span class="badge bg-success float-end">5</span><i class="dripicons-gear font-size-16 align-middle me-2"></i> Settings</a>
-                            <a class="dropdown-item" href="#"><i class="dripicons-lock font-size-16 align-middle me-2"></i> Lock
-                                screen</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="../../index.php"><i class="dripicons-exit font-size-16 align-middle me-2"></i>
-                                Logout</a>
-                        </div>
+                            <img class="rounded-circle header-profile-user" <?php echo "<img src='gambar/$rows[foto]'/>"; ?> </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <!-- item-->
+                                <a class="dropdown-item" href="profile_admin.php"><i class="dripicons-user font-size-16 align-middle me-2"></i>
+                                    Profile</a>
+                                <a class="dropdown-item" href="#"><i class="dripicons-wallet font-size-16 align-middle me-2"></i> My
+                                    Wallet</a>
+                                <a class="dropdown-item d-block" href="#"><span class="badge bg-success float-end">5</span><i class="dripicons-gear font-size-16 align-middle me-2"></i> Settings</a>
+                                <a class="dropdown-item" href="#"><i class="dripicons-lock font-size-16 align-middle me-2"></i> Lock
+                                    screen</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="../../index.php"><i class="dripicons-exit font-size-16 align-middle me-2"></i>
+                                    Logout</a>
+                            </div>
                     </div>
 
                     <div class="dropdown d-inline-block">
@@ -166,11 +150,11 @@ $email = $_SESSION['email'];
                                 <span> Tables </span>
                             </a>
                             <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="tables-tenaga-medis.php">Tenaga Medis</a></li>
-                                <li><a href="tables-poli.php">Poli</a></li>
-                                <li><a href="tables-pasien.php">Pasien</a></li>
-                                <li><a href="tables-jadwal.php">Jadwal</a></li>
-                                <li><a href="tables-faq.php">FAQ</a></li>
+                                <li><a href="tables-tenaga-medis.php"><i class="dripicons-user-group"></i>Tenaga Medis</a></li>
+                                <li><a href="tables-poli.php"><i class="dripicons-medical"></i>Poli</a></li>
+                                <li><a href="tables-pasien.php"><i class="dripicons-user"></i>Pasien</a></li>
+                                <li><a href="tables-jadwal.php"><i class="dripicons-to-do"></i>Jadwal</a></li>
+                                <li><a href="tables-faq.php"><i class="dripicons-lightbulb"></i>FAQ</a></li>
                             </ul>
                         </li>
 
@@ -187,10 +171,9 @@ $email = $_SESSION['email'];
         <div class="main-content">
             <div class="page-content">
                 <div class="container-fluid">
-
                     <div class="row">
                         <div class="col-md-6 col-xl-3">
-                            <div class="card text-center">
+                            <div class="card text-center" style="background-color:#FFB167;">
                                 <div class="mb-2 card-body text-muted">
                                     <h3 class="text-info mt-2">
                                         <?php
@@ -198,12 +181,12 @@ $email = $_SESSION['email'];
                                         $jumlah_user = mysqli_num_rows($data_user);
                                         ?>
                                         <?php echo $jumlah_user; ?>
-                                    </h3> Tenaga Medis
+                                    </h3> <strong style="color: white;">Tenaga Medis</strong>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6 col-xl-3">
-                            <div class="card text-center">
+                            <div class="card text-center" style="background-color:#3991E1;">
                                 <div class="mb-2 card-body text-muted">
                                     <h3 class="text-purple mt-2">
                                         <?php
@@ -211,12 +194,12 @@ $email = $_SESSION['email'];
                                         $jumlah_user = mysqli_num_rows($data_user);
                                         ?>
                                         <?php echo $jumlah_user; ?>
-                                    </h3> Poli
+                                    </h3> <strong style="color: white;">Poli</strong> 
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6 col-xl-3">
-                            <div class="card text-center">
+                            <div class="card text-center" style="background-color:#EF716B;">
                                 <div class="mb-2 card-body text-muted">
                                     <h3 class="text-primary mt-2">
                                         <?php
@@ -224,12 +207,12 @@ $email = $_SESSION['email'];
                                         $jumlah_user = mysqli_num_rows($data_user);
                                         ?>
                                         <?php echo $jumlah_user; ?>
-                                    </h3> Pasien
+                                    </h3> <strong style="color: white;">Pasien</strong> 
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6 col-xl-3">
-                            <div class="card text-center">
+                            <div class="card text-center" style="background-color: #0AB885;">
                                 <div class="mb-2 card-body text-muted">
                                     <h3 class="text-danger mt-2">
                                         <?php
@@ -237,7 +220,7 @@ $email = $_SESSION['email'];
                                         $jumlah_user = mysqli_num_rows($data_user);
                                         ?>
                                         <?php echo $jumlah_user; ?>
-                                    </h3> Admin
+                                    </h3> <strong style="color: white;">Admin</strong>
                                 </div>
                             </div>
                         </div>
@@ -251,28 +234,25 @@ $email = $_SESSION['email'];
                     <div class="col-xl-15">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title mb-4"><strong>Admin : <?= $email;?></strong></h4>
+                                <h4 class="card-title mb-4"><strong>Admin : <?= $email; ?></strong></h4>
                                 <div class="table-responsive">
                                     <table class="table mt-4 mb-0 table-centered table-nowrap">
-
                                         <tbody>
                                             <tr>
-                                                <td>
-                                                    <?php
-                                                    $sql = mysqli_query($koneksi, "SELECT * from login_admin");
-                                                    while ($data = mysqli_fetch_array($sql)) {
-                                                    ?>
+                                                <?php
+                                                $sql = mysqli_query($koneksi, "SELECT * from login_admin");
+                                                while ($data = mysqli_fetch_array($sql)) {
+                                                ?>
                                             <tr>
                                                 <td><?= $data['id']; ?></td>
+                                                <td> <img class="rounded-circle header-profile-user" <?php echo "<img src='gambar/$data[foto]'/>"; ?></td>
                                                 <td><?= $data['email']; ?></td>
                                                 <td><?= md5($data['password']); ?></td>
                                             </tr>
 
                                         <?php
-                                                    }
+                                                }
                                         ?>
-                                                </td>
-                                        </td>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -296,8 +276,8 @@ $email = $_SESSION['email'];
                             ©
                             <script>
                                 document.write(new Date().getFullYear())
-                            </script> Fonik<span class="d-none d-sm-inline-block"> -
-                                Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand.</span>
+                            </script> HealthCare<span class="d-none d-sm-inline-block"> -
+                                Crafted with <i class="mdi mdi-heart text-danger"></i> by Kelompok 5</span>
                         </div>
                     </div>
                 </div>

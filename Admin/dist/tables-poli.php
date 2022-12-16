@@ -82,22 +82,11 @@ include('../../core/koneksi.php')
                 </div>
 
                 <!-- Search input -->
-                <div class="search-wrap" id="search-wrap">
-                    <div class="search-bar">
-                        <input class="search-input form-control" placeholder="Search" />
-                        <a href="#" class="close-search toggle-search" data-bs-target="#search-wrap">
-                            <i class="mdi mdi-close-circle"></i>
-                        </a>
-                    </div>
-                </div>
+                
 
                 <div class="d-flex">
 
-                    <div class="dropdown d-none d-lg-inline-block">
-                        <button type="button" class="btn header-item toggle-search noti-icon waves-effect" data-bs-target="#search-wrap">
-                            <i class="mdi mdi-magnify"></i>
-                        </button>
-                    </div>
+                    <
 
                     <div class="dropdown d-none d-lg-inline-block">
                         <button type="button" class="btn header-item noti-icon waves-effect" data-bs-toggle="fullscreen">
@@ -105,76 +94,7 @@ include('../../core/koneksi.php')
                         </button>
                     </div>
 
-                    <div class="dropdown d-inline-block ms-2">
-                        <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-notifications-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="ion ion-md-notifications"></i>
-                            <span class="badge bg-danger rounded-pill">3</span>
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0" aria-labelledby="page-header-notifications-dropdown">
-                            <div class="p-3">
-                                <div class="row align-items-center">
-                                    <div class="col">
-                                        <h5 class="m-0 font-size-16"> Notification (3) </h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div data-simplebar style="max-height: 230px;">
-                                <a href="" class="text-reset notification-item">
-                                    <div class="media d-flex">
-                                        <div class="avatar-xs me-3">
-                                            <span class="avatar-title bg-success rounded-circle font-size-16">
-                                                <i class="mdi mdi-cart-outline"></i>
-                                            </span>
-                                        </div>
-                                        <div class="flex-1">
-                                            <h6 class="mt-0 font-size-15 mb-1">Your order is placed</h6>
-                                            <div class="font-size-12 text-muted">
-                                                <p class="mb-1">Dummy text of the printing and typesetting industry.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-
-                                <a href="" class="text-reset notification-item">
-                                    <div class="media d-flex">
-                                        <div class="avatar-xs me-3">
-                                            <span class="avatar-title bg-warning rounded-circle font-size-16">
-                                                <i class="mdi mdi-message-text-outline"></i>
-                                            </span>
-                                        </div>
-                                        <div class="flex-1">
-                                            <h6 class="mt-0 font-size-15 mb-1">New Message received</h6>
-                                            <div class="font-size-12 text-muted">
-                                                <p class="mb-1">You have 87 unread messages</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-
-                                <a href="" class="text-reset notification-item">
-                                    <div class="media d-flex">
-                                        <div class="avatar-xs me-3">
-                                            <span class="avatar-title bg-info rounded-circle font-size-16">
-                                                <i class="mdi mdi-glass-cocktail"></i>
-                                            </span>
-                                        </div>
-                                        <div class="flex-1">
-                                            <h6 class="mt-0 font-size-15 mb-1">Your item is shipped</h6>
-                                            <div class="font-size-12 text-muted">
-                                                <p class="mb-1">It is a long established fact that a reader will</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-
-                            </div>
-                            <div class="p-2 border-top text-center">
-                                <a class="btn btn-sm btn-link font-size-14 w-100" href="javascript:void(0)">
-                                    View all
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                   
 
                     <div class="dropdown d-inline-block ms-2">
                         <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -244,11 +164,11 @@ include('../../core/koneksi.php')
                                 <span> Tables </span>
                             </a>
                             <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="tables-tenaga-medis.php">Tenaga Medis</a></li>
-                                <li><a href="tables-poli.php">Poli</a></li>
-                                <li><a href="tables-pasien.php">Pasien</a></li>
-                                <li><a href="tables-jadwal.php">Jadwal</a></li>
-                                <li><a href="tables-faq.php">FAQ</a></li>
+                                <li><a href="tables-tenaga-medis.php"><i class="dripicons-user-group"></i>Tenaga Medis</a></li>
+                                <li><a href="tables-poli.php"><i class="dripicons-medical"></i>Poli</a></li>
+                                <li><a href="tables-pasien.php"><i class="dripicons-user"></i>Pasien</a></li>
+                                <li><a href="tables-jadwal.php"><i class="dripicons-to-do"></i>Jadwal</a></li>
+                                <li><a href="tables-faq.php"><i class="dripicons-lightbulb"></i>FAQ</a></li>
                             </ul>
                         </li>
 
@@ -264,8 +184,8 @@ include('../../core/koneksi.php')
         <!-- ============================================================== -->
         <div class="main-content">
             <div class="page-content">
-                <button style="margin-left:963px; margin-bottom:15px; background-color:#0AB885; color:white;"  type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                <i class="fa-regular fa-plus"></i> Tambah Data
+                <button style="margin-left:959px; margin-bottom:15px; background-color:#0AB885; color:white;" type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <i class="fa-regular fa-plus"></i> Tambah Data
                 </button>
 
                 <!-- Modal -->
@@ -280,7 +200,7 @@ include('../../core/koneksi.php')
                                 <form action="" method="post">
                                     <div class="form-group">
                                         <label for="exampleFormControlInput1">Nama Poli</label>
-                                        <input type="text" name="nama_poli" class="form-control" id="NamaPoli" placeholder="Nama Poli" require>
+                                        <input type="text" name="nama_poli" class="form-control" id="NamaPoli" placeholder="Nama Poli" required>
                                     </div>
 
                             </div>
@@ -315,7 +235,7 @@ include('../../core/koneksi.php')
                                                 <tr>
                                                     <td><?= $data['id_poli']; ?></td>
                                                     <td><?= $data['nama_poli']; ?></td>
-                                                    <td><button type="button" class="btn btn-danger"><a style="color : white;" href="poli/delete_poli.php?id=<?= $data['id_poli']; ?>">Hapus</a></button></td>
+                                                    <td><button type="button" onclick="Swal.fire('data Berhasil ditambah')" class="btn btn-danger"><a style="color : white;" href="poli/delete_poli.php?id=<?= $data['id_poli']; ?>">Hapus</a></button></td>
                                                     <td><button type="button" class="btn btn-warning"><a style="color : white;" href="poli/update_poli.php?id=<?= $data['id_poli']; ?>">Update</a></button></td>
                                                 </tr>
 
@@ -478,18 +398,19 @@ include('../../core/koneksi.php')
     <script src="assets/js/pages/datatables.init.js"></script>
 
     <script src="assets/js/app.js"></script>
+    <script src="../../dist/sweetalert2.all.min.js"></script>
 
 </body>
 
 </html>
 <?php
-include('../../core/koneksi.php');
 if (isset($_POST['btn'])) {
     $sql = mysqli_query($koneksi, "INSERT INTO poli VALUES('','$_POST[nama_poli]')");
+    if ($sql) {
+        echo "<script>alert('data ditambahkan')
+        window.location.href = 'tables-poli.php'
+        </script>";
+    }
 }
-if ($sql) {
-    // echo "<script>alert('data ditambahkan')
-    // window.location.href = 'tables-poli.php'
-    // </script>";
-}
+
 ?>

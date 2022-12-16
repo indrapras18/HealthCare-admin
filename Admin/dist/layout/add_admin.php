@@ -12,8 +12,8 @@
     <!-- Main css -->
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
 
+<body>
     <div class="main">
         <!-- Sign up form -->
         <section class="signup">
@@ -22,22 +22,22 @@
                     <div class="signup-form">
                         <h2 class="form-title">Sign up</h2>
                         <form method="POST" class="register-form" id="register-form">
-                            
+
                             <div class="form-group">
                                 <label for="email"><i class="zmdi zmdi-email"></i></label>
-                                <input type="email" name="email" id="email" placeholder="Your Email"/>
+                                <input type="email" name="email" id="email" placeholder="Your Email" required />
                             </div>
                             <div class="form-group">
                                 <label for="pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" name="password" id="pass" placeholder="Password"/>
+                                <input type="password" name="password" id="pass" placeholder="Password" required />
                             </div>
                             <div class="form-group">
                                 <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
-                                <input type="password" name="password2" id="re_pass" placeholder="Repeat your password"/>
+                                <input type="password" name="password2" id="re_pass" placeholder="Repeat your password" required />
                             </div>
-                            
+
                             <div class="form-group form-button">
-                                <input type="submit" name="btn" id="signup" class="form-submit" value="Register" style="background-color: #0AB885;"/>
+                                <input type="submit" name="btn" id="signup" class="form-submit" value="Register" style="background-color: #0AB885;" />
                             </div>
                         </form>
                     </div>
@@ -49,11 +49,8 @@
             </div>
         </section>
     </div>
+</body>
 
-    <!-- JS -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="js/main.js"></script>
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>
 <?php
 include('../../../core/koneksi.php');
