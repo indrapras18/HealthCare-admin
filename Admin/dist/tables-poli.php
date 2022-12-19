@@ -1,5 +1,12 @@
 <?php
-include('../../core/koneksi.php')
+include('../../core/koneksi.php');
+include('Data.php');
+$dt = new data();
+session_start();
+$id = $_SESSION['id'];
+$email = $_SESSION['email'];
+$sql = mysqli_query($koneksi, "SELECT * FROM login_admin WHERE id = $id");
+$rows = mysqli_fetch_array($sql);
 ?>
 <!doctype html>
 <html lang="en">
@@ -82,68 +89,55 @@ include('../../core/koneksi.php')
                 </div>
 
                 <!-- Search input -->
-                
-
                 <div class="d-flex">
-
-                    <
 
                     <div class="dropdown d-none d-lg-inline-block">
                         <button type="button" class="btn header-item noti-icon waves-effect" data-bs-toggle="fullscreen">
                             <i class="mdi mdi-fullscreen"></i>
                         </button>
-                    </div>
-
-                   
-
-                    <div class="dropdown d-inline-block ms-2">
-                        <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-1.jpg" alt="Header Avatar">
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-end">
-                            <!-- item-->
-                            <a class="dropdown-item" href="#"><i class="dripicons-user font-size-16 align-middle me-2"></i>
-                                Profile</a>
-                            <a class="dropdown-item" href="#"><i class="dripicons-wallet font-size-16 align-middle me-2"></i> My
-                                Wallet</a>
-                            <a class="dropdown-item d-block" href="#"><span class="badge bg-success float-end">5</span><i class="dripicons-gear font-size-16 align-middle me-2"></i> Settings</a>
-                            <a class="dropdown-item" href="#"><i class="dripicons-lock font-size-16 align-middle me-2"></i> Lock
-                                screen</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#"><i class="dripicons-exit font-size-16 align-middle me-2"></i>
-                                Logout</a>
-                        </div>
-                    </div>
-
-                    <div class="dropdown d-inline-block">
-                        <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect">
-                            <i class="mdi mdi-spin mdi-cog"></i>
-                        </button>
-                    </div>
-
                 </div>
+
+                <div class="dropdown d-inline-block ms-2">
+                    <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img class="rounded-circle header-profile-user" <?php echo "<img src='gambar/$rows[foto]'/>"; ?>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <!-- item-->
+
+                        <a class="dropdown-item" href="layout/logout.php"><i class="dripicons-exit font-size-16 align-middle me-2"></i>
+                            Logout</a>
+                    </div>
+                </div>
+
+                <div class="dropdown d-inline-block">
+                    <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect">
+                        <i class="mdi mdi-spin mdi-cog"></i>
+                    </button>
+                </div>
+
             </div>
-        </header>
+    </div>
+    </header>
 
-        <!-- ========== Left Sidebar Start ========== -->
-        <div class="vertical-menu">
+    <!-- ========== Left Sidebar Start ========== -->
+    <div class="vertical-menu">
 
-            <div data-simplebar class="h-100">
+        <div data-simplebar class="h-100">
 
-                <!--- Sidemenu -->
-                <div id="sidebar-menu">
-                    <!-- Left Menu Start -->
-                    <ul class="metismenu list-unstyled" id="side-menu">
-                        <li class="menu-title">Main</li>
+            <!--- Sidemenu -->
+            <div id="sidebar-menu">
+                <!-- Left Menu Start -->
+                <ul class="metismenu list-unstyled" id="side-menu">
+                    <li class="menu-title">Main</li>
 
-                        <li>
-                            <a href="dashboard.php" class="waves-effect">
-                                <i class="dripicons-device-desktop"></i>
-                                <span>Dashboard</span>
-                            </a>
-                        </li>
+                    <li>
+                        <a href="dashboard.php" class="waves-effect">
+                            <i class="dripicons-device-desktop"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
 
-                        <!-- <li>
+                    <!-- <li>
                             <a href="javascript: void(0);" class="waves-effect">
                                 <i class="dripicons-blog"></i>
                                 <span> Forms </span>
@@ -158,122 +152,121 @@ include('../../core/koneksi.php')
                             </ul>
                         </li> -->
 
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                <i class="dripicons-list"></i>
-                                <span> Tables </span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="tables-tenaga-medis.php"><i class="dripicons-user-group"></i>Tenaga Medis</a></li>
-                                <li><a href="tables-poli.php"><i class="dripicons-medical"></i>Poli</a></li>
-                                <li><a href="tables-pasien.php"><i class="dripicons-user"></i>Pasien</a></li>
-                                <li><a href="tables-jadwal.php"><i class="dripicons-to-do"></i>Jadwal</a></li>
-                                <li><a href="tables-faq.php"><i class="dripicons-lightbulb"></i>FAQ</a></li>
-                            </ul>
-                        </li>
+                    <li>
+                        <a href="javascript: void(0);" class="has-arrow waves-effect">
+                            <i class="dripicons-list"></i>
+                            <span> Tables </span>
+                        </a>
+                        <ul class="sub-menu" aria-expanded="false">
+                            <li><a href="tables-tenaga-medis.php"><i class="dripicons-user-group"></i>Tenaga Medis</a></li>
+                            <li><a href="tables-poli.php"><i class="dripicons-medical"></i>Poli</a></li>
+                            <li><a href="tables-pasien.php"><i class="dripicons-user"></i>Pasien</a></li>
+                            <li><a href="tables-jadwal.php"><i class="dripicons-to-do"></i>Jadwal</a></li>
+                            <li><a href="tables-faq.php"><i class="dripicons-lightbulb"></i>FAQ</a></li>
+                        </ul>
+                    </li>
 
-                    </ul>
-                </div>
-                <!-- Sidebar -->
+                </ul>
             </div>
+            <!-- Sidebar -->
         </div>
-        <!-- Left Sidebar End -->
+    </div>
+    <!-- Left Sidebar End -->
 
-        <!-- ============================================================== -->
-        <!-- Start right Content here -->
-        <!-- ============================================================== -->
-        <div class="main-content">
-            <div class="page-content">
-                <button style="margin-left:959px; margin-bottom:15px; background-color:#0AB885; color:white;" type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <i class="fa-regular fa-plus"></i> Tambah Data
-                </button>
+    <!-- ============================================================== -->
+    <!-- Start right Content here -->
+    <!-- ============================================================== -->
+    <div class="main-content">
+        <div class="page-content">
+            <button style="margin-left:959px; margin-bottom:15px; background-color:#0AB885; color:white;" type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <i class="fa-regular fa-plus"></i> Tambah Data
+            </button>
 
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Form Poli</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <form action="" method="post">
-                                    <div class="form-group">
-                                        <label for="exampleFormControlInput1">Nama Poli</label>
-                                        <input type="text" name="nama_poli" class="form-control" id="NamaPoli" placeholder="Nama Poli" required>
-                                    </div>
-
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal"> <i class="fa-solid fa-xmark"></i> Close</button>
-                                <button type="submit" class="btn btn-success" name="btn"> <i class="fa-solid fa-floppy-disk"></i> Simpan</button>
-                            </div>
-                            </form>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Form Poli</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
+                        <div class="modal-body">
+                            <form action="" method="post">
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Nama Poli</label>
+                                    <input type="text" name="nama_poli" class="form-control" id="NamaPoli" placeholder="Nama Poli" required>
+                                </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal"> <i class="fa-solid fa-xmark"></i> Close</button>
+                            <button type="submit" class="btn btn-success" name="btn"> <i class="fa-solid fa-floppy-disk"></i> Simpan</button>
+                        </div>
+                        </form>
                     </div>
                 </div>
-                <div class="container-fluid">
+            </div>
+            <div class="container-fluid">
 
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-body">
-                                    <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                                        <thead>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                    <thead>
+                                        <tr>
+                                            <th style="background-color: #0AB885; color:white;">ID Poli</th>
+                                            <th style="background-color: #0AB885; color:white;">Nama Poli</th>
+                                            <th style="background-color: #0AB885; color:white;" colspan="2">Aksi</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <?php
+                                        $no = 1;
+                                        foreach ($dt->data_poli() as $data) {
+                                        ?>
                                             <tr>
-                                                <th style="background-color: #0AB885; color:white;">ID Poli</th>
-                                                <th style="background-color: #0AB885; color:white;">Nama Poli</th>
-                                                <th style="background-color: #0AB885; color:white;" colspan="2">Aksi</th>
+                                                <td><?= $data['id_poli']; ?></td>
+                                                <td><?= $data['nama_poli']; ?></td>
+                                                <td><button type="button" onclick="Swal.fire('data Berhasil ditambah')" class="btn btn-danger"><a style="color : white;" href="poli/delete_poli.php?id=<?= $data['id_poli']; ?>">Hapus</a></button></td>
+                                                <td><button type="button" class="btn btn-warning"><a style="color : white;" href="poli/update_poli.php?id=<?= $data['id_poli']; ?>">Update</a></button></td>
                                             </tr>
-                                        </thead>
+                                        <?php
+                                        }
+                                        ?>
+                                    </tbody>
+                                </table>
 
-                                        <tbody>
-                                            <?php
-                                            $sql = mysqli_query($koneksi, "SELECT * from poli");
-                                            while ($data = mysqli_fetch_array($sql)) {
-                                            ?>
-                                                <tr>
-                                                    <td><?= $data['id_poli']; ?></td>
-                                                    <td><?= $data['nama_poli']; ?></td>
-                                                    <td><button type="button" onclick="Swal.fire('data Berhasil ditambah')" class="btn btn-danger"><a style="color : white;" href="poli/delete_poli.php?id=<?= $data['id_poli']; ?>">Hapus</a></button></td>
-                                                    <td><button type="button" class="btn btn-warning"><a style="color : white;" href="poli/update_poli.php?id=<?= $data['id_poli']; ?>">Update</a></button></td>
-                                                </tr>
-
-                                            <?php
-                                            }
-                                            ?>
-                                        </tbody>
-                                    </table>
-
-                                </div>
                             </div>
                         </div>
-                        <!-- end col -->
                     </div>
-                    <!-- end row -->
-
-
+                    <!-- end col -->
                 </div>
                 <!-- end row -->
 
-            </div>
-            <!-- container-fluid -->
-        </div>
-        <!-- End Page-content -->
 
-        <footer class="footer">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12">
-                        ©
-                        <script>
-                            document.write(new Date().getFullYear())
-                        </script> Fonik<span class="d-none d-sm-inline-block"> -
-                            Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand.</span>
-                    </div>
+            </div>
+            <!-- end row -->
+
+        </div>
+        <!-- container-fluid -->
+    </div>
+    <!-- End Page-content -->
+
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    ©
+                    <script>
+                        document.write(new Date().getFullYear())
+                    </script> Fonik<span class="d-none d-sm-inline-block"> -
+                        Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand.</span>
                 </div>
             </div>
-        </footer>
+        </div>
+    </footer>
     </div>
     <!-- end main content-->
 
@@ -326,41 +319,6 @@ include('../../core/koneksi.php')
                 </ul>
 
             </div>
-            <!-- <div class="form-check form-check-inline">
-                <input class="form-check-input theme-color" type="radio" name="theme-mode"
-                    id="theme-default" value="default" onchange="document.documentElement.setAttribute('data-theme-mode', 'default')" checked>
-                <label class="form-check-label" for="theme-default">Default</label>
-            </div> -->
-
-            <!-- <div class="form-check form-check-inline">
-                <input class="form-check-input theme-color" type="radio" name="theme-mode"
-                    id="theme-teal" value="teal" onchange="document.documentElement.setAttribute('data-theme-mode', 'teal')">
-                <label class="form-check-label" for="theme-teal">Teal</label>
-            </div> -->
-
-            <!-- <div class="form-check form-check-inline">
-                <input class="form-check-input theme-color" type="radio" name="theme-mode"
-                    id="theme-orange" value="orange" onchange="document.documentElement.setAttribute('data-theme-mode', 'orange')">
-                <label class="form-check-label" for="theme-orange">Orange</label>
-            </div> -->
-
-            <!-- <div class="form-check form-check-inline">
-                <input class="form-check-input theme-color" type="radio" name="theme-mode"
-                    id="theme-purple" value="purple" onchange="document.documentElement.setAttribute('data-theme-mode', 'purple')">
-                <label class="form-check-label" for="theme-purple">Purple</label>
-            </div> -->
-
-            <!-- <div class="form-check form-check-inline">
-                <input class="form-check-input theme-color" type="radio" name="theme-mode"
-                    id="theme-green" value="green" onchange="document.documentElement.setAttribute('data-theme-mode', 'green')">
-                <label class="form-check-label" for="theme-green">Green</label>
-            </div> -->
-
-            <!-- <div class="form-check form-check-inline">
-                <input class="form-check-input theme-color" type="radio" name="theme-mode"
-                    id="theme-red" value="red" onchange="document.documentElement.setAttribute('data-theme-mode', 'red')">
-                <label class="form-check-label" for="theme-red">Red</label>
-            </div> -->
         </div>
 
     </div>

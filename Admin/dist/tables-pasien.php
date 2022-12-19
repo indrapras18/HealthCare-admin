@@ -1,12 +1,17 @@
 <?php
 include('../../core/koneksi.php');
+session_start();
+$id = $_SESSION['id'];
+$email = $_SESSION['email'];
+$sql = mysqli_query($koneksi, "SELECT * FROM login_admin WHERE id = $id");
+$rows = mysqli_fetch_array($sql);
 ?>
 <!doctype html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8" />
-    <title>Data Tables | Fonik - Responsive Bootstrap 5 Admin Dashboard</title>
+    <title>Data Tables | HealthCare</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
@@ -98,19 +103,12 @@ include('../../core/koneksi.php');
 
                     <div class="dropdown d-inline-block ms-2">
                         <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-1.jpg" alt="Header Avatar">
+                        <img class="rounded-circle header-profile-user" <?php echo "<img src='gambar/$rows[foto]'/>"; ?>
                         </button>
                         <div class="dropdown-menu dropdown-menu-end">
                             <!-- item-->
-                            <a class="dropdown-item" href="#"><i class="dripicons-user font-size-16 align-middle me-2"></i>
-                                Profile</a>
-                            <a class="dropdown-item" href="#"><i class="dripicons-wallet font-size-16 align-middle me-2"></i> My
-                                Wallet</a>
-                            <a class="dropdown-item d-block" href="#"><span class="badge bg-success float-end">5</span><i class="dripicons-gear font-size-16 align-middle me-2"></i> Settings</a>
-                            <a class="dropdown-item" href="#"><i class="dripicons-lock font-size-16 align-middle me-2"></i> Lock
-                                screen</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#"><i class="dripicons-exit font-size-16 align-middle me-2"></i>
+                    
+                            <a class="dropdown-item" href="layout/logout.php"><i class="dripicons-exit font-size-16 align-middle me-2"></i>
                                 Logout</a>
                         </div>
                     </div>

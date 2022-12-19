@@ -1,5 +1,10 @@
 <?php
 include('../../core/koneksi.php');
+session_start();
+$id = $_SESSION['id'];
+$email = $_SESSION['email'];
+$sql = mysqli_query($koneksi, "SELECT * FROM login_admin WHERE id = $id");
+$rows = mysqli_fetch_array($sql);
 ?>
 <!doctype html>
 <html lang="en">
@@ -27,6 +32,7 @@ include('../../core/koneksi.php');
     <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <!-- App Css-->
     <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
 
 </head>
@@ -86,21 +92,14 @@ include('../../core/koneksi.php');
                     </div>
                     <div class="dropdown d-inline-block ms-2">
                         <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-1.jpg" alt="Header Avatar">
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-end">
-                            <!-- item-->
-                            <a class="dropdown-item" href="#"><i class="dripicons-user font-size-16 align-middle me-2"></i>
-                                Profile</a>
-                            <a class="dropdown-item" href="#"><i class="dripicons-wallet font-size-16 align-middle me-2"></i> My
-                                Wallet</a>
-                            <a class="dropdown-item d-block" href="#"><span class="badge bg-success float-end">5</span><i class="dripicons-gear font-size-16 align-middle me-2"></i> Settings</a>
-                            <a class="dropdown-item" href="#"><i class="dripicons-lock font-size-16 align-middle me-2"></i> Lock
-                                screen</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#"><i class="dripicons-exit font-size-16 align-middle me-2"></i>
-                                Logout</a>
-                        </div>
+                            <img class="rounded-circle header-profile-user" <?php echo "<img src='gambar/$rows[foto]'/>"; ?> </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <!-- item-->
+
+
+                                <a class="dropdown-item" href="layout/logout.php"><i class="dripicons-exit font-size-16 align-middle me-2"></i>
+                                    Logout</a>
+                            </div>
                     </div>
 
                     <div class="dropdown d-inline-block">
@@ -174,6 +173,35 @@ include('../../core/koneksi.php');
 
             <div class="page-content">
                 <!-- modal -->
+                <button style="margin-left:949px; margin-bottom:15px; background-color:#0AB885; color:white;" type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal"> <i class="fa-regular fa-plus"></i>
+                    Tambah Data
+                </button>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">FAQ</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="" method="post">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Pertanyaan</label>
+                                        <textarea class="form-control" name="pertanyaan" id="pertanyaan" placeholder="Tulis Pertanyaan...."></textarea>
+                                    </div>
+                                    <div class="form-group"><label for="message-text" class="col-form-label">Jawaban</label>
+                                        <textarea class="form-control" name="jawaban" id="jawaban" placeholder="Tulis Jawaban...."></textarea>
+                                    </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="fa-solid fa-xmark"></i> Close</button>
+                                <button type="submit" class="btn btn-success" name="btn"><i class="fa-regular fa-floppy-disk"></i> Simpan</button>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-12">
@@ -327,3 +355,13 @@ include('../../core/koneksi.php');
 </body>
 
 </html>
+<?php
+if (isset($_POST['btn'])) {
+    $sql = mysqli_query($koneksi, "INSERT INTO faq VALUES('','$_POST[pertanyaan]','$_POST[jawaban]')");
+    if ($sql) {
+        echo "<script>alert('data ditambahkan')
+        window.location.href = 'tables-faq.php'
+        </script>";
+    }
+}
+?>

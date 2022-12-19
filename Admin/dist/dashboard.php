@@ -1,6 +1,9 @@
 <?php
 include('../../core/koneksi.php');
 session_start();
+if (!isset($_SESSION['email'])) {
+    header("Location: layout/login.php");
+}
 $id = $_SESSION['id'];
 $email = $_SESSION['email'];
 $sql = mysqli_query($koneksi, "SELECT * FROM login_admin WHERE id = $id");
@@ -91,13 +94,8 @@ $rows = mysqli_fetch_array($sql);
                                 <!-- item-->
                                 <a class="dropdown-item" href="profile_admin.php"><i class="dripicons-user font-size-16 align-middle me-2"></i>
                                     Profile</a>
-                                <a class="dropdown-item" href="#"><i class="dripicons-wallet font-size-16 align-middle me-2"></i> My
-                                    Wallet</a>
-                                <a class="dropdown-item d-block" href="#"><span class="badge bg-success float-end">5</span><i class="dripicons-gear font-size-16 align-middle me-2"></i> Settings</a>
-                                <a class="dropdown-item" href="#"><i class="dripicons-lock font-size-16 align-middle me-2"></i> Lock
-                                    screen</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="../../index.php"><i class="dripicons-exit font-size-16 align-middle me-2"></i>
+                                <a class="dropdown-item" href="layout/logout.php"><i class="dripicons-exit font-size-16 align-middle me-2"></i>
                                     Logout</a>
                             </div>
                     </div>
@@ -173,53 +171,53 @@ $rows = mysqli_fetch_array($sql);
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-6 col-xl-3">
-                            <div class="card text-center" style="background-color:#FFB167;">
+                            <div class="card text-center" style="background-color:#FFB167; border-radius:10px;">
                                 <div class="mb-2 card-body text-muted">
                                     <h3 class="text-info mt-2">
                                         <?php
                                         $data_user = mysqli_query($koneksi, "select * from tenaga_medis");
                                         $jumlah_user = mysqli_num_rows($data_user);
                                         ?>
-                                        <?php echo $jumlah_user; ?>
+                                        <strong style="color:white;"><?php echo $jumlah_user; ?></strong>
                                     </h3> <strong style="color: white;">Tenaga Medis</strong>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6 col-xl-3">
-                            <div class="card text-center" style="background-color:#3991E1;">
+                            <div class="card text-center" style="background-color:#3991E1;  border-radius:10px;">
                                 <div class="mb-2 card-body text-muted">
                                     <h3 class="text-purple mt-2">
                                         <?php
                                         $data_user = mysqli_query($koneksi, "select * from poli");
                                         $jumlah_user = mysqli_num_rows($data_user);
                                         ?>
-                                        <?php echo $jumlah_user; ?>
-                                    </h3> <strong style="color: white;">Poli</strong> 
+                                        <strong style="color: white;"><?php echo $jumlah_user; ?></strong>
+                                    </h3> <strong style="color: white;">Poli</strong>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6 col-xl-3">
-                            <div class="card text-center" style="background-color:#EF716B;">
+                            <div class="card text-center" style="background-color:#EF716B; border-radius:10px;">
                                 <div class="mb-2 card-body text-muted">
                                     <h3 class="text-primary mt-2">
                                         <?php
                                         $data_user = mysqli_query($koneksi, "select * from pasien");
                                         $jumlah_user = mysqli_num_rows($data_user);
                                         ?>
-                                        <?php echo $jumlah_user; ?>
-                                    </h3> <strong style="color: white;">Pasien</strong> 
+                                        <strong style="color: white;"><?php echo $jumlah_user; ?></strong>
+                                    </h3> <strong style="color: white;">Pasien</strong>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6 col-xl-3">
-                            <div class="card text-center" style="background-color: #0AB885;">
+                            <div class="card text-center" style="background-color: #0AB885; border-radius:10px;">
                                 <div class="mb-2 card-body text-muted">
                                     <h3 class="text-danger mt-2">
                                         <?php
                                         $data_user = mysqli_query($koneksi, "select * from login_admin");
                                         $jumlah_user = mysqli_num_rows($data_user);
                                         ?>
-                                        <?php echo $jumlah_user; ?>
+                                        <strong style="color: white;"> <?php echo $jumlah_user; ?> </strong>
                                     </h3> <strong style="color: white;">Admin</strong>
                                 </div>
                             </div>
@@ -229,7 +227,6 @@ $rows = mysqli_fetch_array($sql);
 
                 </div>
                 <!-- end row -->
-
                 <div class="row">
                     <div class="col-xl-15">
                         <div class="card">
@@ -246,24 +243,75 @@ $rows = mysqli_fetch_array($sql);
                                             <tr>
                                                 <td><?= $data['id']; ?></td>
                                                 <td> <img class="rounded-circle header-profile-user" <?php echo "<img src='gambar/$data[foto]'/>"; ?></td>
+                                                <td><?= $data['username']; ?></td>
                                                 <td><?= $data['email']; ?></td>
-                                                <td><?= md5($data['password']); ?></td>
                                             </tr>
-
                                         <?php
                                                 }
                                         ?>
                                         </tr>
                                         </tbody>
+
                                     </table>
+                                    <div>
+                                        <canvas id="myChart"></canvas>
+                                    </div>
+                                    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                                    <script>
+                                        const ctx = document.getElementById('myChart');
+
+                                        new Chart(ctx, {
+                                            type: 'bar',
+                                            data: {
+                                                labels: ['tenaga Medis', 'Poli', 'Pasien', 'Admin'],
+                                                datasets: [{
+                                                    label: '',
+                                                    data: [
+                                                        <?php
+                                                        $jumlah_teknik = mysqli_query($koneksi, "select * from tenaga_medis");
+                                                        echo mysqli_num_rows($jumlah_teknik);
+                                                        ?>,
+                                                        <?php
+                                                        $jumlah_teknik = mysqli_query($koneksi, "select * from poli");
+                                                        echo mysqli_num_rows($jumlah_teknik);
+                                                        ?>,
+                                                        <?php
+                                                        $jumlah_teknik = mysqli_query($koneksi, "select * from pasien");
+                                                        echo mysqli_num_rows($jumlah_teknik);
+                                                        ?>,
+                                                        <?php
+                                                        $jumlah_teknik = mysqli_query($koneksi, "select * from login_admin");
+                                                        echo mysqli_num_rows($jumlah_teknik);
+                                                        ?>,
+                                                    ],
+                                                    backgroundColor: [
+                                                        'rgba(255, 99, 132, 0.2)',
+                                                        'rgba(54, 162, 235, 0.2)',
+                                                        'rgba(255, 206, 86, 0.2)',
+                                                        'rgba(75, 192, 192, 0.2)'
+                                                    ],
+                                                    borderColor: [
+                                                        'rgba(255,99,132,1)',
+                                                        'rgba(54, 162, 235, 1)',
+                                                        'rgba(255, 206, 86, 1)',
+                                                        'rgba(75, 192, 192, 1)'
+                                                    ],
+                                                    borderWidth: 1
+                                                }]
+                                            },
+                                            options: {
+                                                scales: {
+                                                    y: {
+                                                        beginAtZero: true
+                                                    }
+                                                }
+                                            }
+                                        });
+                                    </script>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-
-                    <!-- end row -->
-
                 </div>
                 <!-- container-fluid -->
             </div>
@@ -350,6 +398,7 @@ $rows = mysqli_fetch_array($sql);
     <script src="assets/libs/metismenu/metisMenu.min.js"></script>
     <script src="assets/libs/simplebar/simplebar.min.js"></script>
     <script src="assets/libs/node-waves/waves.min.js"></script>
+    <script type="text/javascript" src="chartjs/Chart.js"></script>
 
     <!--Morris Chart-->
     <script src="assets/libs/morris.js/morris.min.js"></script>

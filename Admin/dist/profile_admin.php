@@ -52,7 +52,8 @@ $rows = mysqli_fetch_array($sql);
                     </div>
                     <div class="col-md-2">
                         <!-- <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile" /> -->
-                        <a href="dashboard.php">Edit</a>
+                        <button><a href="admin/editeprofile.php">Edit</a></button>
+                        <button><a href="dashboard.php">back</a></button>
                     </div>
                 </div>
                 <div class="row">
