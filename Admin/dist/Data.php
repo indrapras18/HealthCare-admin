@@ -40,4 +40,14 @@ class data
 		}
 		return $hasil;
 	}
+
+	function data_faq()
+	{
+		include('../../core/koneksi.php');
+		$data_tampil = mysqli_query($koneksi, "select * from pasien");
+		while ($d = mysqli_fetch_array($data_tampil)) {
+			$hasil[] = $d;
+		}
+		return $hasil;
+	}
 }
