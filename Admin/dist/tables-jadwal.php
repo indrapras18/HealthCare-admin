@@ -59,16 +59,15 @@ $rows = mysqli_fetch_array($sql)
                     <div class="navbar-brand-box">
                         <a href="index.html" class="logo logo-dark">
                             <span class="logo-sm">
-                                <img src="assets/images/logo-sm.png" alt="" height="22">
+                                <img src="../../img/logo.png" alt="" height="22">
                             </span>
                             <span class="logo-lg">
-                                <img src="assets/images/logo-dark.png" alt="" height="20">
+                                <img src="../../img/logo.png" alt="" height="20">
                             </span>
                         </a>
-
                         <a href="index.html" class="logo logo-light">
                             <span class="logo-sm">
-                                <img src="assets/images/logo-sm.png" alt="" height="22">
+                                <img src="../../img/logo.png" alt="" height="22">
                             </span>
                             <span class="logo-lg" style="color:white; font-size:19px;">
                                 <img src="../../img/logo.png" alt="" height="30">
@@ -223,7 +222,7 @@ $rows = mysqli_fetch_array($sql)
 
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal"> <i class="fa-solid fa-xmark"></i> Close</button>
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal"> <i class="fa-solid fa-xmark"></i> Tutup</button>
                                 <button type="submit" class="btn btn-success" name="btn"> <i class="fa-solid fa-floppy-disk"></i> Simpan</button>
                             </div>
                             </form>
@@ -286,7 +285,7 @@ $rows = mysqli_fetch_array($sql)
                             ©
                             <script>
                                 document.write(new Date().getFullYear())
-                            </script> Fonik<span class="d-none d-sm-inline-block"> -
+                            </script> HealthCare<span class="d-none d-sm-inline-block"> -
                                 Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand.</span>
                         </div>
                     </div>
@@ -310,6 +309,7 @@ $rows = mysqli_fetch_array($sql)
 
             <!-- Settings -->
             <hr class="mt-0" />
+            <div class = "p-4">
             <h6 class="mt-4">Select Custom Colors</h6>
             <div class="d-flex">
 

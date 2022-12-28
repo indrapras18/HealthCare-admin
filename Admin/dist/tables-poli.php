@@ -13,7 +13,7 @@ $rows = mysqli_fetch_array($sql);
 
 <head>
     <meta charset="utf-8" />
-    <title>Data Tables | Fonik - Responsive Bootstrap 5 Admin Dashboard</title>
+    <title>Data Tables | HealthCare</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
@@ -60,20 +60,19 @@ $rows = mysqli_fetch_array($sql);
                     <div class="navbar-brand-box">
                         <a href="index.html" class="logo logo-dark">
                             <span class="logo-sm">
-                                <img src="assets/images/logo-sm.png" alt="" height="22">
+                                <img src="../../img/logo.png" alt="" height="22">
+                            </span>
+                            <span class="logo-lg">
+                                <img src="../../img/logo.png" alt="" height="20">
+                            </span>
+                        </a>
+                        <a href="index.html" class="logo logo-light">
+                            <span class="logo-sm">
+                                <img src="../../img/logo.png" alt="" height="22">
                             </span>
                             <span class="logo-lg" style="color:white; font-size:19px;">
                                 <img src="../../img/logo.png" alt="" height="30">
                                 <strong>HealthCare</strong>
-                            </span>
-                        </a>
-
-                        <a href="index.html" class="logo logo-light">
-                            <span class="logo-sm">
-                                <img src="assets/images/logo-sm.png" alt="" height="22">
-                            </span>
-                            <span class="logo-lg">
-                                <img src="assets/images/logo-light.png" alt="" height="20">
                             </span>
                         </a>
                     </div>
@@ -95,178 +94,161 @@ $rows = mysqli_fetch_array($sql);
                         <button type="button" class="btn header-item noti-icon waves-effect" data-bs-toggle="fullscreen">
                             <i class="mdi mdi-fullscreen"></i>
                         </button>
-                </div>
-
-                <div class="dropdown d-inline-block ms-2">
-                    <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img class="rounded-circle header-profile-user" <?php echo "<img src='gambar/$rows[foto]'/>"; ?>
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-end">
-                        <!-- item-->
-
-                        <a class="dropdown-item" href="layout/logout.php"><i class="dripicons-exit font-size-16 align-middle me-2"></i>
-                            Logout</a>
                     </div>
-                </div>
 
-                <div class="dropdown d-inline-block">
-                    <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect">
-                        <i class="mdi mdi-spin mdi-cog"></i>
-                    </button>
-                </div>
+                    <div class="dropdown d-inline-block ms-2">
+                        <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img class="rounded-circle header-profile-user" <?php echo "<img src='gambar/$rows[foto]'/>"; ?> </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <!-- item-->
 
+                                <a class="dropdown-item" href="layout/logout.php"><i class="dripicons-exit font-size-16 align-middle me-2"></i>
+                                    Logout</a>
+                            </div>
+                    </div>
+
+                    <div class="dropdown d-inline-block">
+                        <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect">
+                            <i class="mdi mdi-spin mdi-cog"></i>
+                        </button>
+                    </div>
+
+                </div>
             </div>
-    </div>
-    </header>
+        </header>
 
-    <!-- ========== Left Sidebar Start ========== -->
-    <div class="vertical-menu">
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="vertical-menu">
 
-        <div data-simplebar class="h-100">
+            <div data-simplebar class="h-100">
 
-            <!--- Sidemenu -->
-            <div id="sidebar-menu">
-                <!-- Left Menu Start -->
-                <ul class="metismenu list-unstyled" id="side-menu">
-                    <li class="menu-title">Main</li>
+                <!--- Sidemenu -->
+                <div id="sidebar-menu">
+                    <!-- Left Menu Start -->
+                    <ul class="metismenu list-unstyled" id="side-menu">
+                        <li class="menu-title">Main</li>
 
-                    <li>
-                        <a href="dashboard.php" class="waves-effect">
-                            <i class="dripicons-device-desktop"></i>
-                            <span>Dashboard</span>
-                        </a>
-                    </li>
-
-                    <!-- <li>
-                            <a href="javascript: void(0);" class="waves-effect">
-                                <i class="dripicons-blog"></i>
-                                <span> Forms </span>
+                        <li>
+                            <a href="dashboard.php" class="waves-effect">
+                                <i class="dripicons-device-desktop"></i>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                <i class="dripicons-list"></i>
+                                <span> Tables </span>
                             </a>
                             <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="form-poli.php">Form Poli</a></li>
-                                <li><a href="form-pasien.php">Form Pasien</a></li>
-                                <li><a href="form-tenagamedis.php">Form Tenaga Medis</a></li>
-                                <li><a href="form-.php">Form Jadwal</a></li>
-                                <li><a href="form-.php">Form FAQ</a></li>
-
+                                <li><a href="tables-tenaga-medis.php"><i class="dripicons-user-group"></i>Tenaga Medis</a></li>
+                                <li><a href="tables-poli.php"><i class="dripicons-medical"></i>Poli</a></li>
+                                <li><a href="tables-pasien.php"><i class="dripicons-user"></i>Pasien</a></li>
+                                <li><a href="tables-jadwal.php"><i class="dripicons-to-do"></i>Jadwal</a></li>
+                                <li><a href="tables-faq.php"><i class="dripicons-lightbulb"></i>FAQ</a></li>
                             </ul>
-                        </li> -->
+                        </li>
 
-                    <li>
-                        <a href="javascript: void(0);" class="has-arrow waves-effect">
-                            <i class="dripicons-list"></i>
-                            <span> Tables </span>
-                        </a>
-                        <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="tables-tenaga-medis.php"><i class="dripicons-user-group"></i>Tenaga Medis</a></li>
-                            <li><a href="tables-poli.php"><i class="dripicons-medical"></i>Poli</a></li>
-                            <li><a href="tables-pasien.php"><i class="dripicons-user"></i>Pasien</a></li>
-                            <li><a href="tables-jadwal.php"><i class="dripicons-to-do"></i>Jadwal</a></li>
-                            <li><a href="tables-faq.php"><i class="dripicons-lightbulb"></i>FAQ</a></li>
-                        </ul>
-                    </li>
-
-                </ul>
-            </div>
-            <!-- Sidebar -->
-        </div>
-    </div>
-    <!-- Left Sidebar End -->
-
-    <!-- ============================================================== -->
-    <!-- Start right Content here -->
-    <!-- ============================================================== -->
-    <div class="main-content">
-        <div class="page-content">
-            <button style="margin-left:959px; margin-bottom:15px; background-color:#0AB885; color:white;" type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                <i class="fa-regular fa-plus"></i> Tambah Data
-            </button>
-
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Form Poli</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <form action="" method="post">
-                                <div class="form-group">
-                                    <label for="exampleFormControlInput1">Nama Poli</label>
-                                    <input type="text" name="nama_poli" class="form-control" id="NamaPoli" placeholder="Nama Poli" required>
-                                </div>
-
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal"> <i class="fa-solid fa-xmark"></i> Close</button>
-                            <button type="submit" class="btn btn-success" name="btn"> <i class="fa-solid fa-floppy-disk"></i> Simpan</button>
-                        </div>
-                        </form>
-                    </div>
+                    </ul>
                 </div>
+                <!-- Sidebar -->
             </div>
-            <div class="container-fluid">
+        </div>
+        <!-- Left Sidebar End -->
 
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                                    <thead>
-                                        <tr>
-                                            <th style="background-color: #0AB885; color:white;">ID Poli</th>
-                                            <th style="background-color: #0AB885; color:white;">Nama Poli</th>
-                                            <th style="background-color: #0AB885; color:white;" colspan="2">Aksi</th>
-                                        </tr>
-                                    </thead>
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+            <div class="page-content">
+                <button style="margin-left:959px; margin-bottom:15px; background-color:#0AB885; color:white;" type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <i class="fa-regular fa-plus"></i> Tambah Data
+                </button>
 
-                                    <tbody>
-                                        <?php
-                                        $no = 1;
-                                        foreach ($dt->data_poli() as $data) {
-                                        ?>
-                                            <tr>
-                                                <td><?= $data['id_poli']; ?></td>
-                                                <td><?= $data['nama_poli']; ?></td>
-                                                <td><button type="button" onclick="Swal.fire('data Berhasil ditambah')" class="btn btn-danger"><a style="color : white;" href="poli/delete_poli.php?id=<?= $data['id_poli']; ?>">Hapus</a></button></td>
-                                                <td><button type="button" class="btn btn-warning"><a style="color : white;" href="poli/update_poli.php?id=<?= $data['id_poli']; ?>">Update</a></button></td>
-                                            </tr>
-                                        <?php
-                                        }
-                                        ?>
-                                    </tbody>
-                                </table>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Form Poli</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="" method="post">
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">Nama Poli</label>
+                                        <input type="text" name="nama_poli" class="form-control" id="NamaPoli" placeholder="Nama Poli" required>
+                                    </div>
 
                             </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal"> <i class="fa-solid fa-xmark"></i> Tutup</button>
+                                <button type="submit" class="btn btn-success" name="btn"> <i class="fa-solid fa-floppy-disk"></i> Simpan</button>
+                            </div>
+                            </form>
                         </div>
                     </div>
-                    <!-- end col -->
+                </div>
+                <div class="container-fluid">
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                        <thead>
+                                            <tr>
+                                                <th style="background-color: #0AB885; color:white;">ID Poli</th>
+                                                <th style="background-color: #0AB885; color:white;">Nama Poli</th>
+                                                <th style="background-color: #0AB885; color:white;" colspan="2">Aksi</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <?php
+                                            $no = 1;
+                                            foreach ($dt->data_poli() as $data) {
+                                            ?>
+                                                <tr>
+                                                    <td><?= $data['id_poli']; ?></td>
+                                                    <td><?= $data['nama_poli']; ?></td>
+                                                    <td><button type="button" class="btn btn-danger"><a style="color : white;" href="poli/delete_poli.php?id=<?= $data['id_poli']; ?>">Hapus</a></button></td>
+                                                    <td><button type="button" class="btn btn-warning"><a style="color : white;" href="poli/update_poli.php?id=<?= $data['id_poli']; ?>">Update</a></button></td>
+                                                </tr>
+                                            <?php
+                                            }
+                                            ?>
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end col -->
+                    </div>
+                    <!-- end row -->
+
+
                 </div>
                 <!-- end row -->
 
-
             </div>
-            <!-- end row -->
-
+            <!-- container-fluid -->
         </div>
-        <!-- container-fluid -->
-    </div>
-    <!-- End Page-content -->
+        <!-- End Page-content -->
 
-    <footer class="footer">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12">
-                    ©
-                    <script>
-                        document.write(new Date().getFullYear())
-                    </script> Fonik<span class="d-none d-sm-inline-block"> -
-                        Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand.</span>
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        ©
+                        <script>
+                            document.write(new Date().getFullYear())
+                        </script> HealthCare<span class="d-none d-sm-inline-block"> -
+                            Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand.</span>
+                    </div>
                 </div>
             </div>
-        </div>
-    </footer>
+        </footer>
     </div>
     <!-- end main content-->
 
@@ -285,6 +267,7 @@ $rows = mysqli_fetch_array($sql);
 
             <!-- Settings -->
             <hr class="mt-0" />
+            <div class = "p-4">
             <h6 class="mt-4">Select Custom Colors</h6>
             <div class="d-flex">
 

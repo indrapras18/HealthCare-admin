@@ -348,6 +348,7 @@ $rows = mysqli_fetch_array($sql);
 
             <!-- Settings -->
             <hr class="mt-0" />
+            <div class = "p-4"> 
             <h6 class="mt-4">Select Custom Colors</h6>
             <div class="d-flex">
 

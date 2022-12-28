@@ -5,4 +5,4 @@ FROM tenaga_medis,poli
 WHERE tenaga_medis.`id_poli` = poli.`id_poli`");
 $data = mysqli_fetch_all($sql,MYSQLI_ASSOC);
 echo json_encode($data);
-?>          
+?> 

@@ -39,15 +39,12 @@ $rows = mysqli_fetch_array($sql);
 </head>
 
 <body data-sidebar="dark">
-
-
     <!-- Loader -->
     <div id="preloader">
         <div id="status">
             <div class="spinner"></div>
         </div>
     </div>
-
     <!-- Begin page -->
     <div id="layout-wrapper">
 
@@ -58,16 +55,15 @@ $rows = mysqli_fetch_array($sql);
                     <div class="navbar-brand-box">
                         <a href="index.html" class="logo logo-dark">
                             <span class="logo-sm">
-                                <img src="assets/images/logo-sm.png" alt="" height="22">
+                                <img src="../../img/logo.png" alt="" height="22">
                             </span>
                             <span class="logo-lg">
-                                <img src="assets/images/logo-dark.png" alt="" height="20">
+                                <img src="../../img/logo.png" alt="" height="20">
                             </span>
                         </a>
-
                         <a href="index.html" class="logo logo-light">
                             <span class="logo-sm">
-                                <img src="assets/images/logo-sm.png" alt="" height="22">
+                                <img src="../../img/logo.png" alt="" height="22">
                             </span>
                             <span class="logo-lg" style="color:white; font-size:19px;">
                                 <img src="../../img/logo.png" alt="" height="30">
@@ -75,7 +71,6 @@ $rows = mysqli_fetch_array($sql);
                             </span>
                         </a>
                     </div>
-
                     <button type="button" class="btn btn-sm px-3 font-size-24 header-item waves-effect" id="vertical-menu-btn">
                         <i class="mdi mdi-menu"></i>
                     </button>
@@ -83,16 +78,9 @@ $rows = mysqli_fetch_array($sql);
                     <div class="d-none d-sm-block ms-2">
                         <h4 class="page-title font-size-18">Tenaga Medis</h4>
                     </div>
-
                 </div>
-
                 <!-- Search input -->
-
-
                 <div class="d-flex">
-
-
-
                     <div class="dropdown d-none d-lg-inline-block">
                         <button type="button" class="btn header-item noti-icon waves-effect" data-bs-toggle="fullscreen">
                             <i class="mdi mdi-fullscreen"></i>
@@ -135,22 +123,6 @@ $rows = mysqli_fetch_array($sql);
                                 <span>Dashboard</span>
                             </a>
                         </li>
-
-                        <!-- <li>
-                            <a href="javascript: void(0);" class="waves-effect">
-                                <i class="dripicons-blog"></i>
-                                <span> Forms </span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="form-poli.php">Form Poli</a></li>
-                                <li><a href="form-pasien.php">Form Pasien</a></li>
-                                <li><a href="form-tenagamedis.php">Form Tenaga Medis</a></li>
-                                <li><a href="form-.php">Form Jadwal</a></li>
-                                <li><a href="form-.php">Form FAQ</a></li>
-
-                            </ul>
-                        </li> -->
-
                         <li>
                             <a href="javascript: void(0);" class="has-arrow waves-effect">
                                 <i class="dripicons-list"></i>
@@ -204,6 +176,10 @@ $rows = mysqli_fetch_array($sql);
                                         <input type="number" name="no_str" class="form-control" id="no_str" placeholder="Nomor STR" require>
                                     </div>
                                     <div class="form-group">
+                                        <label for="exampleFormControlInput1">Profesi</label>
+                                        <input type="text" name="profesi" class="form-control" id="no_str" placeholder="Profesi" require>
+                                    </div>
+                                    <div class="form-group">
                                         <label for="exampleFormControlInput1">Password</label>
                                         <input type="password" name="password" class="form-control" id="password" placeholder="Password" require>
                                     </div>
@@ -223,7 +199,7 @@ $rows = mysqli_fetch_array($sql);
                                     </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal"> <i class="fa-solid fa-xmark"></i> Close</button>
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal"> <i class="fa-solid fa-xmark"></i> Tutup</button>
                                 <button type="submit" class="btn btn-success" name="btn" id="tambah"> <i class="fa-regular fa-floppy-disk"></i> Simpan</button>
                             </div>
                             </form>
@@ -243,6 +219,7 @@ $rows = mysqli_fetch_array($sql);
                                                 <th style="background-color: #0AB885; color:white;">Nama</th>
                                                 <th style="background-color: #0AB885; color:white;">Email</th>
                                                 <th style="background-color: #0AB885; color:white;">Nomor STR</th>
+                                                <th style="background-color: #0AB885; color:white;">Profesi</th>
                                                 <th style="background-color: #0AB885; color:white;">Password</th>
                                                 <th style="background-color: #0AB885; color:white;">Poli</th>
                                                 <th style="background-color: #0AB885; color:white;">Aksi</th>
@@ -258,7 +235,8 @@ $rows = mysqli_fetch_array($sql);
                                                     <td><?= $data['nama']; ?></td>
                                                     <td><?= $data['email']; ?></td>
                                                     <td><?= $data['no_str']; ?></td>
-                                                    <td><?= md5($data['password']); ?></td>
+                                                    <td><?= $data['profesi']; ?></td>
+                                                    <td style=" max-width: 100px; overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><?= md5($data['password']); ?></td>
                                                     <td><?= $data['id_poli']; ?></td>
                                                     <td>
                                                         <button type="button" class="btn btn-danger"><a style="color : white;" href="tenaga_medis/delete_tenaga_medis.php?id=<?= $data['id_tenagamedis']; ?>">Hapus</a></button>
@@ -270,7 +248,6 @@ $rows = mysqli_fetch_array($sql);
                                             ?>
                                         </tbody>
                                     </table>
-
                                 </div>
                             </div>
                         </div>
@@ -290,7 +267,7 @@ $rows = mysqli_fetch_array($sql);
                             ©
                             <script>
                                 document.write(new Date().getFullYear())
-                            </script> Fonik<span class="d-none d-sm-inline-block"> -
+                            </script> HealthCare<span class="d-none d-sm-inline-block"> -
                                 Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand.</span>
                         </div>
                     </div>
@@ -314,44 +291,45 @@ $rows = mysqli_fetch_array($sql);
 
             <!-- Settings -->
             <hr class="mt-0" />
-            <h6 class="mt-4">Select Custom Colors</h6>
-            <div class="d-flex">
+            <div class="p-4">
+                <h6 class="mt-4">Select Custom Colors</h6>
+                <div class="d-flex">
 
-                <ul class="list-unstyled mb-0">
-                    <li class="form-check">
-                        <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-default" value="default" onchange="document.documentElement.setAttribute('data-theme-mode', 'default')" checked>
-                        <label class="form-check-label" for="theme-default">Default</label>
-                    </li>
-                    <li class="form-check">
-                        <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-orange" value="orange" onchange="document.documentElement.setAttribute('data-theme-mode', 'orange')">
-                        <label class="form-check-label" for="theme-orange">Orange</label>
-                    </li>
-                    <li class="form-check">
-                        <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-teal" value="teal" onchange="document.documentElement.setAttribute('data-theme-mode', 'teal')">
-                        <label class="form-check-label" for="theme-teal">Teal</label>
-                    </li>
-                </ul>
+                    <ul class="list-unstyled mb-0">
+                        <li class="form-check">
+                            <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-default" value="default" onchange="document.documentElement.setAttribute('data-theme-mode', 'default')" checked>
+                            <label class="form-check-label" for="theme-default">Default</label>
+                        </li>
+                        <li class="form-check">
+                            <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-orange" value="orange" onchange="document.documentElement.setAttribute('data-theme-mode', 'orange')">
+                            <label class="form-check-label" for="theme-orange">Orange</label>
+                        </li>
+                        <li class="form-check">
+                            <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-teal" value="teal" onchange="document.documentElement.setAttribute('data-theme-mode', 'teal')">
+                            <label class="form-check-label" for="theme-teal">Teal</label>
+                        </li>
+                    </ul>
 
-                <ul class="list-unstyled mb-0 ms-4">
-                    <li class="form-check">
-                        <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-purple" value="purple" onchange="document.documentElement.setAttribute('data-theme-mode', 'purple')">
-                        <label class="form-check-label" for="theme-purple">Purple</label>
-                    </li>
-                    <li class="form-check">
-                        <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-green" value="green" onchange="document.documentElement.setAttribute('data-theme-mode', 'green')">
-                        <label class="form-check-label" for="theme-green">Green</label>
-                    </li>
-                    <li class="form-check">
-                        <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-red" value="red" onchange="document.documentElement.setAttribute('data-theme-mode', 'red')">
-                        <label class="form-check-label" for="theme-red">Red</label>
-                    </li>
-                </ul>
+                    <ul class="list-unstyled mb-0 ms-4">
+                        <li class="form-check">
+                            <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-purple" value="purple" onchange="document.documentElement.setAttribute('data-theme-mode', 'purple')">
+                            <label class="form-check-label" for="theme-purple">Purple</label>
+                        </li>
+                        <li class="form-check">
+                            <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-green" value="green" onchange="document.documentElement.setAttribute('data-theme-mode', 'green')">
+                            <label class="form-check-label" for="theme-green">Green</label>
+                        </li>
+                        <li class="form-check">
+                            <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-red" value="red" onchange="document.documentElement.setAttribute('data-theme-mode', 'red')">
+                            <label class="form-check-label" for="theme-red">Red</label>
+                        </li>
+                    </ul>
 
+                </div>
             </div>
-        </div>
 
-    </div>
-    <!-- end slimscroll-menu-->
+        </div>
+        <!-- end slimscroll-menu-->
     </div>
     <!-- /Right-bar -->
 
@@ -392,7 +370,7 @@ $rows = mysqli_fetch_array($sql);
 <?php
 include('../../core/koneksi.php');
 if (isset($_POST['btn'])) {
-    $sql = mysqli_query($koneksi, "INSERT INTO tenaga_medis VALUES ('','$_POST[nama]','$_POST[email]','$_POST[no_str]','$_POST[password]','$_POST[id]')");
+    $sql = mysqli_query($koneksi, "INSERT INTO tenaga_medis VALUES ('','$_POST[nama]','$_POST[email]','$_POST[no_str]','$_POST[profesi]','$_POST[password]','$_POST[id]')");
     if ($sql) {
         echo "<script>alert('data ditambahkan')
         window.location.href = 'tables-tenaga-medis.php'

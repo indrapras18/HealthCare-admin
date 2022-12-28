@@ -1,3 +1,3 @@
-<?php 
- $koneksi = mysqli_connect('localhost','root','','healthcare1');
+<?php
+$koneksi = mysqli_connect('localhost','root','','healthcare1');
 ?>

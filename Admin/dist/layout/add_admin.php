@@ -20,12 +20,19 @@
             <div class="container">
                 <div class="signup-content">
                     <div class="signup-form">
-                        <h2 class="form-title">Sign up</h2>
+                        <h2 class="form-title">Sign Up</h2>
                         <form method="POST" class="register-form" id="register-form">
-
+                        <div class="form-group">
+                                <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                <input type="text" name="username" id="email" placeholder="Username" required />
+                            </div>
                             <div class="form-group">
                                 <label for="email"><i class="zmdi zmdi-email"></i></label>
                                 <input type="email" name="email" id="email" placeholder="Your Email" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="email"><i class="zmdi zmdi-file"></i></label>
+                                <input type="file" name="foto" id="email" placeholder="Your photo" required />
                             </div>
                             <div class="form-group">
                                 <label for="pass"><i class="zmdi zmdi-lock"></i></label>
@@ -57,7 +64,9 @@ include('../../../core/koneksi.php');
 error_reporting(0);
 // cek validasi email
 if (isset($_POST['btn'])) {
+    $uname = $_POST['username'];
     $email = $_POST['email'];
+    $foto = $_POST['foto'];
     $password = $_POST['password'];
     $password2 = $_POST['password2'];
 
@@ -65,7 +74,7 @@ if (isset($_POST['btn'])) {
         $sql = "SELECT * FROM login_admin WHERE email='$email'";
         $result = mysqli_query($koneksi, $sql);
         if (!$result->num_rows > 0) {
-            $sql = "INSERT INTO login_admin (email, password) VALUES ('$email', '$password')";
+            $sql = "INSERT INTO login_admin (username,email,foto,password) VALUES ('$uname','$email','$foto','$password')";
             $result = mysqli_query($koneksi, $sql);
             if ($result) {
                 echo "<script>alert('registrasi berhasil!')
