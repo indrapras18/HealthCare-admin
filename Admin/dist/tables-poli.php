@@ -197,20 +197,25 @@ $rows = mysqli_fetch_array($sql);
                                     <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                         <thead>
                                             <tr>
+                                                <th style="background-color: #0AB885; color:white;">Nomor</th>
                                                 <th style="background-color: #0AB885; color:white;">ID Poli</th>
                                                 <th style="background-color: #0AB885; color:white;">Nama Poli</th>
+                                                <th style="background-color: #0AB885; color:white;">Tenaga Medis</th>
                                                 <th style="background-color: #0AB885; color:white;" colspan="2">Aksi</th>
                                             </tr>
                                         </thead>
 
                                         <tbody>
                                             <?php
-                                            $no = 1;
+                                            $no = 0;
                                             foreach ($dt->data_poli() as $data) {
+                                                $no++;
                                             ?>
                                                 <tr>
+                                                    <td><?= $no?></td>
                                                     <td><?= $data['id_poli']; ?></td>
                                                     <td><?= $data['nama_poli']; ?></td>
+                                                    <td>jamal keknya</td>
                                                     <td><button type="button" class="btn btn-danger"><a style="color : white;" href="poli/delete_poli.php?id=<?= $data['id_poli']; ?>">Hapus</a></button></td>
                                                     <td><button type="button" class="btn btn-warning"><a style="color : white;" href="poli/update_poli.php?id=<?= $data['id_poli']; ?>">Update</a></button></td>
                                                 </tr>
@@ -267,45 +272,45 @@ $rows = mysqli_fetch_array($sql);
 
             <!-- Settings -->
             <hr class="mt-0" />
-            <div class = "p-4">
-            <h6 class="mt-4">Select Custom Colors</h6>
-            <div class="d-flex">
+            <div class="p-4">
+                <h6 class="mt-4">Select Custom Colors</h6>
+                <div class="d-flex">
 
-                <ul class="list-unstyled mb-0">
-                    <li class="form-check">
-                        <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-default" value="default" onchange="document.documentElement.setAttribute('data-theme-mode', 'default')" checked>
-                        <label class="form-check-label" for="theme-default">Default</label>
-                    </li>
-                    <li class="form-check">
-                        <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-orange" value="orange" onchange="document.documentElement.setAttribute('data-theme-mode', 'orange')">
-                        <label class="form-check-label" for="theme-orange">Orange</label>
-                    </li>
-                    <li class="form-check">
-                        <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-teal" value="teal" onchange="document.documentElement.setAttribute('data-theme-mode', 'teal')">
-                        <label class="form-check-label" for="theme-teal">Teal</label>
-                    </li>
-                </ul>
+                    <ul class="list-unstyled mb-0">
+                        <li class="form-check">
+                            <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-default" value="default" onchange="document.documentElement.setAttribute('data-theme-mode', 'default')" checked>
+                            <label class="form-check-label" for="theme-default">Default</label>
+                        </li>
+                        <li class="form-check">
+                            <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-orange" value="orange" onchange="document.documentElement.setAttribute('data-theme-mode', 'orange')">
+                            <label class="form-check-label" for="theme-orange">Orange</label>
+                        </li>
+                        <li class="form-check">
+                            <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-teal" value="teal" onchange="document.documentElement.setAttribute('data-theme-mode', 'teal')">
+                            <label class="form-check-label" for="theme-teal">Teal</label>
+                        </li>
+                    </ul>
 
-                <ul class="list-unstyled mb-0 ms-4">
-                    <li class="form-check">
-                        <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-purple" value="purple" onchange="document.documentElement.setAttribute('data-theme-mode', 'purple')">
-                        <label class="form-check-label" for="theme-purple">Purple</label>
-                    </li>
-                    <li class="form-check">
-                        <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-green" value="green" onchange="document.documentElement.setAttribute('data-theme-mode', 'green')">
-                        <label class="form-check-label" for="theme-green">Green</label>
-                    </li>
-                    <li class="form-check">
-                        <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-red" value="red" onchange="document.documentElement.setAttribute('data-theme-mode', 'red')">
-                        <label class="form-check-label" for="theme-red">Red</label>
-                    </li>
-                </ul>
+                    <ul class="list-unstyled mb-0 ms-4">
+                        <li class="form-check">
+                            <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-purple" value="purple" onchange="document.documentElement.setAttribute('data-theme-mode', 'purple')">
+                            <label class="form-check-label" for="theme-purple">Purple</label>
+                        </li>
+                        <li class="form-check">
+                            <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-green" value="green" onchange="document.documentElement.setAttribute('data-theme-mode', 'green')">
+                            <label class="form-check-label" for="theme-green">Green</label>
+                        </li>
+                        <li class="form-check">
+                            <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-red" value="red" onchange="document.documentElement.setAttribute('data-theme-mode', 'red')">
+                            <label class="form-check-label" for="theme-red">Red</label>
+                        </li>
+                    </ul>
 
+                </div>
             </div>
-        </div>
 
-    </div>
-    <!-- end slimscroll-menu-->
+        </div>
+        <!-- end slimscroll-menu-->
     </div>
     <!-- /Right-bar -->
 
@@ -346,12 +351,17 @@ $rows = mysqli_fetch_array($sql);
 </html>
 <?php
 if (isset($_POST['btn'])) {
-    $sql = mysqli_query($koneksi, "INSERT INTO poli VALUES('','$_POST[nama_poli]')");
-    if ($sql) {
-        echo "<script>alert('data ditambahkan')
-        window.location.href = 'tables-poli.php'
-        </script>";
+    $nama = $_POST['nama_poli'];
+    $cek = mysqli_num_rows(mysqli_query($koneksi, "SELECT * FROM poli WHERE nama_poli='$nama'"));
+    if ($cek > 0) {
+        echo "<script>window.alert('Poli sudah ada!')
+    window.location='tables-poli.php'</script>";
+    } else {
+        mysqli_query($koneksi, "INSERT INTO poli(id_poli,nama_poli)
+    VALUES ('','$nama')");
+
+        echo "<script>window.alert('Data Berhasil disimpan')
+    window.location='tables-poli.php'</script>";
     }
 }
-
 ?>

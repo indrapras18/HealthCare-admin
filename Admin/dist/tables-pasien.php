@@ -1,5 +1,7 @@
 <?php
 include('../../core/koneksi.php');
+include('Data.php');
+$dt = new data();
 session_start();
 $id = $_SESSION['id'];
 $email = $_SESSION['email'];
@@ -39,18 +41,12 @@ $rows = mysqli_fetch_array($sql);
 </head>
 
 <body data-sidebar="dark">
-
-
-    <!-- Loader -->
     <div id="preloader">
         <div id="status">
             <div class="spinner"></div>
         </div>
     </div>
-
-    <!-- Begin page -->
     <div id="layout-wrapper">
-
         <header id="page-topbar">
             <div class="navbar-header">
                 <div class="d-flex">
@@ -82,79 +78,40 @@ $rows = mysqli_fetch_array($sql);
                     <div class="d-none d-sm-block ms-2">
                         <h4 class="page-title font-size-18">Pasien</h4>
                     </div>
-
                 </div>
-
-                <!-- Search input -->
-                
-
                 <div class="d-flex">
-
-                    
-
                     <div class="dropdown d-none d-lg-inline-block">
                         <button type="button" class="btn header-item noti-icon waves-effect" data-bs-toggle="fullscreen">
                             <i class="mdi mdi-fullscreen"></i>
                         </button>
                     </div>
-
-                    
-
                     <div class="dropdown d-inline-block ms-2">
                         <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img class="rounded-circle header-profile-user" <?php echo "<img src='gambar/$rows[foto]'/>"; ?>
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-end">
-                            <!-- item-->
-                    
-                            <a class="dropdown-item" href="layout/logout.php"><i class="dripicons-exit font-size-16 align-middle me-2"></i>
-                                Logout</a>
-                        </div>
+                            <img class="rounded-circle header-profile-user" <?php echo "<img src='gambar/$rows[foto]'/>"; ?> </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <a class="dropdown-item" href="layout/logout.php"><i class="dripicons-exit font-size-16 align-middle me-2"></i>
+                                    Logout</a>
+                            </div>
                     </div>
-
                     <div class="dropdown d-inline-block">
                         <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect">
                             <i class="mdi mdi-spin mdi-cog"></i>
                         </button>
                     </div>
-
                 </div>
             </div>
         </header>
-
-        <!-- ========== Left Sidebar Start ========== -->
         <div class="vertical-menu">
-
             <div data-simplebar class="h-100">
-
-                <!--- Sidemenu -->
                 <div id="sidebar-menu">
-                    <!-- Left Menu Start -->
                     <ul class="metismenu list-unstyled" id="side-menu">
                         <li class="menu-title">Main</li>
-
                         <li>
                             <a href="dashboard.php" class="waves-effect">
                                 <i class="dripicons-device-desktop"></i>
                                 <span>Dashboard</span>
                             </a>
                         </li>
-<!-- 
-                        <li>
-                            <a href="javascript: void(0);" class="waves-effect">
-                                <i class="dripicons-blog"></i>
-                                <span> Forms </span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="form-poli.php">Form Poli</a></li>
-                                <li><a href="form-pasien.php">Form Pasien</a></li>
-                                <li><a href="form-tenagamedis.php">Form Tenaga Medis</a></li>
-                                <li><a href="form-.php">Form Jadwal</a></li>
-                                <li><a href="form-.php">Form FAQ</a></li>
-
-                            </ul>
-                        </li> -->
-
                         <li>
                             <a href="javascript: void(0);" class="has-arrow waves-effect">
                                 <i class="dripicons-list"></i>
@@ -168,17 +125,10 @@ $rows = mysqli_fetch_array($sql);
                                 <li><a href="tables-faq.php"><i class="dripicons-lightbulb"></i>FAQ</a></li>
                             </ul>
                         </li>
-
                     </ul>
                 </div>
-                <!-- Sidebar -->
             </div>
         </div>
-        <!-- Left Sidebar End -->
-
-        <!-- ============================================================== -->
-        <!-- Start right Content here -->
-        <!-- ============================================================== -->
         <div class="main-content">
             <div class="page-content">
                 <button style="margin-left:949px; margin-bottom:15px; background-color:#0AB885; color:white;" type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal"> <i class="fa-regular fa-plus"></i>
@@ -240,6 +190,7 @@ $rows = mysqli_fetch_array($sql);
 
                                         <thead>
                                             <tr>
+                                                <th style="background-color: #0AB885; color:white;">Nomor</th>
                                                 <th style="background-color: #0AB885; color:white;">ID</th>
                                                 <th style="background-color: #0AB885; color:white;">Nama</th>
                                                 <th style="background-color: #0AB885; color:white;">Email</th>
@@ -252,23 +203,23 @@ $rows = mysqli_fetch_array($sql);
                                         </thead>
                                         <tbody>
                                             <?php
-                                            $sql = mysqli_query($koneksi, "SELECT * from pasien");
-                                            while ($data = mysqli_fetch_array($sql)) {
+                                            foreach ($dt->data_pasien() as $data) {
+                                                $no++;
                                             ?>
                                                 <tr>
+                                                    <td><?= $no?></td>
                                                     <td><?= $data['id_pasien']; ?></td>
                                                     <td><?= $data['nama']; ?></td>
                                                     <td><?= $data['email']; ?></td>
                                                     <td><?= $data['jk']; ?></td>
                                                     <td><?= $data['alamat']; ?></td>
-                                                    <td align="center"><?php echo "<img src='gambar/$data[foto]' width='30' height='30' />";?></td>
+                                                    <td align="center"><?php echo "<img src='gambar/$data[foto]' width='30' height='30' />"; ?></td>
                                                     <td style=" max-width: 100px; overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><?= md5($data['password']); ?></td>
                                                     <td>
                                                         <button type="button" class="btn btn-danger"><a style="color : white;" href="pasien/delete.php?id=<?= $data['id_pasien']; ?>">Hapus</a></button>
                                                         <button type="button" class="btn btn-warning"><a style="color : white;" href="pasien/update.php?id=<?= $data['id_pasien']; ?>">Update</a></button>
                                                     </td>
                                                 </tr>
-
                                             <?php
                                             }
                                             ?>
@@ -318,45 +269,45 @@ $rows = mysqli_fetch_array($sql);
 
             <!-- Settings -->
             <hr class="mt-0" />
-            <div class = "p-4">
-            <h6 class="mt-4">Select Custom Colors</h6>
-            <div class="d-flex">
+            <div class="p-4">
+                <h6 class="mt-4">Select Custom Colors</h6>
+                <div class="d-flex">
 
-                <ul class="list-unstyled mb-0">
-                    <li class="form-check">
-                        <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-default" value="default" onchange="document.documentElement.setAttribute('data-theme-mode', 'default')" checked>
-                        <label class="form-check-label" for="theme-default">Default</label>
-                    </li>
-                    <li class="form-check">
-                        <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-orange" value="orange" onchange="document.documentElement.setAttribute('data-theme-mode', 'orange')">
-                        <label class="form-check-label" for="theme-orange">Orange</label>
-                    </li>
-                    <li class="form-check">
-                        <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-teal" value="teal" onchange="document.documentElement.setAttribute('data-theme-mode', 'teal')">
-                        <label class="form-check-label" for="theme-teal">Teal</label>
-                    </li>
-                </ul>
+                    <ul class="list-unstyled mb-0">
+                        <li class="form-check">
+                            <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-default" value="default" onchange="document.documentElement.setAttribute('data-theme-mode', 'default')" checked>
+                            <label class="form-check-label" for="theme-default">Default</label>
+                        </li>
+                        <li class="form-check">
+                            <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-orange" value="orange" onchange="document.documentElement.setAttribute('data-theme-mode', 'orange')">
+                            <label class="form-check-label" for="theme-orange">Orange</label>
+                        </li>
+                        <li class="form-check">
+                            <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-teal" value="teal" onchange="document.documentElement.setAttribute('data-theme-mode', 'teal')">
+                            <label class="form-check-label" for="theme-teal">Teal</label>
+                        </li>
+                    </ul>
 
-                <ul class="list-unstyled mb-0 ms-4">
-                    <li class="form-check">
-                        <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-purple" value="purple" onchange="document.documentElement.setAttribute('data-theme-mode', 'purple')">
-                        <label class="form-check-label" for="theme-purple">Purple</label>
-                    </li>
-                    <li class="form-check">
-                        <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-green" value="green" onchange="document.documentElement.setAttribute('data-theme-mode', 'green')">
-                        <label class="form-check-label" for="theme-green">Green</label>
-                    </li>
-                    <li class="form-check">
-                        <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-red" value="red" onchange="document.documentElement.setAttribute('data-theme-mode', 'red')">
-                        <label class="form-check-label" for="theme-red">Red</label>
-                    </li>
-                </ul>
+                    <ul class="list-unstyled mb-0 ms-4">
+                        <li class="form-check">
+                            <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-purple" value="purple" onchange="document.documentElement.setAttribute('data-theme-mode', 'purple')">
+                            <label class="form-check-label" for="theme-purple">Purple</label>
+                        </li>
+                        <li class="form-check">
+                            <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-green" value="green" onchange="document.documentElement.setAttribute('data-theme-mode', 'green')">
+                            <label class="form-check-label" for="theme-green">Green</label>
+                        </li>
+                        <li class="form-check">
+                            <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-red" value="red" onchange="document.documentElement.setAttribute('data-theme-mode', 'red')">
+                            <label class="form-check-label" for="theme-red">Red</label>
+                        </li>
+                    </ul>
 
+                </div>
             </div>
-        </div>
 
-    </div>
-    <!-- end slimscroll-menu-->
+        </div>
+        <!-- end slimscroll-menu-->
     </div>
     <!-- /Right-bar -->
 

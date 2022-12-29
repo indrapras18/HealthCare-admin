@@ -20,10 +20,8 @@ $rows = mysqli_fetch_array($sql);
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
     <link rel="shortcut icon" href="../../img/logo.png">
-
     <!-- Bootstrap Css -->
     <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
-
     <!-- Icons Css -->
     <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <!-- App Css-->
@@ -32,16 +30,13 @@ $rows = mysqli_fetch_array($sql);
 
 </head>
 
-
 <body data-sidebar="dark">
-
     <!-- Loader -->
     <div id="preloader">
         <div id="status">
             <div class="spinner"></div>
         </div>
     </div>
-
     <!-- Begin page -->
     <div id="layout-wrapper">
 
@@ -348,45 +343,45 @@ $rows = mysqli_fetch_array($sql);
 
             <!-- Settings -->
             <hr class="mt-0" />
-            <div class = "p-4"> 
-            <h6 class="mt-4">Select Custom Colors</h6>
-            <div class="d-flex">
+            <div class="p-4">
+                <h6 class="mt-4">Select Custom Colors</h6>
+                <div class="d-flex">
 
-                <ul class="list-unstyled mb-0">
-                    <li class="form-check">
-                        <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-default" value="default" onchange="document.documentElement.setAttribute('data-theme-mode', 'default')" checked>
-                        <label class="form-check-label" for="theme-default">Default</label>
-                    </li>
-                    <li class="form-check">
-                        <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-orange" value="orange" onchange="document.documentElement.setAttribute('data-theme-mode', 'orange')">
-                        <label class="form-check-label" for="theme-orange">Orange</label>
-                    </li>
-                    <li class="form-check">
-                        <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-teal" value="teal" onchange="document.documentElement.setAttribute('data-theme-mode', 'teal')">
-                        <label class="form-check-label" for="theme-teal">Teal</label>
-                    </li>
-                </ul>
+                    <ul class="list-unstyled mb-0">
+                        <li class="form-check">
+                            <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-default" value="default" onchange="document.documentElement.setAttribute('data-theme-mode', 'default')" checked>
+                            <label class="form-check-label" for="theme-default">Default</label>
+                        </li>
+                        <li class="form-check">
+                            <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-orange" value="orange" onchange="document.documentElement.setAttribute('data-theme-mode', 'orange')">
+                            <label class="form-check-label" for="theme-orange">Orange</label>
+                        </li>
+                        <li class="form-check">
+                            <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-teal" value="teal" onchange="document.documentElement.setAttribute('data-theme-mode', 'teal')">
+                            <label class="form-check-label" for="theme-teal">Teal</label>
+                        </li>
+                    </ul>
 
-                <ul class="list-unstyled mb-0 ms-4">
-                    <li class="form-check">
-                        <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-purple" value="purple" onchange="document.documentElement.setAttribute('data-theme-mode', 'purple')">
-                        <label class="form-check-label" for="theme-purple">Purple</label>
-                    </li>
-                    <li class="form-check">
-                        <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-green" value="green" onchange="document.documentElement.setAttribute('data-theme-mode', 'green')">
-                        <label class="form-check-label" for="theme-green">Green</label>
-                    </li>
-                    <li class="form-check">
-                        <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-red" value="red" onchange="document.documentElement.setAttribute('data-theme-mode', 'red')">
-                        <label class="form-check-label" for="theme-red">Red</label>
-                    </li>
-                </ul>
+                    <ul class="list-unstyled mb-0 ms-4">
+                        <li class="form-check">
+                            <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-purple" value="purple" onchange="document.documentElement.setAttribute('data-theme-mode', 'purple')">
+                            <label class="form-check-label" for="theme-purple">Purple</label>
+                        </li>
+                        <li class="form-check">
+                            <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-green" value="green" onchange="document.documentElement.setAttribute('data-theme-mode', 'green')">
+                            <label class="form-check-label" for="theme-green">Green</label>
+                        </li>
+                        <li class="form-check">
+                            <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-red" value="red" onchange="document.documentElement.setAttribute('data-theme-mode', 'red')">
+                            <label class="form-check-label" for="theme-red">Red</label>
+                        </li>
+                    </ul>
 
+                </div>
             </div>
-        </div>
 
-    </div>
-    <!-- end slimscroll-menu-->
+        </div>
+        <!-- end slimscroll-menu-->
     </div>
     <!-- /Right-bar -->
 

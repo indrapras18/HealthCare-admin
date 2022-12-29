@@ -62,7 +62,6 @@
 <?php
 include('../../../core/koneksi.php');
 error_reporting(0);
-// cek validasi email
 if (isset($_POST['btn'])) {
     $uname = $_POST['username'];
     $email = $_POST['email'];

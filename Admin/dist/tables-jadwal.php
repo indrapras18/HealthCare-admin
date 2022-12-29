@@ -238,6 +238,7 @@ $rows = mysqli_fetch_array($sql)
 
                                         <thead>
                                             <tr>
+                                                <th style="background-color: #0AB885; color:white;">Nomor</th>
                                                 <th style="background-color: #0AB885; color:white;">ID Jadwal</th>
                                                 <th style="background-color: #0AB885; color:white;">Jadwal Mulai</th>
                                                 <th style="background-color: #0AB885; color:white;">Jadwal Selesai</th>
@@ -247,10 +248,12 @@ $rows = mysqli_fetch_array($sql)
                                         </thead>
                                         <tbody>
                                             <?php
-                                            $no = 1;
+                                            $no = 0;
                                             foreach ($dt->data_jadwal() as $data) {
+                                                $no++;
                                             ?>
                                                 <tr>
+                                                    <td><?= $no?></td>
                                                     <td><?= $data['id_jadwal']; ?></td>
                                                     <td><?= $data['jadwal_mulai']; ?></td>
                                                     <td><?= $data['jadwal_selesai']; ?></td>

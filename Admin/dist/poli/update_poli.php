@@ -16,7 +16,7 @@ $rows = mysqli_fetch_array($sql);
         <img src="../../../img/logo.png" alt="rocket_contact" />
     </div>
     <form method="post">
-        <h3>Update Tenaga Medis</h3>
+        <h3>Update Poli</h3>
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">

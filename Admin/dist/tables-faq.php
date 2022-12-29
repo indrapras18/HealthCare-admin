@@ -5,6 +5,7 @@ $id = $_SESSION['id'];
 $email = $_SESSION['email'];
 $sql = mysqli_query($koneksi, "SELECT * FROM login_admin WHERE id = $id");
 $rows = mysqli_fetch_array($sql);
+// error_reporting(0);
 ?>
 <!doctype html>
 <html lang="en">
@@ -209,6 +210,7 @@ $rows = mysqli_fetch_array($sql);
                                     <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                         <thead>
                                             <tr>
+                                                <th style="background-color: #0AB885; color:white;">Nomor</th>
                                                 <th style="background-color: #0AB885; color:white;">ID FAQ</th>
                                                 <th style="background-color: #0AB885; color:white;">Pertanyaan</th>
                                                 <th style="background-color: #0AB885; color:white;">Jawaban</th>
@@ -217,10 +219,13 @@ $rows = mysqli_fetch_array($sql);
                                         </thead>
                                         <tbody>
                                             <?php
+                                            $no = 0;
                                             $sql = mysqli_query($koneksi, "SELECT * from faq");
                                             while ($data = mysqli_fetch_array($sql)) {
+                                                $no++;
                                             ?>
                                                 <tr>
+                                                    <td><?= $no ?></td>
                                                     <td><?= $data['id_faq']; ?></td>
                                                     <td><?= $data['pertanyaan']; ?></td>
                                                     <td><?= $data['jawaban']; ?></td>
@@ -279,45 +284,45 @@ $rows = mysqli_fetch_array($sql);
 
             <!-- Settings -->
             <hr class="mt-0" />
-            <div class = "p-4">
-            <h6 class="mt-4">Select Custom Colors</h6>
-            <div class="d-flex">
+            <div class="p-4">
+                <h6 class="mt-4">Select Custom Colors</h6>
+                <div class="d-flex">
 
-                <ul class="list-unstyled mb-0">
-                    <li class="form-check">
-                        <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-default" value="default" onchange="document.documentElement.setAttribute('data-theme-mode', 'default')" checked>
-                        <label class="form-check-label" for="theme-default">Default</label>
-                    </li>
-                    <li class="form-check">
-                        <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-orange" value="orange" onchange="document.documentElement.setAttribute('data-theme-mode', 'orange')">
-                        <label class="form-check-label" for="theme-orange">Orange</label>
-                    </li>
-                    <li class="form-check">
-                        <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-teal" value="teal" onchange="document.documentElement.setAttribute('data-theme-mode', 'teal')">
-                        <label class="form-check-label" for="theme-teal">Teal</label>
-                    </li>
-                </ul>
+                    <ul class="list-unstyled mb-0">
+                        <li class="form-check">
+                            <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-default" value="default" onchange="document.documentElement.setAttribute('data-theme-mode', 'default')" checked>
+                            <label class="form-check-label" for="theme-default">Default</label>
+                        </li>
+                        <li class="form-check">
+                            <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-orange" value="orange" onchange="document.documentElement.setAttribute('data-theme-mode', 'orange')">
+                            <label class="form-check-label" for="theme-orange">Orange</label>
+                        </li>
+                        <li class="form-check">
+                            <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-teal" value="teal" onchange="document.documentElement.setAttribute('data-theme-mode', 'teal')">
+                            <label class="form-check-label" for="theme-teal">Teal</label>
+                        </li>
+                    </ul>
 
-                <ul class="list-unstyled mb-0 ms-4">
-                    <li class="form-check">
-                        <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-purple" value="purple" onchange="document.documentElement.setAttribute('data-theme-mode', 'purple')">
-                        <label class="form-check-label" for="theme-purple">Purple</label>
-                    </li>
-                    <li class="form-check">
-                        <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-green" value="green" onchange="document.documentElement.setAttribute('data-theme-mode', 'green')">
-                        <label class="form-check-label" for="theme-green">Green</label>
-                    </li>
-                    <li class="form-check">
-                        <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-red" value="red" onchange="document.documentElement.setAttribute('data-theme-mode', 'red')">
-                        <label class="form-check-label" for="theme-red">Red</label>
-                    </li>
-                </ul>
+                    <ul class="list-unstyled mb-0 ms-4">
+                        <li class="form-check">
+                            <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-purple" value="purple" onchange="document.documentElement.setAttribute('data-theme-mode', 'purple')">
+                            <label class="form-check-label" for="theme-purple">Purple</label>
+                        </li>
+                        <li class="form-check">
+                            <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-green" value="green" onchange="document.documentElement.setAttribute('data-theme-mode', 'green')">
+                            <label class="form-check-label" for="theme-green">Green</label>
+                        </li>
+                        <li class="form-check">
+                            <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-red" value="red" onchange="document.documentElement.setAttribute('data-theme-mode', 'red')">
+                            <label class="form-check-label" for="theme-red">Red</label>
+                        </li>
+                    </ul>
 
+                </div>
             </div>
-        </div>
 
-    </div>
-    <!-- end slimscroll-menu-->
+        </div>
+        <!-- end slimscroll-menu-->
     </div>
     <!-- /Right-bar -->
 
@@ -349,7 +354,6 @@ $rows = mysqli_fetch_array($sql);
 
     <!-- Datatable init js -->
     <script src="assets/js/pages/datatables.init.js"></script>
-
     <script src="assets/js/app.js"></script>
 
 </body>

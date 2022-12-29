@@ -215,6 +215,7 @@ $rows = mysqli_fetch_array($sql);
                                     <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                         <thead>
                                             <tr>
+                                                <th style="background-color: #0AB885; color:white;">Nomor</th>
                                                 <th style="background-color: #0AB885; color:white;">ID Tenaga Medis</th>
                                                 <th style="background-color: #0AB885; color:white;">Nama</th>
                                                 <th style="background-color: #0AB885; color:white;">Email</th>
@@ -227,13 +228,15 @@ $rows = mysqli_fetch_array($sql);
                                         </thead>
                                         <tbody>
                                             <?php
-                                            $no = 1;
+                                            $no = 0;
                                             foreach ($dt->data_medis() as $data) {
+                                                $no++;
                                             ?>
                                                 <tr>
+                                                    <td><?= $no?></td>
                                                     <td><?= $data['id_tenagamedis']; ?></td>
                                                     <td><?= $data['nama']; ?></td>
-                                                    <td><?= $data['email']; ?></td>
+                                                    <td style=" max-width: 100px; overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><?= $data['email']; ?></td>
                                                     <td><?= $data['no_str']; ?></td>
                                                     <td><?= $data['profesi']; ?></td>
                                                     <td style=" max-width: 100px; overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><?= md5($data['password']); ?></td>
