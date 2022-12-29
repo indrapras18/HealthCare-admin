@@ -1,5 +1,7 @@
 <?php
 include('../../core/koneksi.php');
+include('Data.php');
+$dt = new data();
 session_start();
 $id = $_SESSION['id'];
 $email = $_SESSION['email'];
@@ -32,24 +34,19 @@ $rows = mysqli_fetch_array($sql);
     <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <!-- App Css-->
     <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
 
 </head>
 
 <body data-sidebar="dark">
-
-
-    <!-- Loader -->
     <div id="preloader">
         <div id="status">
             <div class="spinner"></div>
         </div>
     </div>
-
-    <!-- Begin page -->
     <div id="layout-wrapper">
-
         <header id="page-topbar">
             <div class="navbar-header">
                 <div class="d-flex">
@@ -79,9 +76,8 @@ $rows = mysqli_fetch_array($sql);
                     </button>
 
                     <div class="d-none d-sm-block ms-2">
-                        <h4 class="page-title font-size-18">FAQ</h4>
+                        <h4 class="page-title font-size-18">Pasien</h4>
                     </div>
-
                 </div>
                 <div class="d-flex">
                     <div class="dropdown d-none d-lg-inline-block">
@@ -93,57 +89,29 @@ $rows = mysqli_fetch_array($sql);
                         <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img class="rounded-circle header-profile-user" <?php echo "<img src='gambar/$rows[foto]'/>"; ?> </button>
                             <div class="dropdown-menu dropdown-menu-end">
-                                <!-- item-->
-
-
                                 <a class="dropdown-item" href="layout/logout.php"><i class="dripicons-exit font-size-16 align-middle me-2"></i>
                                     Logout</a>
                             </div>
                     </div>
-
                     <div class="dropdown d-inline-block">
                         <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect">
                             <i class="mdi mdi-spin mdi-cog"></i>
                         </button>
                     </div>
-
                 </div>
             </div>
         </header>
-
-        <!-- ========== Left Sidebar Start ========== -->
         <div class="vertical-menu">
-
             <div data-simplebar class="h-100">
-
-                <!--- Sidemenu -->
                 <div id="sidebar-menu">
-                    <!-- Left Menu Start -->
                     <ul class="metismenu list-unstyled" id="side-menu">
                         <li class="menu-title">Main</li>
-
                         <li>
                             <a href="dashboard.php" class="waves-effect">
                                 <i class="dripicons-device-desktop"></i>
                                 <span>Dashboard</span>
                             </a>
                         </li>
-
-                        <!-- <li>
-                            <a href="javascript: void(0);" class="waves-effect">
-                                <i class="dripicons-blog"></i>
-                                <span> Forms </span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="form-poli.php">Form Poli</a></li>
-                                <li><a href="form-pasien.php">Form Pasien</a></li>
-                                <li><a href="form-tenagamedis.php">Form Tenaga Medis</a></li>
-                                <li><a href="form-.php">Form Jadwal</a></li>
-                                <li><a href="form-.php">Form FAQ</a></li>
-
-                            </ul>
-                        </li> -->
-
                         <li>
                             <a href="javascript: void(0);" class="has-arrow waves-effect">
                                 <i class="dripicons-list"></i>
@@ -158,21 +126,12 @@ $rows = mysqli_fetch_array($sql);
                                 <li><a href="tables-detail.php"><i class="dripicons-lightbulb"></i>Detail</a></li>
                             </ul>
                         </li>
-
                     </ul>
                 </div>
-                <!-- Sidebar -->
             </div>
         </div>
-        <!-- Left Sidebar End -->
-
-        <!-- ============================================================== -->
-        <!-- Start right Content here -->
-        <!-- ============================================================== -->
         <div class="main-content">
-
             <div class="page-content">
-                <!-- modal -->
                 <button style="margin-left:949px; margin-bottom:15px; background-color:#0AB885; color:white;" type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal"> <i class="fa-regular fa-plus"></i>
                     Tambah Data
                 </button>
@@ -180,61 +139,88 @@ $rows = mysqli_fetch_array($sql);
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">FAQ</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">Form Pasien</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
                                 <form action="" method="post">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Pertanyaan</label>
-                                        <textarea class="form-control" name="pertanyaan" id="pertanyaan" placeholder="Tulis Pertanyaan...."></textarea>
+                                        <label for="exampleInputEmail1">Nama</label>
+                                        <input type="text" name="nama" class="form-control" id="exampleInputEmail1" placeholder="Nama Paseien" required>
                                     </div>
-                                    <div class="form-group"><label for="message-text" class="col-form-label">Jawaban</label>
-                                        <textarea class="form-control" name="jawaban" id="jawaban" placeholder="Tulis Jawaban...."></textarea>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Email</label>
+                                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email Pasien">
                                     </div>
+                                    <div>
+                                        <label for="exampleInputEmail1">Jenis Kelamins</label>
+                                        <select class="form-select" name="jk" aria-label="Default select example">
+                                            <option selected>Open this select menu</option>
+                                            <option value="L">Laki Laki</option>
+                                            <option value="P">Perempuan</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Alamat</label>
+                                        <input type="text" name="alamat" class="form-control" id="exampleInputPassword1" placeholder="Alamat">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Foto</label>
+                                        <input type="file" name="foto" class="form-control" id="exampleInputPassword1" placeholder="Foto">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Password</label>
+                                        <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                    </div>
+
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="fa-solid fa-xmark"></i> Tutup</button>
-                                <button type="submit" class="btn btn-success" name="btn"><i class="fa-regular fa-floppy-disk"></i> Simpan</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                                <button type="submit" class="btn btn-success" name="btn">Simpan</button>
                             </div>
                             </form>
                         </div>
                     </div>
                 </div>
-
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-body">
                                     <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+
                                         <thead>
                                             <tr>
                                                 <th style="background-color: #0AB885; color:white;">Nomor</th>
-                                                <th style="background-color: #0AB885; color:white;">ID FAQ</th>
-                                                <th style="background-color: #0AB885; color:white;">Pertanyaan</th>
-                                                <th style="background-color: #0AB885; color:white;">Jawaban</th>
+                                                <th style="background-color: #0AB885; color:white;">ID</th>
+                                                <th style="background-color: #0AB885; color:white;">Nama</th>
+                                                <th style="background-color: #0AB885; color:white;">Email</th>
+                                                <th style="background-color: #0AB885; color:white;">Jenis Kelmin</th>
+                                                <th style="background-color: #0AB885; color:white;">Alamat</th>
+                                                <th style="background-color: #0AB885; color:white;">Foto</th>
+                                                <th style="background-color: #0AB885; color:white;">Password</th>
                                                 <th style="background-color: #0AB885; color:white;">Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
-                                            $no = 0;
-                                            $sql = mysqli_query($koneksi, "SELECT * from faq");
-                                            while ($data = mysqli_fetch_array($sql)) {
+                                            foreach ($dt->data_pasien() as $data) {
                                                 $no++;
                                             ?>
                                                 <tr>
                                                     <td><?= $no ?></td>
-                                                    <td><?= $data['id_faq']; ?></td>
-                                                    <td><?= $data['pertanyaan']; ?></td>
-                                                    <td><?= $data['jawaban']; ?></td>
+                                                    <td><?= $data['id_pasien']; ?></td>
+                                                    <td><?= $data['nama']; ?></td>
+                                                    <td><?= $data['email']; ?></td>
+                                                    <td><?= $data['jk']; ?></td>
+                                                    <td><?= $data['alamat']; ?></td>
+                                                    <td align="center"><?php echo "<img src='gambar/$data[foto]' width='30' height='30' />"; ?></td>
+                                                    <td style=" max-width: 100px; overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><?= md5($data['password']); ?></td>
                                                     <td>
-                                                        <button type="button" class="btn btn-danger"><a style="color : white;" href="faq/delete.php?id=<?= $data['id_faq']; ?>">Hapus</a></button>
-                                                        <button type="button" class="btn btn-warning"><a style="color : white;" href="faq/update.php?id=<?= $data['id_faq']; ?>">Update</a></button>
+                                                        <button type="button" class="btn btn-danger"><a style="color : white;" href="pasien/delete.php?id=<?= $data['id_pasien']; ?>">Hapus</a></button>
+                                                        <button type="button" class="btn btn-warning"><a style="color : white;" href="pasien/update.php?id=<?= $data['id_pasien']; ?>">Update</a></button>
                                                     </td>
                                                 </tr>
-
                                             <?php
                                             }
                                             ?>
@@ -354,17 +340,19 @@ $rows = mysqli_fetch_array($sql);
 
     <!-- Datatable init js -->
     <script src="assets/js/pages/datatables.init.js"></script>
+
     <script src="assets/js/app.js"></script>
 
 </body>
 
 </html>
 <?php
+include('../../core/koneksi.php');
 if (isset($_POST['btn'])) {
-    $sql = mysqli_query($koneksi, "INSERT INTO faq VALUES('','$_POST[pertanyaan]','$_POST[jawaban]')");
+    $sql = mysqli_query($koneksi, "INSERT INTO pasien VALUES ('','$_POST[nama]','$_POST[email]','$_POST[jk]','$_POST[alamat]','$_POST[foto]','$_POST[password]')");
     if ($sql) {
         echo "<script>alert('data ditambahkan')
-        window.location.href = 'tables-faq.php'
+        window.location.href = 'tables-pasien.php'
         </script>";
     }
 }

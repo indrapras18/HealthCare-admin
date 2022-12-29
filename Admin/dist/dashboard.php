@@ -122,21 +122,6 @@ $rows = mysqli_fetch_array($sql);
                                 <span>Dashboard</span>
                             </a>
                         </li>
-
-                        <!-- <li>
-                            <a href="javascript: void(0);" class="waves-effect">
-                                <i class="dripicons-blog"></i></span>
-                                <span> Forms </span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="form-poli.php">Form Poli</a></li>
-                                <li><a href="form-pasien.php">Form Pasien</a></li>
-                                <li><a href="form-tenagamedis.php">Form Tenaga Medis</a></li>
-                                <li><a href="form-.php">Form Jadwal</a></li>
-                                <li><a href="form-.php">Form FAQ</a></li>
-                            </ul>
-                        </li> -->
-
                         <li>
                             <a href="javascript: void(0);" class="has-arrow waves-effect">
                                 <i class="dripicons-list"></i>
@@ -148,6 +133,7 @@ $rows = mysqli_fetch_array($sql);
                                 <li><a href="tables-pasien.php"><i class="dripicons-user"></i>Pasien</a></li>
                                 <li><a href="tables-jadwal.php"><i class="dripicons-to-do"></i>Jadwal</a></li>
                                 <li><a href="tables-faq.php"><i class="dripicons-lightbulb"></i>FAQ</a></li>
+                                <li><a href="tables-detail.php"><i class="dripicons-lightbulb"></i>Detail</a></li>
                             </ul>
                         </li>
 

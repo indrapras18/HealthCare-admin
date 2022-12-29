@@ -43,8 +43,20 @@ $rows = mysqli_fetch_array($sql);
                         <input type="password" name="password" class="form-control" placeholder="Maukkan Password *" value="<?= $rows['password']; ?>" />
                     </div>
                     <div class="form-group">
-                        <label>Poli</label>
-                        <input type="text" name="poli" class="form-control" placeholder="Pilih Poli *" value="<?= $rows['id_poli']; ?>" />
+                        <div>
+                            <label for="exampleFormControlInput1">Poli</label>
+                            <select class="form-select" name="poli" aria-label="Default select example">
+                                <option selected>Open this select menu</option>
+                                <?php
+                                $sql = mysqli_query($koneksi, "SELECT * FROM poli");
+                                foreach ($sql as $a) :
+                                ?>
+                                    <option value="<?= $a['id_poli']; ?>"><?= $a['nama_poli']; ?></option>
+                                <?php
+                                endforeach;
+                                ?>
+                            </select>
+                        </div>
                         <div class="modal-footer">
                             <button type="submit" class="btn btn-danger" data-bs-dismiss="modal"><i class="fa-solid fa-xmark"> <a href="update_tenaga_medis.php"></a></i><a href="../tables-tenaga-medis.php" style="color:white;"> Kembali</a></button>
                             <button type="submit" class="btn btn-success" name="btn"><i class="fa-regular fa-floppy-disk"></i> Simpan</button>
@@ -56,7 +68,7 @@ $rows = mysqli_fetch_array($sql);
 </div>
 <?php
 if (isset($_POST['btn'])) {
-    $sql = mysqli_query($koneksi, "UPDATE tenaga_medis SET nama = '$_POST[nama]',email = '$_POST[email]',no_str = '$_POST[no_str]',password = '$_POST[password]' WHERE id_tenagamedis = $id");
+    $sql = mysqli_query($koneksi, "UPDATE tenaga_medis SET nama = '$_POST[nama]',email = '$_POST[email]',no_str = '$_POST[no_str]',password = '$_POST[password]', id_poli= '$_POST[poli]' WHERE id_tenagamedis = $id");
     echo "<script>alert('Edit Berhasil')
         window.location.href = '../tables-tenaga-medis.php'
         </script>";
