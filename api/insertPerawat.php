@@ -5,8 +5,9 @@ $email = $_POST["email"];
 $no = $_POST["no_str"];
 $prof = $_POST["profesi"];
 $pass = $_POST["password"];
+$id = $_POST["id_poli"];
 
-$sql = mysqli_query($koneksi,"insert into tenaga_medis set nama='$nama',email='$email',no_str='$no',profesi='$prof',password='$pass'");
+$sql = mysqli_query($koneksi,"insert into tenaga_medis set nama='$nama',email='$email',no_str='$no',profesi='$prof',password='$pass',id_poli='$id'");
 if($sql){
     echo json_encode(['pesan' => 'sukses']);
 }else {

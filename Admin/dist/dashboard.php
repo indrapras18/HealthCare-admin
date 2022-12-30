@@ -132,8 +132,8 @@ $rows = mysqli_fetch_array($sql);
                                 <li><a href="tables-poli.php"><i class="dripicons-medical"></i>Poli</a></li>
                                 <li><a href="tables-pasien.php"><i class="dripicons-user"></i>Pasien</a></li>
                                 <li><a href="tables-jadwal.php"><i class="dripicons-to-do"></i>Jadwal</a></li>
-                                <li><a href="tables-faq.php"><i class="dripicons-lightbulb"></i>FAQ</a></li>
                                 <li><a href="tables-detail.php"><i class="dripicons-lightbulb"></i>Detail</a></li>
+                                <li><a href="tables-faq.php"><i class="dripicons-lightbulb"></i>FAQ</a></li>
                             </ul>
                         </li>
 

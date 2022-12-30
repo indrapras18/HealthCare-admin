@@ -227,8 +227,8 @@ $rows = mysqli_fetch_array($sql);
                                                 <tr>
                                                     <td><?= $no ?></td>
                                                     <td><?= $data['id_faq']; ?></td>
-                                                    <td style=" max-width: 100px; overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><?= $data['pertanyaan']; ?></td>
-                                                    <td style=" max-width: 100px; overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><?= $data['jawaban']; ?></td>
+                                                    <td><?= $data['pertanyaan']; ?></td>
+                                                    <td><?= $data['jawaban']; ?></td>
                                                     <td>
                                                         <button type="button" class="btn btn-danger"><a style="color : white;" href="faq/delete.php?id=<?= $data['id_faq']; ?>">Hapus</a></button>
                                                         <button type="button" class="btn btn-warning"><a style="color : white;" href="faq/update.php?id=<?= $data['id_faq']; ?>">Update</a></button>
