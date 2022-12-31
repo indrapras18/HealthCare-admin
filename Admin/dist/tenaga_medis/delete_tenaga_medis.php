@@ -5,4 +5,3 @@ $sql = mysqli_query($koneksi,"DELETE FROM tenaga_medis WHERE id_tenagamedis = $i
 if($sql){
 	header("location:../tables-tenaga-medis.php");
  }
-?>

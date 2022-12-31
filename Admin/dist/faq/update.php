@@ -29,6 +29,7 @@ $rows = mysqli_fetch_array($sql);
                     <div class="form-group">
                         <label>Jawaban</label>
                         <input type="text" name="jawaban" class="form-control" placeholder="masukan jawaban" value="<?= $rows['jawaban']; ?>" />
+                        
                     </div>
                     <div class="form-group">
                         <div class="modal-footer">

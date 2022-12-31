@@ -19,7 +19,6 @@ $rows = mysqli_fetch_array($sql);
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
     <link rel="shortcut icon" href="../../img/logo.png">
-
     <!-- DataTables -->
     <link href="assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
     <link href="assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
@@ -41,12 +40,18 @@ $rows = mysqli_fetch_array($sql);
 </head>
 
 <body data-sidebar="dark">
+
+
+    <!-- Loader -->
     <div id="preloader">
         <div id="status">
             <div class="spinner"></div>
         </div>
     </div>
+
+    <!-- Begin page -->
     <div id="layout-wrapper">
+
         <header id="page-topbar">
             <div class="navbar-header">
                 <div class="d-flex">
@@ -76,36 +81,52 @@ $rows = mysqli_fetch_array($sql);
                     </button>
 
                     <div class="d-none d-sm-block ms-2">
-                        <h4 class="page-title font-size-18">Pasien</h4>
+                        <h4 class="page-title font-size-18">Poli</h4>
                     </div>
+
                 </div>
+
+                <!-- Search input -->
                 <div class="d-flex">
+
                     <div class="dropdown d-none d-lg-inline-block">
                         <button type="button" class="btn header-item noti-icon waves-effect" data-bs-toggle="fullscreen">
                             <i class="mdi mdi-fullscreen"></i>
                         </button>
                     </div>
+
                     <div class="dropdown d-inline-block ms-2">
                         <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img class="rounded-circle header-profile-user" <?php echo "<img src='gambar/$rows[foto]'/>"; ?> </button>
                             <div class="dropdown-menu dropdown-menu-end">
+                                <!-- item-->
+
                                 <a class="dropdown-item" href="layout/logout.php"><i class="dripicons-exit font-size-16 align-middle me-2"></i>
                                     Logout</a>
                             </div>
                     </div>
+
                     <div class="dropdown d-inline-block">
                         <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect">
                             <i class="mdi mdi-spin mdi-cog"></i>
                         </button>
                     </div>
+
                 </div>
             </div>
         </header>
+
+        <!-- ========== Left Sidebar Start ========== -->
         <div class="vertical-menu">
+
             <div data-simplebar class="h-100">
+
+                <!--- Sidemenu -->
                 <div id="sidebar-menu">
+                    <!-- Left Menu Start -->
                     <ul class="metismenu list-unstyled" id="side-menu">
                         <li class="menu-title">Main</li>
+
                         <li>
                             <a href="dashboard.php" class="waves-effect">
                                 <i class="dripicons-device-desktop"></i>
@@ -126,118 +147,77 @@ $rows = mysqli_fetch_array($sql);
                                 <li><a href="tables-faq.php"><i class="dripicons-lightbulb"></i>FAQ</a></li>
                             </ul>
                         </li>
+
                     </ul>
                 </div>
+                <!-- Sidebar -->
             </div>
         </div>
+        <!-- Left Sidebar End -->
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
         <div class="main-content">
             <div class="page-content">
-                <button style="margin-left:949px; margin-bottom:15px; background-color:#0AB885; color:white;" type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal"> <i class="fa-regular fa-plus"></i>
-                    Tambah Data
+                <button style="margin-left:959px; margin-bottom:15px; background-color:#0AB885; color:white;" type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <i class="fa-regular fa-plus"></i> Tambah Data
                 </button>
+
+                <!-- Modal -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Form keluhan</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">Form Poli</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
                                 <form action="" method="post">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Keluhan</label>
-                                        <textarea class="form-control" name="keluhan" id="keluhan" placeholder="Tulis keluhan pasien...."></textarea>
+                                        <label for="exampleFormControlInput1">Nama Poli</label>
+                                        <input type="text" name="nama_poli" class="form-control" id="NamaPoli" placeholder="Nama Poli" required>
                                     </div>
-                                    <div>
-                                        <label for="exampleFormControlInput1">Pasien</label>
-                                        <select class="form-select" name="id_pasien" aria-label="Default select example">
-                                            <option selected>Open this select menu</option>
-                                            <?php
-                                            $sql = mysqli_query($koneksi, "SELECT * FROM pasien");
-                                            foreach ($sql as $a) :
-                                            ?>
-                                                <option value="<?= $a['id_pasien']; ?>"><?= $a['nama']; ?></option>
-                                            <?php
-                                            endforeach;
-                                            ?>
-                                        </select>
-                                    </div>
-                                    <div>
-                                        <label for="exampleFormControlInput1">Tenaga Medis</label>
-                                        <select class="form-select" name="id_medis" aria-label="Default select example">
-                                            <option selected>Open this select menu</option>
-                                            <?php
-                                            $sql = mysqli_query($koneksi, "SELECT * FROM tenaga_medis");
-                                            foreach ($sql as $a) :
-                                            ?>
-                                                <option value="<?= $a['id_tenagamedis']; ?>"><?= $a['nama']; ?></option>
-                                            <?php
-                                            endforeach;
-                                            ?>
-                                        </select>
-                                    </div>
-                                    <div>
-                                        <label for="exampleFormControlInput1">Jadwal Mulai</label>
-                                        <select class="form-select" name="id_jadwal" aria-label="Default select example">
-                                            <option selected>Open this select menu</option>
-                                            <?php
-                                            $sql = mysqli_query($koneksi, "SELECT * FROM jadwal");
-                                            foreach ($sql as $a) :
-                                            ?>
-                                                <option value="<?= $a['id_jadwal']; ?>"><?= $a['jadwal_mulai']; ?></option>
-                                            <?php
-                                            endforeach;
-                                            ?>
-                                        </select>
-                                    </div>
+
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                                <button type="submit" class="btn btn-success" name="btn">Simpan</button>
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal"> <i class="fa-solid fa-xmark"></i> Tutup</button>
+                                <button type="submit" class="btn btn-success" name="btn"> <i class="fa-solid fa-floppy-disk"></i> Simpan</button>
                             </div>
                             </form>
                         </div>
                     </div>
                 </div>
                 <div class="container-fluid">
+
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-
+                                    <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                         <thead>
                                             <tr>
                                                 <th style="background-color: #0AB885; color:white;">Nomor</th>
-                                                <th style="background-color: #0AB885; color:white;">ID Detail Pasien</th>
-                                                <th style="background-color: #0AB885; color:white;">Nama Pasien</th>
-                                                <th style="background-color: #0AB885; color:white;">Jenis Kelmin Pasien</th>
+                                                <th style="background-color: #0AB885; color:white;">ID Poli</th>
+                                                <th style="background-color: #0AB885; color:white;">Nama Poli</th>
                                                 <th style="background-color: #0AB885; color:white;">Tenaga Medis</th>
-                                                <th style="background-color: #0AB885; color:white;">No STR</th>
-                                                <th style="background-color: #0AB885; color:white;">Profesi</th>
-                                                <th style="background-color: #0AB885; color:white;">Jadwal Praktik</th>
-                                                <th style="background-color: #0AB885; color:white;">Keluhan</th>
-                                                <th style="background-color: #0AB885; color:white;">Aksi</th>
+                                                <th style="background-color: #0AB885; color:white;" colspan="2">Aksi</th>
                                             </tr>
                                         </thead>
+
                                         <tbody>
                                             <?php
-                                            foreach ($dt->data_detail() as $data) {
+                                            $no = 0;
+                                            foreach ($dt->data_poli() as $data) {
                                                 $no++;
                                             ?>
                                                 <tr>
-                                                    <td><?= $no ?></td>
-                                                    <td><?= $data['id_detail_pasien']; ?></td>
-                                                    <td><?= $data['nama']; ?></td>
-                                                    <td><?= $data['jk']; ?></td>
-                                                    <td><?= $data['nama']; ?></td>
-                                                    <td><?= $data['no_str']; ?></td>
-                                                    <td><?= $data['profesi']; ?></td>
-                                                    <td><?= $data['jadwal_mulai']; ?></td>
-                                                    <td><?= $data['keluhan']; ?></td>
-                                                    <td>
-                                                        <button type="button" class="btn btn-danger"><a style="color : white;" href="detail/delete.php?id=<?= $data['id_detail_pasien']; ?>">Hapus</a></button>
-                                                    </td>
+                                                    <td><?= $no?></td>
+                                                    <td><?= $data['id_poli']; ?></td>
+                                                    <td><?= $data['nama_poli']; ?></td>
+                                                    <td>jamal keknya</td>
+                                                    <td><button type="button" class="btn btn-danger"><a style="color : white;" href="poli/delete_poli.php?id=<?= $data['id_poli']; ?>">Hapus</a></button></td>
+                                                    <td><button type="button" class="btn btn-warning"><a style="color : white;" href="poli/update_poli.php?id=<?= $data['id_poli']; ?>">Update</a></button></td>
                                                 </tr>
                                             <?php
                                             }
@@ -252,26 +232,30 @@ $rows = mysqli_fetch_array($sql);
                     </div>
                     <!-- end row -->
 
-                </div>
-                <!-- container-fluid -->
-            </div>
-            <!-- End Page-content -->
 
-            <footer class="footer">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">
-                            ©
-                            <script>
-                                document.write(new Date().getFullYear())
-                            </script> HealthCare<span class="d-none d-sm-inline-block"> -
-                                Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand.</span>
-                        </div>
+                </div>
+                <!-- end row -->
+
+            </div>
+            <!-- container-fluid -->
+        </div>
+        <!-- End Page-content -->
+
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        ©
+                        <script>
+                            document.write(new Date().getFullYear())
+                        </script> HealthCare<span class="d-none d-sm-inline-block"> -
+                            Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand.</span>
                     </div>
                 </div>
-            </footer>
-        </div>
-        <!-- end main content-->
+            </div>
+        </footer>
+    </div>
+    <!-- end main content-->
 
     </div>
     <!-- END layout-wrapper -->
@@ -360,18 +344,24 @@ $rows = mysqli_fetch_array($sql);
     <script src="assets/js/pages/datatables.init.js"></script>
 
     <script src="assets/js/app.js"></script>
+    <script src="../../dist/sweetalert2.all.min.js"></script>
 
 </body>
 
 </html>
 <?php
-include('../../core/koneksi.php');
 if (isset($_POST['btn'])) {
-    $sql = mysqli_query($koneksi, "INSERT INTO detail_pasien VALUES ('','$_POST[keluhan]','$_POST[id_pasien]','$_POST[id_medis]','$_POST[id_jadwal]')");
-    if ($sql) {
-        echo "<script>alert('data ditambahkan')
-        window.location.href = 'tables-detail.php'
-        </script>";
+    $nama = $_POST['nama_poli'];
+    $cek = mysqli_num_rows(mysqli_query($koneksi, "SELECT * FROM poli WHERE nama_poli='$nama'"));
+    if ($cek > 0) {
+        echo "<script>window.alert('Poli sudah ada!')
+    window.location='tables-poli.php'</script>";
+    } else {
+        mysqli_query($koneksi, "INSERT INTO poli(id_poli,nama_poli)
+    VALUES ('','$nama')");
+
+        echo "<script>window.alert('Data Berhasil disimpan')
+    window.location='tables-poli.php'</script>";
     }
 }
 ?>

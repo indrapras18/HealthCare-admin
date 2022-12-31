@@ -37,3 +37,4 @@ if (empty($_GET)) {
         $result
     );
 }
+?>
