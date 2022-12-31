@@ -24,4 +24,4 @@ a team of developers from group 1 with the name the caps who develop a mobile ap
 - [x] Elisa Febrian S
 
 This application will be used by nurses and midwives
-#  © 2023 HealthCare- Crafted with <3
+#  © 2023 HealthCare - Crafted with <3
